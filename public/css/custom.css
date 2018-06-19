@@ -1,0 +1,84 @@
+body.dark {
+    background-image: url('../imgs/cpic.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    font-weight: 100;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dark:before{
+    /*font-family: "calibri", Garamond, 'Comic Sans';*/
+    font-family: times, serif;
+    font-size:16pt;
+    font-style:italic;
+    color: white;
+    background-color: rgb(35,130,118);
+    position: absolute;
+    opacity: 0.4;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-height {
+    height: 100vh;
+    color: white;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.position-ref {
+    color: white;
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: white;
+    padding: 0px;
+    font-size: 12px;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    width: 130px;
+    text-align: center;
+    height: 30px;
+
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+.p-2{
+    font-size:18pt;
+    font-weight: 300;
+}
+h4{
+    text-decoration: underline;
+}
