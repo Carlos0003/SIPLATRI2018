@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\ClassroomRequest;
 use App\Classroom;
 use App\User;
 
@@ -35,7 +36,7 @@ class ClassroomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ClassroomRequest $request)
+    public function store(Request $request)
     {
       $classr = new Classroom;
       $classr->name         = $request->input('name');
@@ -79,7 +80,16 @@ class ClassroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $responsables = User::all();
+        
+        $classr->name         = $request->input('name');
+        $classr->user_id      = $request->input('user_id');
+        $classr->state        = $request->input('state');
+        $classr->usability    = $request->input('usability');
+
+      if($classr->save()){
+          return redirect('classroom')->with('status', 'La información del Ambiente '.$classr->name.' se actualizó con Exito.');
+      };
     }
 
     /**

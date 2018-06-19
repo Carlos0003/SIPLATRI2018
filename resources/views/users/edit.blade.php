@@ -30,32 +30,32 @@
 			<table class="table table-striped table-hover text-center">
 				<tr>
 					<th> Documento: </th>
-					<td> <input type="number" name="document" class="form-control" placeholder="Documento de Identidad" value="{{$user->document}}"></td>				
+					<td> <input type="number" required name="document" class="form-control" placeholder="Documento de Identidad" value="{{$user->document}}"></td>				
 				</tr>
 				<tr>
 					<th> Nombre Completo: </th>
-					<td> <input type="text" name="fullname" class="form-control" placeholder="Nombre Completo" value="{{$user->fullname}}"></td>				
+					<td> <input type="text" required name="fullname" class="form-control" placeholder="Nombre Completo" value="{{$user->fullname}}"></td>				
 				</tr>
 				<tr>
 					<th> Correo: </th>
-					<td> <input type="email" name="email" class="form-control" placeholder="Correo" value="{{$user->email}}"></td>				
+					<td> <input type="email" required name="email" class="form-control" placeholder="Correo" value="{{$user->email}}"></td>				
 				</tr>
 				<tr>
 					<th> Contraseña: </th>
-					<td> <input type="password" name="password" class="form-control" placeholder="Contraseña" value="{{$user->password}}"></td>				
+					<td> <input type="password" required name="password" class="form-control" placeholder="Contraseña" value="{{$user->password}}"></td>				
 				</tr>
 				<tr>
 					<th> Teléfono: </th>
-					<td> <input type="number" name="phonenumber" class="form-control" placeholder="Telefono" value="{{$user->phonenumber}}"></td>
+					<td> <input type="number" required name="phonenumber" class="form-control" placeholder="Telefono" value="{{$user->phonenumber}}"></td>
 				</tr>
 				<tr>
 					<th> Municipio: </th>
-					<td> <input type="text" name="municipality" class="form-control" placeholder="Ciudad de Empleo" value="{{$user->municipality}}"></td>
+					<td> <input type="text" required name="municipality" class="form-control" placeholder="Ciudad de Empleo" value="{{$user->municipality}}"></td>
 				</tr>
 				<tr>
 					<th> Género: </th>
 					<td> 
-						<select name="gender" class="form-control">
+						<select required name="gender" class="form-control">
 							<option value="">Seleccione tipo de Género...</option>
 							<option value="Masculino"{{$user->gender=='Masculino'?'selected':''}}>Masculino</option>
 							<option value="Femenino"{{$user->gender=='Femenino'?'selected':''}}>Femenino</option>
@@ -65,7 +65,7 @@
 				<tr>
 					<th> Rol: </th>
 					<td>
-						<select name="role" class="form-control">
+						<select required name="role" class="form-control">
 							<option value="">Seleccione tipo de Rol...</option>
 							<option value="Instructor"{{$user->role=='Instructor'?'selected':''}}>Instructor</option>
 							<option value="Admin"{{$user->role=='Admin'?'selected':''}}>Administrador</option>
@@ -76,7 +76,7 @@
 				<tr>
 					<th> Tipo de Contrato: </th>
 					<td>
-						<select name="contract" class="form-control">
+						<select required name="contract" class="form-control">
 							<option value="">Seleccione tipo de contrato...</option>
 							<option value="PrestacionServicios"{{$user->contract=='PrestacionServicios'?'selected':''}}>Prestacion de Servicios</option>
 							<option value="PersonalPlanta"{{$user->contract=='PersonalPlanta'?'selected':''}}>Personal de Planta</option>
@@ -85,7 +85,7 @@
 				<tr>
 					<th> Estado: </th>
 					<td>
-						<select name="state" class="form-control">
+						<select required name="state" class="form-control">
 							<option value="">Seleccione tipo de Estado...</option>
 							<option value="activo"{{$user->state=='activo'?'selected':''}}>Activo</option>
 							<option value="inactivo"{{$user->state=='inactivo'?'selected':''}}>inactivo</option>
@@ -97,7 +97,8 @@
 			</div>
 		</form>
 	</div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     </body>
 </html>

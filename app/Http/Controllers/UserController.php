@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use App\Http\Controllers\ClassroomRequest;
 use App\Exports\UsersExport;
 use App\User;
 use App\Classroom;

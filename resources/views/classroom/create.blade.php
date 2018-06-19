@@ -38,7 +38,7 @@
 							@foreach($responsables as $responsable)
 								<option value="{{ $responsable->id }}">{{ $responsable->fullname }}</option>	
 							@endforeach
-						</select></td></td>	</td>				
+						</select></td>			
 				</tr>
 				<tr>
 					<th> Estado: </th>
