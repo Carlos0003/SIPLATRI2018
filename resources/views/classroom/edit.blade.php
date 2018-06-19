@@ -34,28 +34,28 @@
 				</tr>
 				<tr>
 					<th> Responsable: </th>
-					<td> <select name="user_id" class="form-control">
+					<td> <select required name="user_id" class="form-control">
 							<option value="">Seleccione responsable...</option>
 							@foreach($responsables as $responsable)
-								<option value="{{ $responsable->id }}">{{ $responsable->fullname }}</option>	
+								<option value="{{ $responsable->id }}" {{ $responsable->id==$responsable->id?'selected':'' }}>{{ $responsable->fullname }}</option>	
 							@endforeach
 						</select></td>				
 				</tr>
 				<tr>
 					<th> Estado: </th>
-					<td> <select name="state" class="form-control">
+					<td> <select required name="state" class="form-control">
 							<option value="">Seleccione el estado...</option>
-							<option value="activo">activo</option>
-							<option value="inactivo">inactivo</option>
-						</select></td></td>	</td>				
+							<option value="activo" {{ $classroom->state=='activo'?'selected':'' }}>activo</option>
+							<option value="inactivo"{{ $classroom->state=='inactivo'?'selected':'' }}>inactivo</option>
+						</select></td>			
 				</tr>
 				<tr>
 					<th> Uso: </th>
-					<td> <input type="text" name="usability" class="form-control" placeholder="Uso" value="{{old('usability')}}"></td>
+					<td> <input type="text" required name="usability" class="form-control" placeholder="Uso" value="{{$classroom->usability}}"></td>
 				</tr>
 			</table>
 			<div class="form-group">
-				<button class="btn btn-outline-success" type="submit" value="Save">Adicionar</button>
+				<button class="btn btn-outline-success" type="submit" value="Save">Actualizar</button>
 			</div>
 		</form>
 	</div>

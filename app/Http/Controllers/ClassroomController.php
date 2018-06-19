@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\ClassroomRequest;
+use App\Exports\ClassroomExport;
+
 use App\Classroom;
 use App\User;
 
@@ -68,7 +71,8 @@ class ClassroomController extends Controller
      */
     public function edit($id)
     {
-        return view('classroom.edit')->with('classroom', Classroom::findOrFail($id));
+
+        return view('classroom.edit')->with('classroom', Classroom::findOrFail($id))->with('responsables', User::all());
     }
 
     /**
@@ -80,15 +84,14 @@ class ClassroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $responsables = User::all();
-        
-        $classr->name         = $request->input('name');
-        $classr->user_id      = $request->input('user_id');
-        $classr->state        = $request->input('state');
-        $classr->usability    = $request->input('usability');
+        $classroom=Classroom::find($id);
+        $classroom->name         = $request->input('name');
+        $classroom->user_id      = $request->input('user_id');
+        $classroom->state        = $request->input('state');
+        $classroom->usability    = $request->input('usability');
 
-      if($classr->save()){
-          return redirect('classroom')->with('status', 'La información del Ambiente '.$classr->name.' se actualizó con Exito.');
+      if($classroom->save()){
+          return redirect('classroom')->with('status', 'La información del Ambiente '.$classroom->name.' se actualizó con Exito.');
       };
     }
 
@@ -100,7 +103,7 @@ class ClassroomController extends Controller
      */
     public function destroy($id)
     {
-        $classr = classroom::findOrFail($id);
+        $classr = Classroom::findOrFail($id);
         if($classr->delete()){
             return redirect('classroom')
                 ->with('status', 'El Ambiente '.$classr->name.' se eliminó con éxito.');
