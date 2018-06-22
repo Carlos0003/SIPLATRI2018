@@ -18,9 +18,13 @@ class Classroom extends Model
     }
 
     //buscar
-    public function scopeFullname($classroom,$name){
+    public function scopeName($classrooms,$name){
         if(trim($name)!= ''){
-            $classroom->where('name','LIKE',"%$name%");
+            $classrooms->where('name','LIKE',"%$name%");
         }
     }
+    // public function ajaxsearch(Request $request){
+    //     $classrooms = Classroom::name($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('classroom');
+    //     return view('classroom.ajaxs')->with('classroom',$classrooms);
+    // }
 }

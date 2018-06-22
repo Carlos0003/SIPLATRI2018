@@ -40,7 +40,7 @@ class UserRequest extends FormRequest
             'document'      => 'required|unique:users',
             'fullname'      => 'required',
             'email'         => 'required|unique:users,email,',
-            'password'      => 'required|min:6|confirmed',
+            'password'      => 'required|min:6',
             'phonenumber'   => 'required|numeric',
             'municipality'  => 'required',
             'gender'        => 'required',

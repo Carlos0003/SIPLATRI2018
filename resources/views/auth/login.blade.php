@@ -1,4 +1,3 @@
-@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,6 +10,7 @@
     <link rel="shortcut icon" href="imgs/siplatri2018.ico">
 </head>
 <body class="dark">
+    @extends('layouts.app')
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6" style="opacity: 0.92;">

@@ -17,6 +17,9 @@ class ClassroomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('classroom.index')->with('classroom', Classroom::paginate(50)->setPath('classroom'));
@@ -39,7 +42,7 @@ class ClassroomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClassroomRequest $request)
     {
       $classr = new Classroom;
       $classr->name         = $request->input('name');
@@ -112,21 +115,21 @@ class ClassroomController extends Controller
     // Generate PDF Report
     public function pdf(){
 
-        $classr = Classroom::all();
-        $pdf = \PDF::loadView('classroom.pdf', compact('classroom'));
+        $classrooms = Classroom::all();
+        $pdf = \PDF::loadView('classroom.pdf', compact('classrooms'));
         return $pdf->download('classroom.pdf');
     }
     // Generate EXCEL Report
-    public function excel(){
-        return \Excel::download(new ClassroomExport,'classroom.xlsx');
-    }
+    // public function excel(){
+    //     return \Excel::download(new ClassroomExport,'classroom.xlsx');
+    // }
     //buscar
     public function search(Request $request){
-        $classr=Classroom::name($request->input('name'))->orderBy('id','ASC')->paginate(50)->setPath('classroom');
-        return view('classroom.index')->with('classroom',$classr);
+        $classrooms=Classroom::name($request->input('name'))->orderBy('id','ASC')->paginate(50)->setPath('classroom');
+        return view('classroom.index')->with('classroom',$classrooms);
     }
     public function ajaxsearch(Request $request){
-        $classr = Classroom::name($request->input('name'))->orderBy('id', 'ASC')->paginate(50)->setPath('classroom');
-    return view('users.ajaxs')->with('users',$classr);
+        $classrooms = Classroom::name($request->input('name'))->orderBy('id', 'ASC')->paginate(50)->setPath('classroom');
+        return view('classroom.ajaxs')->with('classrooms',$classrooms);
     }
 }

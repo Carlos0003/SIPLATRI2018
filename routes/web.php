@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'admin'], function(){
-	// Route::get('classroom/pdf', 'ClassroomController@pdf');
+	Route::get('classroom/pdf', 'ClassroomController@pdf');
 	// Route::get('articles/excel', 'ArticleController@excel');
 	// Route::get('categories/pdf', 'CategoryController@pdf');
 	// Route::get('categories/excel', 'CategoryController@excel');
@@ -25,6 +25,8 @@ Route::group(['middleware' => 'admin'], function(){
 	// Route::resource('category', 'CategoryController');
 	Route::get('users/search', 'UserController@search');
 	Route::get('users/ajaxsearch', 'UserController@ajaxsearch');
+	Route::get('classroom/search', 'ClassroomController@search');
+	Route::get('classroom/ajaxsearch', 'ClassroomController@ajaxsearch');
 	// Route::get('departments', 'HomeController@departments');
 	// Route::get('municipalities', 'HomeController@municipalities');
 	Route::resource('user', 'UserController');

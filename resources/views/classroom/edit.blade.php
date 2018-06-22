@@ -46,7 +46,7 @@
 					<td> <select required name="state" class="form-control">
 							<option value="">Seleccione el estado...</option>
 							<option value="activo" {{ $classroom->state=='activo'?'selected':'' }}>activo</option>
-							<option value="inactivo"{{ $classroom->state=='inactivo'?'selected':'' }}>inactivo</option>
+							<option value="inactivo" {{ $classroom->state=='inactivo'?'selected':'' }}>inactivo</option>
 						</select></td>			
 				</tr>
 				<tr>
