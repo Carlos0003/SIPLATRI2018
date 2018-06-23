@@ -57,7 +57,7 @@
                         </select>
                     </td>
                 </tr> --}}
-                <tr>
+{{--                 <tr>
                     <th> Rol: </th>
                     <td>
                         <select name="role" class="form-control">
@@ -68,7 +68,7 @@
                         </select>
                     </td>               
                 </tr>
-{{--                 <tr>
+                <tr>
                     <th> Tipo de Contrato: </th>
                     <td> 
                         <select name="contract" class="form-control">
