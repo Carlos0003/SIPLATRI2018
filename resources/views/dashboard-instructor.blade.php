@@ -1,4 +1,3 @@
-@extends('layouts.navbar')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -14,6 +13,7 @@
         <link rel="shortcut icon" href="imgs/siplatri2018.ico">
         <!-- Styles -->
     </head>
+    @extends('layouts.navbar')
     <body class="dark">
         <div class="flex-center position-ref full-height">
             <div class="content">
@@ -25,14 +25,15 @@
                     <br>
                     
                     <p class="p-2 text-justify">
-                        <strong>Este espacio está diseñado para que pueda conocer sus horarios semanales:</strong>
+                        <strong>Este espacio está diseñado para que pueda conocer sus horarios de clase semanales, así como de su grupo en caso de ser gestor.</strong>
                     </p>
-                    <a class="btn btn-secondary active" type="button" href="{{url('classroom')}}" style="line-height: 27px;"><strong>AMBIENTES</strong></a>
+                    <a class="btn btn-secondary active" type="button" href="{{url('classroom')}}" style="line-height: 27px;"><strong>Mi Horario Semanal</strong></a>
+                    <a class="btn btn-secondary active" type="button" href="{{url('classroom')}}" style="line-height: 27px;"><strong>Mi Grupo (Gestor)</strong></a>
                 </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     </body>
 @include('layouts.footer')
 </html>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light fixed-top navbar-static-top" style="background-color: rgb(35,130,118);opacity: 0.8;">
+<nav id="ocultar" class="navbar navbar-expand-md navbar-light fixed-top navbar-static-top" style="background-color: rgb(35,130,118);opacity: 0.8;">
     <div class="container">
         <div class="navbar-header" style="align-items: center;">
             <!-- Collapsed Hamburger -->

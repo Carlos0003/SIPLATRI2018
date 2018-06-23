@@ -1,4 +1,3 @@
-@extends('layouts.navbar')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -15,6 +14,7 @@
         <!-- Styles -->
     </head>
     <body class="dark">
+    @extends('layouts.navbar')
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <br>
@@ -23,11 +23,10 @@
                 </div>
                 <div style="color: white; width:800px; height: 400px;background-color: rgba(0,0,0,.5);opacity: 0.9; border-radius: 10px;padding: 20px;">
                     <br>
-                    <h2 class="text-center"><strong>Sistema de Planeación Trimestral</strong></h2>
-                    <h4 class="text-center"><strong>SIPLATRI</strong></h4>
-                    <br>
+                    <h2 class="text-center"><strong>Sistema de Planeación Trimestral SIPLATRI</strong></h2>
+                    <h4 class="text-center" style="text-decoration: none;"><strong>Gestión del Coordinador Académico</strong></h4>
                     <p class="p-2 text-justify">
-                        <strong>Es un sistema de información que facilita la planeación trimestral de los programas de formación integral en las diferentes modalidades para el Centro de Procesos Industriales y Construcción CPIC del SENA Regional Caldas, de acuerdo con las necesidades orientadas a cubrir la programación académica para los aprendices.</strong>
+                        <strong>Espacio exclusivo para Coordinación Académica representada por , quien tiene acceso al sistema de información para agregar, editar, eliminar y ver todos los módulos que componen la planeación trimestral en el CPIC y que permiten la correcta administración de los elementos para la construcción de las fichas.</strong>
                     </p>
                     <div class="links">
                     <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>FICHAS</strong></a>

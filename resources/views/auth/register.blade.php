@@ -1,4 +1,3 @@
-@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,81 +10,82 @@
     <link rel="shortcut icon" href="imgs/siplatri2018.ico">
 </head>
 <body class="dark">
+@extends('layouts.navbar')
 <div class="container">
     <div><br><br><br></div>
     <div class="row justify-content-center">
-        <div class="col-md-12" style="opacity: 0.92;">
+        <div class="col-md-8" style="opacity: 0.92;">
             @include('layouts.validation_errors')
             <div class="card">
                 <div class="card-body">
                 <h3 class="text-center"><i class="fa fa-user"></i> Registro de Usuarios</h3>
-                <div class="card-header">Todos los campos son obligatorios:</div>
+                <div class="card-header text-center">Todos los campos son obligatorios:</div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <table class="table table-striped table-hover text-center">
+                        <table class="table table-striped table-hover text-justify">
                 <tr>
                     <th> Documento: </th>
-                    <td> <input type="number" name="document" class="form-control" placeholder="Documento de Identidad" value="{{old('document')}}"></td>               
+                    <td> <input type="number" name="document" class="form-control" placeholder="* Documento de Identidad" value="{{old('document')}}"></td>               
                 </tr>
                 <tr>
                     <th> Nombre Completo: </th>
-                    <td> <input type="text" name="fullname" class="form-control" placeholder="Nombre Completo" value="{{old('fullname')}}"></td>                
+                    <td> <input type="text" name="fullname" class="form-control" placeholder="* Nombre Completo" value="{{old('fullname')}}"></td>                
                 </tr>
                 <tr>
                     <th> Correo: </th>
-                    <td> <input type="email" name="email" class="form-control" placeholder="Correo" value="{{old('email')}}"></td>              
+                    <td> <input type="email" name="email" class="form-control" placeholder="* Correo" value="{{old('email')}}"></td>              
                 </tr>
                 <tr>
                     <th> Contraseña: </th>
-                    <td> <input type="password" name="password" class="form-control" placeholder="Contraseña"></td>             
+                    <td> <input type="password" name="password" class="form-control" placeholder="* Contraseña"></td>             
                 </tr>
-                <tr>
+{{--                 <tr>
                     <th> Teléfono: </th>
-                    <td> <input type="number" name="phonenumber" class="form-control" placeholder="Telefono" value="{{old('phonenumber')}}"></td>
+                    <td> <input type="number" name="phonenumber" class="form-control" placeholder="* Telefono" value="{{old('phonenumber')}}"></td>
                 </tr>
                 <tr>
                     <th> Municipio: </th>
-                    <td> <input type="text" name="municipality" class="form-control" placeholder="Ciudad de Empleo" value="{{old('municipality')}}"></td>
+                    <td> <input type="text" name="municipality" class="form-control" placeholder="* Ciudad de Empleo" value="{{old('municipality')}}"></td>
                 </tr>
                 <tr>
                     <th> Género: </th>
-                    <td> {{-- <input type="text" name="gender" class="form-control" placeholder="Género" value="{{old('gender')}}"> --}}
+                    <td>
                         <select name="gender" class="form-control">
                             <option value="">Seleccione tipo de contrato...</option>
                             <option value="{{old('gender')}}">Masculino</option>
                             <option value="{{old('gender')}}">Femenino</option>
                         </select>
                     </td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <th> Rol: </th>
-                    <td> {{-- <input type="text" name="role" class="form-control" placeholder="Rol" value="{{old('role')}}"> --}}
+                    <td>
                         <select name="role" class="form-control">
-                            <option value="">Seleccione tipo de contrato...</option>
+                            <option value="">* Seleccione Rol...</option>
                             <option value="{{old('role')}}">Instructor</option>
                             <option value="{{old('role')}}">Admin</option>
                             <option value="{{old('role')}}">Almacen</option>
                         </select>
                     </td>               
                 </tr>
-                <tr>
+{{--                 <tr>
                     <th> Tipo de Contrato: </th>
-                    <td> {{-- <input type="text" name="contract" class="form-control" placeholder="Tipo Contrato" value="{{old('contract')}}"> --}}
+                    <td> 
                         <select name="contract" class="form-control">
-                            <option value="">Seleccione tipo de contrato...</option>
+                            <option value="">* Seleccione tipo de contrato...</option>
                             <option value="{{old('contract')}}">PrestacionServicios</option>
                             <option value="{{old('contract')}}">PersonalPlanta</option>
                         </select></td>
                 </tr>
                 <tr>
                     <th> Estado: </th>
-                    <td> {{-- <input type="text" name="state" class="form-control" placeholder="Estado" value="{{old('state')}}"> --}}
+                    <td> 
                         <select name="state" class="form-control">
-                            <option value="">Seleccione tipo de contrato...</option>
+                            <option value="">* Seleccione tipo de contrato...</option>
                             <option value="{{old('state')}}">activo</option>
                             <option value="{{old('state')}}">inactivo</option>
                         </select></td></td>             
-                </tr>
+                </tr> --}}
             </table>
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
@@ -99,8 +99,9 @@
         </div>
     </div>
 </div>
+<div><br></div>
+@include('layouts.footer')
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-@include('layouts.footer')
 </body>
 </html>
