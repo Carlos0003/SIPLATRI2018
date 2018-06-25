@@ -22,7 +22,7 @@ class ClassroomController extends Controller
     }
     public function index()
     {
-        return view('classroom.index')->with('classroom', Classroom::paginate(50)->setPath('classroom'));
+        return view('classroom.index')->with('classroom', Classroom::paginate(10)->setPath('classroom'));
     }
 
     /**

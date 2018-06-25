@@ -31,11 +31,14 @@
                                     </a>
 
                                     <a href="{{ url('#') }}" class="dropdown-item">
-                                        <i class="fas fa-boxes"></i> Competencias
+                                        <i class="fas fa-boxes"></i> Programas
                                     </a>
 
                                     <a href="{{ url('#') }}" class="dropdown-item">
                                         <i class="fas fa-clipboard-list"></i> Fichas
+                                    </a>
+                                    <a href="{{ url('#') }}" class="dropdown-item">
+                                        <i class="fas fa-clipboard-list"></i> Competencias
                                     </a>
                                     <div class="dropdown-divider"></div>
                                 @else

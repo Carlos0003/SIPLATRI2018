@@ -23,73 +23,77 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <table class="table table-striped table-hover text-justify">
-                <tr>
-                    <th> Documento: </th>
-                    <td> <input type="number" name="document" class="form-control" placeholder="* Documento de Identidad" value="{{old('document')}}"></td>               
-                </tr>
-                <tr>
-                    <th> Nombre Completo: </th>
-                    <td> <input type="text" name="fullname" class="form-control" placeholder="* Nombre Completo" value="{{old('fullname')}}"></td>                
-                </tr>
-                <tr>
-                    <th> Correo: </th>
-                    <td> <input type="email" name="email" class="form-control" placeholder="* Correo" value="{{old('email')}}"></td>              
-                </tr>
-                <tr>
-                    <th> Contraseña: </th>
-                    <td> <input type="password" name="password" class="form-control" placeholder="* Contraseña"></td>             
-                </tr>
-{{--                 <tr>
-                    <th> Teléfono: </th>
-                    <td> <input type="number" name="phonenumber" class="form-control" placeholder="* Telefono" value="{{old('phonenumber')}}"></td>
-                </tr>
-                <tr>
-                    <th> Municipio: </th>
-                    <td> <input type="text" name="municipality" class="form-control" placeholder="* Ciudad de Empleo" value="{{old('municipality')}}"></td>
-                </tr>
-                <tr>
-                    <th> Género: </th>
-                    <td>
-                        <select name="gender" class="form-control">
-                            <option value="">Seleccione tipo de contrato...</option>
-                            <option value="{{old('gender')}}">Masculino</option>
-                            <option value="{{old('gender')}}">Femenino</option>
-                        </select>
-                    </td>
-                </tr> --}}
-{{--                 <tr>
-                    <th> Rol: </th>
-                    <td>
-                        <select name="role" class="form-control">
-                            <option value="">* Seleccione Rol...</option>
-                            <option value="{{old('role')}}">Instructor</option>
-                            <option value="{{old('role')}}">Admin</option>
-                            <option value="{{old('role')}}">Almacen</option>
-                        </select>
-                    </td>               
-                </tr>
-                <tr>
-                    <th> Tipo de Contrato: </th>
-                    <td> 
-                        <select name="contract" class="form-control">
-                            <option value="">* Seleccione tipo de contrato...</option>
-                            <option value="{{old('contract')}}">PrestacionServicios</option>
-                            <option value="{{old('contract')}}">PersonalPlanta</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <th> Estado: </th>
-                    <td> 
-                        <select name="state" class="form-control">
-                            <option value="">* Seleccione tipo de contrato...</option>
-                            <option value="{{old('state')}}">activo</option>
-                            <option value="{{old('state')}}">inactivo</option>
-                        </select></td></td>             
-                </tr> --}}
-            </table>
+                        <tr>
+                            <th> Documento: </th>
+                            <td> <input type="number" name="document" class="form-control" placeholder="* Documento de Identidad" value="{{old('document')}}"></td>               
+                        </tr>
+                        <tr>
+                            <th> Nombre Completo: </th>
+                            <td> <input type="text" name="fullname" class="form-control" placeholder="* Nombre Completo" value="{{old('fullname')}}"></td>                
+                        </tr>
+                        <tr>
+                            <th> Correo: </th>
+                            <td> <input type="email" name="email" class="form-control" placeholder="* Correo" value="{{old('email')}}"></td>              
+                        </tr>
+                        <tr>
+                            <th> Contraseña: </th>
+                            <td> <input type="password" name="password" class="form-control" placeholder="* Contraseña"></td>             
+                        </tr>
+                        <tr>
+                            <th> Confirmar Contraseña: </th>
+                            <td> <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="* Confirmar Contraseña"></td>
+                        </tr>
+        {{--                 <tr>
+                            <th> Teléfono: </th>
+                            <td> <input type="number" name="phonenumber" class="form-control" placeholder="* Telefono" value="{{old('phonenumber')}}"></td>
+                        </tr>
+                        <tr>
+                            <th> Municipio: </th>
+                            <td> <input type="text" name="municipality" class="form-control" placeholder="* Ciudad de Empleo" value="{{old('municipality')}}"></td>
+                        </tr>
+                        <tr>
+                            <th> Género: </th>
+                            <td>
+                                <select name="gender" class="form-control">
+                                    <option value="">Seleccione tipo de contrato...</option>
+                                    <option value="{{old('gender')}}">Masculino</option>
+                                    <option value="{{old('gender')}}">Femenino</option>
+                                </select>
+                            </td>
+                        </tr> --}}
+        {{--                 <tr>
+                            <th> Rol: </th>
+                            <td>
+                                <select name="role" class="form-control">
+                                    <option value="">* Seleccione Rol...</option>
+                                    <option value="{{old('role')}}">Instructor</option>
+                                    <option value="{{old('role')}}">Admin</option>
+                                    <option value="{{old('role')}}">Almacen</option>
+                                </select>
+                            </td>               
+                        </tr>
+                        <tr>
+                            <th> Tipo de Contrato: </th>
+                            <td> 
+                                <select name="contract" class="form-control">
+                                    <option value="">* Seleccione tipo de contrato...</option>
+                                    <option value="{{old('contract')}}">PrestacionServicios</option>
+                                    <option value="{{old('contract')}}">PersonalPlanta</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <th> Estado: </th>
+                            <td> 
+                                <select name="state" class="form-control">
+                                    <option value="">* Seleccione tipo de contrato...</option>
+                                    <option value="{{old('state')}}">activo</option>
+                                    <option value="{{old('state')}}">inactivo</option>
+                                </select></td></td>             
+                        </tr> --}}
+                        </table>
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
-                                <button type="submit" style="background-color: rgb(35,130,118); color: white; border: none;;" class="btn btn-primary btn-block"><strong>Registrarse</strong>
+                                <button type="submit" style="background-color: rgb(35,130,118); color: white; border: none;" class="btn btn-primary btn-block"><strong>Registrarse</strong>
                                 </button>
                             </div>
                         </div>
@@ -101,7 +105,7 @@
 </div>
 <div><br></div>
 @include('layouts.footer')
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
 </html>
