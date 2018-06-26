@@ -14,7 +14,7 @@
         <!-- Styles -->
     </head>
 	<body>
-		{{-- @extends('layouts.navbar') --}}
+		@extends('layouts.navbar')
 		<div><br><br><br></div>
 		<div class="col-md-8 offset-2">
 		<h1 class="text-center"><i class="fa fa-plus"></i> Adicionar Ambiente</h1>

@@ -23,8 +23,30 @@ class ClassroomRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        if($this->method() == 'PUT') {
+            return [
+            'name'      => 'required',
+            'user_id'   => 'required',
+            'state'     => 'required',
+            'usability' => 'required',
+            ];
+        }else{
+            return [
+            'name'      => 'required',
+            'user_id'   => 'required',
+            'state'     => 'required',
+            'usability' => 'required',
+            ];
+        }
+    }
+    public function messages() 
+    {
+        return[
+            'fullname.required'     => "El campo Nombre es obligatorio.",
+            'state.required'        => "El campo Responsable es obligatorio.",
+            'state.unique'          => "El campo Estado es obligatorio.",
+            'usability.required'    => "El campo Usabilidad es obligatorio.",
+
+       ];
     }
 }

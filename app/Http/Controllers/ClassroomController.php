@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
-use App\Http\Controllers\ClassroomRequest;
-use App\Exports\ClassroomExport;
-
-use App\Classroom;
 use App\User;
+use App\Classroom;
+use App\Http\Requests\UserRequest;
+use App\Http\Requests\ClassroomRequest;
+use App\Exports\ClassroomExport;
 
 class ClassroomController extends Controller
 {
@@ -120,9 +119,9 @@ class ClassroomController extends Controller
         return $pdf->download('classroom.pdf');
     }
     // Generate EXCEL Report
-    // public function excel(){
-    //     return \Excel::download(new ClassroomExport,'classroom.xlsx');
-    // }
+    public function excel(){
+        return \Excel::download(new ClassroomExport,'classroom.xlsx');
+    }
     //buscar
     public function search(Request $request){
         $classrooms=Classroom::name($request->input('name'))->orderBy('id','ASC')->paginate(50)->setPath('classroom');

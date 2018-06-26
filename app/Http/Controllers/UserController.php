@@ -41,8 +41,6 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        dd($request->input('phonenumber'));
-        die;
       $user = new User;
       $user->document       = $request->input('document');
       $user->fullname       = $request->input('fullname');
@@ -130,9 +128,9 @@ class UserController extends Controller
         return $pdf->download('users.pdf');
     }
     // Generate EXCEL Report
-    // public function excel(){
-    //     return \Excel::download(new UsersExport,'users.xlsx');
-    // }
+    public function excel(){
+        return \Excel::download(new UsersExport,'users.xlsx');
+    }
     //buscar
     public function search(Request $request){
         $users=User::fullname($request->input('fullname'))->orderBy('id','ASC')->paginate(10)->setPath('user');

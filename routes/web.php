@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('classroom/pdf', 'ClassroomController@pdf');
-	// Route::get('articles/excel', 'ArticleController@excel');
+	Route::get('classroom/excel', 'ClassroomController@excel');
 	// Route::get('categories/pdf', 'CategoryController@pdf');
 	// Route::get('categories/excel', 'CategoryController@excel');
 	Route::get('users/pdf', 'UserController@pdf');
-	// Route::get('users/excel', 'UserController@excel');
+	Route::get('users/excel', 'UserController@excel');
 	// Route::resource('category', 'CategoryController');
 	Route::get('users/search', 'UserController@search');
 	Route::get('users/ajaxsearch', 'UserController@ajaxsearch');
