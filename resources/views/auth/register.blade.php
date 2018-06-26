@@ -43,7 +43,7 @@
                             <th> Confirmar Contraseña: </th>
                             <td> <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="* Confirmar Contraseña"></td>
                         </tr>
-        {{--                 <tr>
+                        <tr>
                             <th> Teléfono: </th>
                             <td> <input type="number" name="phonenumber" class="form-control" placeholder="* Telefono" value="{{old('phonenumber')}}"></td>
                         </tr>
@@ -56,29 +56,18 @@
                             <td>
                                 <select name="gender" class="form-control">
                                     <option value="">Seleccione tipo de contrato...</option>
-                                    <option value="{{old('gender')}}">Masculino</option>
-                                    <option value="{{old('gender')}}">Femenino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
                                 </select>
                             </td>
-                        </tr> --}}
-        {{--                 <tr>
-                            <th> Rol: </th>
-                            <td>
-                                <select name="role" class="form-control">
-                                    <option value="">* Seleccione Rol...</option>
-                                    <option value="{{old('role')}}">Instructor</option>
-                                    <option value="{{old('role')}}">Admin</option>
-                                    <option value="{{old('role')}}">Almacen</option>
-                                </select>
-                            </td>               
                         </tr>
                         <tr>
                             <th> Tipo de Contrato: </th>
                             <td> 
                                 <select name="contract" class="form-control">
                                     <option value="">* Seleccione tipo de contrato...</option>
-                                    <option value="{{old('contract')}}">PrestacionServicios</option>
-                                    <option value="{{old('contract')}}">PersonalPlanta</option>
+                                    <option value="PrestacionServicios">PrestacionServicios</option>
+                                    <option value="PersonalPlanta">PersonalPlanta</option>
                                 </select></td>
                         </tr>
                         <tr>
@@ -86,10 +75,10 @@
                             <td> 
                                 <select name="state" class="form-control">
                                     <option value="">* Seleccione tipo de contrato...</option>
-                                    <option value="{{old('state')}}">activo</option>
-                                    <option value="{{old('state')}}">inactivo</option>
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
                                 </select></td></td>             
-                        </tr> --}}
+                        </tr>
                         </table>
                         <div class="form-group row mb-0">
                             <div class="col-md-12">

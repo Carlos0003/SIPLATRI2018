@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('phonenumber');
             $table->string('municipality');
             $table->string('gender');
-            $table->string('role');
+            $table->string('role')->default('Instructor');
             $table->string('contract');
             $table->string('state')->default('activo');
             $table->rememberToken();

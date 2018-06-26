@@ -41,6 +41,8 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
+        dd($request->input('phonenumber'));
+        die;
       $user = new User;
       $user->document       = $request->input('document');
       $user->fullname       = $request->input('fullname');

@@ -37,7 +37,7 @@
 					<td> <select required name="user_id" class="form-control">
 							<option value="">Seleccione responsable...</option>
 							@foreach($responsables as $responsable)
-								<option value="{{ $responsable->id }}" {{ $responsable->id==$responsable->id?'selected':'' }}>{{ $responsable->fullname }}</option>	
+								<option value="{{ $responsable->id }}" {{ $classroom->user->id == $responsable->id ? 'selected':'' }}>{{ $responsable->fullname }}</option>	
 							@endforeach
 						</select></td>				
 				</tr>
