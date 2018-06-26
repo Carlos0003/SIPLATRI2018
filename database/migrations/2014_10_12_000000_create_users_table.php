@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->bigInteger('phonenumber');
-            $table->string('municipality');
+            $table->string('municipality')->default('Manizales');
             $table->string('gender');
             $table->string('role')->default('Instructor');
-            $table->string('contract');
+            $table->string('contract')->default('PrestacionServicios');
             $table->string('state')->default('activo');
             $table->rememberToken();
             $table->timestamps();

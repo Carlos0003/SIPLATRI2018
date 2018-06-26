@@ -25,11 +25,11 @@
                         <table class="table table-striped table-hover text-justify">
                         <tr>
                             <th> Documento: </th>
-                            <td> <input type="number" name="document" class="form-control" placeholder="* Documento de Identidad" value="{{old('document')}}"></td>               
+                            <td> <input type="number" name="document" class="form-control" placeholder="* Documento de Identidad" value="{{old('document')}}"></td>
                         </tr>
                         <tr>
                             <th> Nombre Completo: </th>
-                            <td> <input type="text" name="fullname" class="form-control" placeholder="* Nombre Completo" value="{{old('fullname')}}"></td>                
+                            <td> <input type="text" name="fullname" class="form-control" placeholder="* Nombre Completo" value="{{old('fullname')}}"></td>
                         </tr>
                         <tr>
                             <th> Correo: </th>
@@ -48,36 +48,14 @@
                             <td> <input type="number" name="phonenumber" class="form-control" placeholder="* Telefono" value="{{old('phonenumber')}}"></td>
                         </tr>
                         <tr>
-                            <th> Municipio: </th>
-                            <td> <input type="text" name="municipality" class="form-control" placeholder="* Ciudad de Empleo" value="{{old('municipality')}}"></td>
-                        </tr>
-                        <tr>
                             <th> Género: </th>
                             <td>
                                 <select name="gender" class="form-control">
-                                    <option value="">Seleccione tipo de contrato...</option>
+                                    <option value="">Seleccione Género...</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
                                 </select>
                             </td>
-                        </tr>
-                        <tr>
-                            <th> Tipo de Contrato: </th>
-                            <td> 
-                                <select name="contract" class="form-control">
-                                    <option value="">* Seleccione tipo de contrato...</option>
-                                    <option value="PrestacionServicios">PrestacionServicios</option>
-                                    <option value="PersonalPlanta">PersonalPlanta</option>
-                                </select></td>
-                        </tr>
-                        <tr>
-                            <th> Estado: </th>
-                            <td> 
-                                <select name="state" class="form-control">
-                                    <option value="">* Seleccione tipo de contrato...</option>
-                                    <option value="activo">Activo</option>
-                                    <option value="inactivo">Inactivo</option>
-                                </select></td></td>             
                         </tr>
                         </table>
                         <div class="form-group row mb-0">

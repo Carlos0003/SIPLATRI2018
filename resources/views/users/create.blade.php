@@ -55,7 +55,7 @@
 					<th> Género: </th>
 					<td>
 						<select name="gender" class="form-control">
-							<option value="">Seleccione tipo de contrato...</option>
+							<option value="">Seleccione Género...</option>
 							<option value="Masculino">Masculino</option>
 							<option value="Femenino">Femenino</option>
 						</select>
