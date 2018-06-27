@@ -30,8 +30,8 @@ class HomeController extends Controller
         else if(Auth::user()->role=='Instructor'){
             return view('dashboard-instructor');
         }
-        else if(Auth::user()->role=='Almacen'){
-            return view('dashboard-logistica');
+        else if(Auth::user()->role=='Almac'){
+            return view('dashboard-almac');
         }
         else{
             return "El rol no existe";

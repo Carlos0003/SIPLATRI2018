@@ -37,13 +37,13 @@
                                     <a href="{{ url('#') }}" class="dropdown-item">
                                         <i class="fas fa-clipboard-list"></i> Fichas
                                     </a>
-                                    {{-- <a href="{{ url('#') }}" class="dropdown-item">
-                                        <i class="fas fa-clipboard-list"></i> Competencias
-                                    </a> --}}
                                     <div class="dropdown-divider"></div>
                                 @else
+                                    <a href="{{ url('classroom') }}" class="dropdown-item">
+                                        <i class="fa fa-newspaper"></i>Ambientes
+                                    </a>
                                     <a href="{{ url('#') }}" class="dropdown-item">
-                                        <i class="fa fa-newspaper"></i>Mis articulos
+                                        <i class="fas fa-clipboard-list"></i> Competencias
                                     </a>
                                     <div class="dropdown-divider"></div>
                                 @endif
