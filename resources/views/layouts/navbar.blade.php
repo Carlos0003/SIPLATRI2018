@@ -30,16 +30,16 @@
                                         <i class="fas fa-warehouse"></i> Ambientes
                                     </a>
 
-                                    <a href="{{ url('#') }}" class="dropdown-item">
+                                    <a href="{{ url('program') }}" class="dropdown-item">
                                         <i class="fas fa-boxes"></i> Programas
                                     </a>
 
                                     <a href="{{ url('#') }}" class="dropdown-item">
                                         <i class="fas fa-clipboard-list"></i> Fichas
                                     </a>
-                                    <a href="{{ url('#') }}" class="dropdown-item">
+                                    {{-- <a href="{{ url('#') }}" class="dropdown-item">
                                         <i class="fas fa-clipboard-list"></i> Competencias
-                                    </a>
+                                    </a> --}}
                                     <div class="dropdown-divider"></div>
                                 @else
                                     <a href="{{ url('#') }}" class="dropdown-item">

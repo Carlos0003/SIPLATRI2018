@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Index-User</title>
+        <title> Index-Programs</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -16,59 +16,52 @@
 	<body>
 		@extends('layouts.navbar')
 		<div><br><br><br></div>
-		<div class="col-md-12">
-			<h1 class="text-center" style="font-size: 30px"><i class="fa fa-users"></i> Lista de Usuarios</h1>
+		<div class="col-md-8 offset-2">
+			<h1 class="text-center" style="font-size: 30px"><i class="fas fa-boxes"></i> Lista de Programas</h1>
 			<hr>
 			<ol class="breadcrumb">
 	            <li class="breadcrumb-item"><a href="{{url('home')}}">Inicio</a></li>
-	            <li class="breadcrumb-item active" aria-current="page">Lista usuario</li>
+	            <li class="breadcrumb-item active" aria-current="page">Lista programas</li>
 	        </ol>
-			<a href="{{ url('user/create')}}" class="btn btn-outline-info">
-				<i class="fa fa-plus"></i> Agregar Usuario
+			<a href="{{ url('program/create')}}" class="btn btn-outline-info">
+				<i class="fa fa-plus"></i> Agregar Programa
 			</a>
-			<a href="{{url('users/pdf')}}" class="btn btn-outline-primary">
+			<a href="{{url('programs/pdf')}}" class="btn btn-outline-primary">
 				<i class="fa fa-file-pdf">  Exportar</i>
 			</a>
-			<a href="{{url('users/excel')}}" class="btn btn-outline-success">
+			<a href="{{url('programs/excel')}}" class="btn btn-outline-success">
 				<i class="fa fa-file-excel">  Exportar</i>
 			</a>
 			<hr>
-			<form class="form-inline" action="{{ url('users/search') }}">
+			<form class="form-inline" action="{{ url('programs/search') }}">
 				<div class="form-group">
-					<input type="search" class="form-control" name="fullname" placeholder="Ingrese su busqueda">&nbsp;
+					<input type="search" class="form-control" name="name" placeholder="Ingrese su busqueda">&nbsp;
 					<button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 			<hr>
 			<form class="form-inline">
-				<input type="search" class="form-control" id="usearch" name="fullname" placeholder="Filtrar" autocomplete="off">
+				<input type="search" class="form-control" id="psearch" name="name" placeholder="Filtrar" autocomplete="off">
 			</form>
 			<hr>
+			<div class="row justify-content-center aling-items-center">
+				{!! $program->render() !!}
+			</div>
 			<table class="table table-striped table-hover text-center" style="font-size: 12px;">
-				<thead class="thead-dark">
+				<thead class="thead-dark text-center">
 					<tr>
-						<th>Nombre Completo</th>
-						<th>Correo Electronico</th>
-						<th>Teléfono</th>
-						<th>Rol</th>
-						<th>Tipo Contrato</th>
-						<th>Estado</th>
+						<th>Nombre del Programa</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
-				<tbody class="results">
-					@foreach($users as $user)
+				<tbody class="results" style="text-align: justify;">
+					@foreach($program as $progr)
 					<tr>
-						<td> {{$user->fullname}} </td>
-						<td> {{$user->email}} </td>
-						<td> {{$user->phonenumber}} </td>
-						<td> {{$user->role}}
-						<td> {{$user->contract}} </td>
-						<td> {{$user->state}} </td>
+						<td> {{$progr->name}} </td>
 						<td>
-							<a href="{{url('user/'.$user->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
-							<a href="{{url('user/'.$user->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
-							<form action="{{url('user/'.$user->id)}}" method="post" style="display: inline">
+							<a href="{{url('program/'.$progr->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
+							<a href="{{url('program/'.$progr->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
+							<form action="{{url('program/'.$progr->id)}}" method="post" style="display: inline">
 								{!! csrf_field() !!}
 								{!! method_field('delete') !!}
 								<button class="btn btn-outline-danger btn-delete" type="button"><i class="fa fa-trash"></i></button>				
@@ -79,9 +72,9 @@
 				</tbody>
 				<tfoot class="text-center" ">
 					<tr>
-						<td colspan='4'>
+						<td colspan='6'>
 							<div class="row justify-content-center aling-items-center">
-								{!! $users->render() !!}
+								{!! $program->render() !!}
 							</div>
 						</td>
 					</tr>
@@ -115,20 +108,13 @@
                     }
                 });
             });
-            $('form').on('keyup','#usearch', function(event) {
+            $('form').on('keyup','#psearch', function(event) {
                 event.preventDefault();
-                $fullname=$(this).val();
-                $.get('users/ajaxsearch',{fullname:$fullname}, function(data){
+                $name=$(this).val();
+                $.get('programs/ajaxsearch',{name:$name}, function(data){
                     $('.results').html(data);
                 });
             });
-            // $('form').on('keyup','#asearch', function(event) {
-            //     event.preventDefault();
-            //     $name=$(this).val();
-            //     $.get('articles/ajaxsearch',{name:$name}, function(data){
-            //         $('.results').html(data);
-            //     });
-            // });
         });
     </script>
     </body>

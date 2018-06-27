@@ -16,7 +16,7 @@
 	<body>
 		@extends('layouts.navbar')
 		<div><br><br><br></div>
-		<div class="col-md-12">
+		<div class="col-md-8 offset-2">
 			<h1 class="text-center" style="font-size: 30px"><i class="fas fa-warehouse"></i> Lista de Ambientes</h1>
 			<hr>
 			<ol class="breadcrumb">
@@ -24,7 +24,7 @@
 	            <li class="breadcrumb-item active" aria-current="page">Lista Ambientes</li>
 	        </ol>
 			<a href="{{ url('classroom/create')}}" class="btn btn-outline-info">
-				<i class="fa fa-plus"></i> Ambientes
+				<i class="fa fa-plus"></i> Agregar Ambiente
 			</a>
 			<a href="{{url('classroom/pdf')}}" class="btn btn-outline-primary">
 				<i class="fa fa-file-pdf">  Exportar</i>
@@ -63,7 +63,7 @@
 							<tr>
 								<td> {{$classr->id}} </td>
 								<td> {{$classr->name}} </td>
-								<td> {{$classr->user->fullname }} </td>
+								<td style="text-align: justify;"> {{$classr->user->fullname }} </td>
 								<td> {{$classr->state}} </td>
 								<td> {{$classr->usability}} </td>
 								<td>
@@ -80,7 +80,7 @@
 				</tbody>
 				<tfoot class="text-center" ">
 					<tr>
-						<td colspan='4'>
+						<td colspan='8'>
 							<div class="row justify-content-center aling-items-center">
 								{!! $classroom->render() !!}
 							</div>

@@ -18,17 +18,19 @@ Route::get('/', function () {
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('classroom/pdf', 'ClassroomController@pdf');
 	Route::get('classroom/excel', 'ClassroomController@excel');
-	// Route::get('categories/pdf', 'CategoryController@pdf');
-	// Route::get('categories/excel', 'CategoryController@excel');
-	Route::get('users/pdf', 'UserController@pdf');
-	Route::get('users/excel', 'UserController@excel');
-	// Route::resource('category', 'CategoryController');
-	Route::get('users/search', 'UserController@search');
-	Route::get('users/ajaxsearch', 'UserController@ajaxsearch');
 	Route::get('classroom/search', 'ClassroomController@search');
 	Route::get('classroom/ajaxsearch', 'ClassroomController@ajaxsearch');
+	Route::get('programs/pdf', 'ProgramController@pdf');
+	Route::get('programs/excel', 'ProgramController@excel');
+	Route::get('programs/search', 'ProgramController@search');
+	Route::get('programs/ajaxsearch', 'ProgramController@ajaxsearch');
+	Route::get('users/pdf', 'UserController@pdf');
+	Route::get('users/excel', 'UserController@excel');
+	Route::get('users/search', 'UserController@search');
+	Route::get('users/ajaxsearch', 'UserController@ajaxsearch');
 	// Route::get('departments', 'HomeController@departments');
 	// Route::get('municipalities', 'HomeController@municipalities');
+	Route::resource('program', 'ProgramController');
 	Route::resource('user', 'UserController');
 	Route::resource('classroom', 'ClassroomController');
 });

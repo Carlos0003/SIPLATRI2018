@@ -32,14 +32,14 @@
                     <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>FICHAS</strong></a>
                     <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>INSTRUCTORES</strong></a>
                     <a class="btn btn-secondary active" type="button" href="{{url('classroom')}}" style="line-height: 27px;"><strong>AMBIENTES</strong></a>
-                    <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>PROGRAMAS</strong></a>
-                    <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>COMPETENCIAS</strong></a>
+                    <a class="btn btn-secondary active" type="button" href="{{url('program')}}" style="line-height: 27px;"><strong>PROGRAMAS</strong></a>
+{{--                     <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>COMPETENCIAS</strong></a> --}}
                     </div>
                 </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     </body>
 @include('layouts.footer')
 </html>
