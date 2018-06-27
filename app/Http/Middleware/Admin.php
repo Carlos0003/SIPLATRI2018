@@ -17,9 +17,17 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-      if(Auth::user() && Auth::user()->role=='Admin'){
+      if(Auth::user()->role=='Admin'){
             return $next($request);
+            return redirect('/dashboard-admin');
         }
-        return redirect('/dashboard-admin');
+        elseif (Auth::user()->role=='Instructor'){
+            return $next($request);
+            return redirect('/dashboard-instructor');
+        }
+        elseif (Auth::user()->role=='Almac'){
+            return $next($request);
+            return redirect('/dashboard-almac');
+        }
     }
 }

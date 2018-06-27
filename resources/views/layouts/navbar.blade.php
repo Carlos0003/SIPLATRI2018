@@ -38,7 +38,7 @@
                                         <i class="fas fa-clipboard-list"></i> Fichas
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                @else
+                                @elseif(Auth::user()->role == 'Almac')
                                     <a href="{{ url('classroom') }}" class="dropdown-item">
                                         <i class="fa fa-newspaper"></i>Ambientes
                                     </a>
@@ -46,6 +46,10 @@
                                         <i class="fas fa-clipboard-list"></i> Competencias
                                     </a>
                                     <div class="dropdown-divider"></div>
+                                @elseif(Auth::user()->role == 'Instructor')
+                                <a href="{{ url('#') }}" class="dropdown-item">
+                                        <i class="fas fa-clipboard-list"></i> Mi perfil
+                                    </a>
                                 @endif
 
 
