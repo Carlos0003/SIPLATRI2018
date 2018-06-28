@@ -91,7 +91,7 @@
 		</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/sweetalert2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script>
     	$(document).ready(function(){
             @if(session('status'))

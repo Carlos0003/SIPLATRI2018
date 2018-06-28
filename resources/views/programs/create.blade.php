@@ -29,7 +29,7 @@
 			<table class="table table-striped table-hover text-center">
 				<tr>
 					<th> Nombre del Programa de Formación: </th>
-					<td> <input type="text" name="name" class="form-control" placeholder="* " value="{{old('name')}}"></td>				
+					<td> <input type="text" required name="name" class="form-control" placeholder="* " value="{{old('name')}}"></td>				
 				</tr>
 			</table>
 			<div class="form-group">
@@ -39,5 +39,6 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     </body>
 </html>

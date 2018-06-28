@@ -58,7 +58,7 @@
 					@foreach($program as $progr)
 					<tr>
 						<td> {{$progr->name}} </td>
-						<td>
+						<td style="text-align: center;">
 							<a href="{{url('program/'.$progr->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 							<a href="{{url('program/'.$progr->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
 							<form action="{{url('program/'.$progr->id)}}" method="post" style="display: inline">
@@ -83,7 +83,7 @@
 		</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/sweetalert2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script>
     	$(document).ready(function(){
             @if(session('status'))
