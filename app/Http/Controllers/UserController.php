@@ -8,6 +8,8 @@ use App\Http\Controllers\ClassroomRequest;
 use App\Exports\UsersExport;
 use App\User;
 use App\Classroom;
+use Auth;
+
 
 class UserController extends Controller
 {
@@ -18,9 +20,14 @@ class UserController extends Controller
      */
     public function index()
     {
-      return view('users.index')
-      ->with('users', User::paginate(10)
-      ->setPath('user'));
+        if(Auth::user()->role=='Admin') {
+          return view('users.index')
+          ->with('users', User::paginate(10)
+          ->setPath('user'));
+        }else {
+                return view('/home');         
+        }
+
     }
 
     /**
@@ -30,7 +37,12 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        if(Auth::user()->role=='Admin') {
+            return view('users.create');
+
+        }else {
+            return view('/home');
+        }
     }
 
     /**

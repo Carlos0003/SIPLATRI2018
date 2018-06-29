@@ -8,6 +8,8 @@ use App\Classroom;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\ClassroomRequest;
 use App\Exports\ClassroomExport;
+use Auth;
+
 
 class ClassroomController extends Controller
 {
@@ -21,7 +23,11 @@ class ClassroomController extends Controller
     }
     public function index()
     {
-        return view('classroom.index')->with('classroom', Classroom::paginate(10)->setPath('classroom'));
+         if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
+            return view('classroom.index')->with('classroom', Classroom::paginate(10)->setPath('classroom'));
+        }else {
+                return view('/home');         
+        }
     }
 
     /**
