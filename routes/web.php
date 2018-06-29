@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'admin'], function(){
+	Route::get('users/pdf', 'UserController@pdf');
+	Route::get('users/excel', 'UserController@excel');
+	Route::get('users/search', 'UserController@search');
+	Route::get('users/ajaxsearch', 'UserController@ajaxsearch');
 	Route::get('classroom/pdf', 'ClassroomController@pdf');
 	Route::get('classroom/excel', 'ClassroomController@excel');
 	Route::get('classroom/search', 'ClassroomController@search');
@@ -24,15 +28,16 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('programs/excel', 'ProgramController@excel');
 	Route::get('programs/search', 'ProgramController@search');
 	Route::get('programs/ajaxsearch', 'ProgramController@ajaxsearch');
-	Route::get('users/pdf', 'UserController@pdf');
-	Route::get('users/excel', 'UserController@excel');
-	Route::get('users/search', 'UserController@search');
-	Route::get('users/ajaxsearch', 'UserController@ajaxsearch');
+	Route::get('records/pdf', 'RecordsController@pdf');
+	Route::get('records/excel', 'RecordsController@excel');
+	Route::get('records/search', 'RecordsController@search');
+	Route::get('records/ajaxsearch', 'RecordsController@ajaxsearch');
 	// Route::get('departments', 'HomeController@departments');
 	// Route::get('municipalities', 'HomeController@municipalities');
-	Route::resource('program', 'ProgramController');
 	Route::resource('user', 'UserController');
 	Route::resource('classroom', 'ClassroomController');
+	Route::resource('program', 'ProgramController');
+	Route::resource('record', 'RecordController');
 });
 
 	// Authentication Routes...
