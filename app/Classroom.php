@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Controllers\ClassroomRequest;
 
 class Classroom extends Model
 {

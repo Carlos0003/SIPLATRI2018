@@ -8,6 +8,7 @@ use App\Http\Requests\ProgramRequest;
 use App\Exports\ProgramsExport;
 use App\User;
 use App\Program;
+use Auth;
 
 class ProgramController extends Controller
 {
@@ -21,7 +22,11 @@ class ProgramController extends Controller
     }
     public function index()
     {
-        return view('programs.index')->with('program', Program::paginate(10)->setPath('program'));
+        if(Auth::user()->role=='Admin') {
+            return view('programs.index')->with('program', Program::paginate(10)->setPath('program'));
+            }else {
+                return view('/home');         
+        }
     }
 
     /**
@@ -31,7 +36,11 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        return view('programs.create');
+        if(Auth::user()->role=='Admin') {
+            return view('programs.create');
+            }else {
+            return view('/home');
+        }
     }
 
     /**
@@ -58,8 +67,12 @@ class ProgramController extends Controller
      */
     public function show($id)
     {
-        $progr = Program::find($id);
-        return view('programs.show')->with('progr', $progr);
+        if(Auth::user()->role=='Admin') {
+            $progr = Program::find($id);
+            return view('programs.show')->with('progr', $progr);
+        }else {
+            return view('/home');
+        }
     }
 
     /**
@@ -70,8 +83,12 @@ class ProgramController extends Controller
      */
     public function edit($id)
     {
-        $progr = Program::find($id);
-        return view('programs.edit')->with('progr', $progr);
+        if(Auth::user()->role=='Admin') {
+            $progr = Program::find($id);
+            return view('programs.edit')->with('progr', $progr);
+           }else {
+            return view('/home');
+        } 
     }
 
     /**

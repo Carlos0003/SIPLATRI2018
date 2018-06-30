@@ -29,7 +29,10 @@ class User extends Authenticatable
     ];
 
     public function classrooms(){
-        return $this->hasOne('App\Classroom');
+        return $this->hasMany('App\Classroom');
+    }
+    public function records(){
+        return $this->hasMany('App\Record');
     }
     //buscar
     public function scopeFullname($users,$fullname){

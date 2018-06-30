@@ -22,9 +22,20 @@ class ProgramRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
-        return [
-            //
-        ];
+        if ($this->method() == 'PUT') {
+            return [
+            'name'      => 'required|unique:programs',
+            ];
+        }else{
+            return [
+            'name'  => 'required|unique:programs',
+            ];
+        }
+    }
+    public function messages() {
+        return[
+            'name.required'        => "El campo Nombre de Programa es obligatorio.",
+            'name.unique'          => "El campo Nombre de Programa ya está en uso.",
+       ];
     }
 }

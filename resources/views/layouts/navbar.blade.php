@@ -34,7 +34,7 @@
                                         <i class="fas fa-boxes"></i> Programas
                                     </a>
 
-                                    <a href="{{ url('#') }}" class="dropdown-item">
+                                    <a href="{{ url('record') }}" class="dropdown-item">
                                         <i class="fas fa-clipboard-list"></i> Fichas
                                     </a>
                                     <div class="dropdown-divider"></div>

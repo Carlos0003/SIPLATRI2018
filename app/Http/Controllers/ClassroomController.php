@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Classroom;
+use App\Record;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\ClassroomRequest;
+use App\Http\Requests\RecordRequest;
 use App\Exports\ClassroomExport;
 use Auth;
 
@@ -23,7 +25,7 @@ class ClassroomController extends Controller
     }
     public function index()
     {
-         if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
+        if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
             return view('classroom.index')->with('classroom', Classroom::paginate(10)->setPath('classroom'));
         }else {
                 return view('/home');         
@@ -37,8 +39,12 @@ class ClassroomController extends Controller
      */
     public function create()
     {
-        $responsables = User::all();
-        return view('classroom.create', compact('responsables'));
+        if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
+            $responsables = User::all();
+            return view('classroom.create', compact('responsables'));
+        }else {
+                return view('/home');         
+            }
     }
 
     /**
@@ -68,7 +74,11 @@ class ClassroomController extends Controller
      */
     public function show($id)
     {
-        return view('classroom.show')->with('classroom', Classroom::findOrFail($id));
+        if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
+            return view('classroom.show')->with('classroom', Classroom::findOrFail($id));
+        }else {
+                return view('/home');         
+            }   
     }
 
     /**
@@ -79,8 +89,11 @@ class ClassroomController extends Controller
      */
     public function edit($id)
     {
-
-        return view('classroom.edit')->with('classroom', Classroom::findOrFail($id))->with('responsables', User::all());
+        if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
+            return view('classroom.edit')->with('classroom', Classroom::findOrFail($id))->with('responsables', User::all());
+        }else {
+                return view('/home');         
+            }
     }
 
     /**

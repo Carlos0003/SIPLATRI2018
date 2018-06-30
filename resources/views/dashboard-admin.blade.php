@@ -29,7 +29,7 @@
                         <strong>Espacio exclusivo para Coordinación Académica representada por , quien tiene acceso al sistema de información para agregar, editar, eliminar y ver todos los módulos que componen la planeación trimestral en el CPIC y que permiten la correcta administración de los elementos para la construcción de las fichas.</strong>
                     </p>
                     <div class="links">
-                    <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>FICHAS</strong></a>
+                    <a class="btn btn-secondary active" type="button" href="{{url('record')}}" style="line-height: 27px;"><strong>FICHAS</strong></a>
                     <a class="btn btn-secondary active" type="button" href="{{url('user')}}" style="line-height: 27px;"><strong>INSTRUCTORES</strong></a>
                     <a class="btn btn-secondary active" type="button" href="{{url('classroom')}}" style="line-height: 27px;"><strong>AMBIENTES</strong></a>
                     <a class="btn btn-secondary active" type="button" href="{{url('program')}}" style="line-height: 27px;"><strong>PROGRAMAS</strong></a>

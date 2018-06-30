@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
-use App\Http\Controllers\ClassroomRequest;
+use App\Http\Requests\ClassroomRequest;
+use App\Http\Requests\RecordRequest;
+use App\Http\Requests\ProgramRequest;
 use App\Exports\UsersExport;
 use App\User;
 use App\Classroom;
@@ -42,7 +44,6 @@ class UserController extends Controller
     {
         if(Auth::user()->role=='Admin') {
             return view('users.create');
-
         }else {
             return view('/home');
         }
@@ -63,7 +64,7 @@ class UserController extends Controller
       $user->password       = bcrypt($request->input('password'));
       $user->phonenumber    = $request->input('phonenumber');
       $user->municipality   = $request->input('municipality');
-      $user->gender          = $request->input('gender');
+      $user->gender         = $request->input('gender');
       $user->role           = $request->input('role');
       $user->contract       = $request->input('contract');
       $user->state          = $request->input('state');
@@ -81,7 +82,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('users.show')->with('user', User::find($id));
+        if(Auth::user()->role=='Admin') {
+            return view('users.show')->with('user', User::find($id));
+        }else {
+            return view('/home');
+            }    
     }
 
     /**
@@ -92,7 +97,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('users.edit')->with('user', User::find($id));
+        if(Auth::user()->role=='Admin') {
+            return view('users.edit')->with('user', User::find($id));
+            }else {
+            return view('/home');
+        }
+
     }
 
     /**

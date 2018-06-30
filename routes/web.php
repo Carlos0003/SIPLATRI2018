@@ -55,7 +55,11 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/home', 'HomeController@index')->name('home');
+	
+	Route::resource('mydata', 'MydataController');
+
+
 
 
 
