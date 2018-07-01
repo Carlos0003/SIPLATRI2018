@@ -15,6 +15,9 @@ class Classroom extends Model
     public function user(){
     	return $this->belongsTo('App\User');
     }
+    public function records(){
+        return $this->hasMany('App\Record');
+    }
 
     //buscar
     public function scopeName($classrooms,$name){

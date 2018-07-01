@@ -24,16 +24,16 @@ class CreateRecordsTable extends Migration
             $table->bigInteger('startdate');
             $table->bigInteger('endingdate');
             $table->bigInteger('scheduledhours');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('groupmanager')->unsigned();
+            $table->foreign('groupmanager')->references('id')->on('users');
             $table->string('municipality')->default('Manizales');
             $table->bigInteger('starttime');
             $table->bigInteger('endtime');
             $table->string('matter');
             $table->integer('classroom_id')->unsigned();
             $table->foreign('classroom_id')->references('id')->on('classrooms');
-            $table->integer('groupmanager')->unsigned();
-            $table->foreign('groupmanager')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

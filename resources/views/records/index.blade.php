@@ -74,7 +74,7 @@
 					<tr>
 						<td colspan='4'>
 							<div class="row justify-content-center aling-items-center">
-								{!! $records->render() !!}
+								{!! $record->render() !!}
 							</div>
 						</td>
 					</tr>

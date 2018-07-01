@@ -46,7 +46,7 @@
 							<option value="">Seleccione el estado...</option>
 							<option value="activo">activo</option>
 							<option value="inactivo">inactivo</option>
-						</select></td></td>	</td>				
+						</select></td>
 				</tr>
 				<tr>
 					<th> Uso: </th>

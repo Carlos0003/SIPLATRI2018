@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Classroom;
-use App\Program;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\ClassroomRequest;
 use App\Http\Requests\ProgramRequest;
 use App\Http\Requests\RecordRequest;
-use App\Exports\RecordsExport;
+use App\User;
+use App\Classroom;
+use App\Program;
+use App\Record;
 use Auth;
+use App\Exports\RecordsExport;
 
 class RecordController extends Controller
 {
@@ -40,8 +41,11 @@ class RecordController extends Controller
      */
     public function create()
     {
-        if(Auth::record()->role=='Admin') {
-            return view('records.create');
+        if(Auth::user()->role=='Admin') {
+            $programsname = Program::all();
+            $managers = User::all();
+            $classrooms = Classroom::all();
+            return view('records.create', compact('programsname', 'managers', 'classrooms'));
         }else {
             return view('/home');
         }
@@ -64,13 +68,13 @@ class RecordController extends Controller
         $record->startdate      = $request->input('startdate');
         $record->endingdate     = $request->input('endingdate');
         $record->scheduledhours = $request->input('scheduledhours');
-        $record->user_id        = $request->input('user_id');
+        $record->groupmanager   = $request->input('groupmanager');
         $record->municipality   = $request->input('municipality');
         $record->starttime      = $request->input('starttime');
         $record->endtime        = $request->input('endtime');
         $record->matter         = $request->input('matter');
         $record->classroom_id   = $request->input('classroom_id');
-        $record->groupmanager   = $request->input('groupmanager');
+        $record->user_id        = $request->input('user_id');
 
       if($record->save()){
           return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program_id.' se guardo con Exito.');
@@ -103,7 +107,10 @@ class RecordController extends Controller
     {
         if(Auth::user()->role=='Admin') {
             $record = Record::find($id);
-            return view('records.edit')->with('record', $record);
+            return view('records.edit')->with('record', Record::findOrFail($id))
+            ->with('programsname', Program::all())
+            ->with('managers', User::all())
+            ->with('classrooms', Classroom::all());
            }else {
             return view('/home');
         } 
@@ -127,13 +134,13 @@ class RecordController extends Controller
         $record->startdate      = $request->input('startdate');
         $record->endingdate     = $request->input('endingdate');
         $record->scheduledhours = $request->input('scheduledhours');
-        $record->user_id        = $request->input('user_id');
+        $record->groupmanager   = $request->input('groupmanager');
         $record->municipality   = $request->input('municipality');
         $record->starttime      = $request->input('starttime');
         $record->endtime        = $request->input('endtime');
         $record->matter         = $request->input('matter');
         $record->classroom_id   = $request->input('classroom_id');
-        $record->groupmanager   = $request->input('groupmanager');
+        $record->user_id        = $request->input('user_id');
 
       if($record->save()){
           return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program_id.' se editó con Exito.');

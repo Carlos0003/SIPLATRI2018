@@ -10,6 +10,9 @@ class Program extends Model
     protected $fillable = [
     	'name',
     ];
+    public function records(){
+        return $this->hasMany('App\Record');
+    }
 
    //buscar
     public function scopeName($programs,$name){
