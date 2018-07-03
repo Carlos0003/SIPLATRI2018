@@ -77,7 +77,7 @@ class RecordController extends Controller
         $record->user_id        = $request->input('user_id');
 
       if($record->save()){
-          return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program_id.' se guardo con Exito.');
+          return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program->name.' se guardo con Exito.');
       };
     }
 
@@ -143,7 +143,7 @@ class RecordController extends Controller
         $record->user_id        = $request->input('user_id');
 
       if($record->save()){
-          return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program_id.' se editó con Exito.');
+          return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program->name.' se editó con Exito.');
       };
     }
 
@@ -158,7 +158,7 @@ class RecordController extends Controller
         $record = record::find($id);
         if($record->delete()){
             return redirect('record')
-                ->with('status', 'La Ficha '.$record->idrecord.'-'.$record->program_id.' se eliminó con éxito.');
+                ->with('status', 'La Ficha '.$record->idrecord.'-'.$record->program->name.' se eliminó con éxito.');
         };
     }
     // Generate PDF Report

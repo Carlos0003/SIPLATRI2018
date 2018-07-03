@@ -16,7 +16,7 @@
 	<body>
 		@extends('layouts.navbar')
 		<div><br><br><br></div>
-		<div class="col-md-12">
+		<div class="col-md-8 offset-2">
 			<h1 class="text-center" style="font-size: 30px"><i class="fas fa-clipboard-list"></i> Lista de Fichas</h1>
 			<hr>
 			<ol class="breadcrumb">
@@ -50,20 +50,21 @@
 						<th>Ficha</th>
 						<th>Nombre del Programa</th>
 						<th>Gestor</th>
+						<th>Acciones</th>
 					</tr>
 				</thead>
 				<tbody class="results">
 					@foreach($record as $rec)
 					<tr>
 						<td> {{$rec->idrecord}} </td>
-						<td> {{$rec->name}} </td>
-						<td> {{$rec->groupmanager}} </td>
+						<td> {{$rec->program->name}} </td>
+						<td> {{$rec->user->fullname}} </td>
 						<td>
 							<a href="{{url('record/'.$rec->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 							<a href="{{url('record/'.$rec->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
 							<form action="{{url('record/'.$rec->id)}}" method="post" style="display: inline">
 								{!! csrf_field() !!}
-								{!! method_field('delete') !!}
+								{!! method_field('delete') !!}   
 								<button class="btn btn-outline-danger btn-delete" type="button"><i class="fa fa-trash"></i></button>				
 							</form>
 						</td>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Show Users</title>
+    <title> Show Records</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -17,48 +17,48 @@
 	@extends('layouts.navbar')
 	<div><br><br><br></div>
 	<div class="col-md-6 offset-3">
-		<h1 class="text-center" style="font-size: 30px"><i class="fa fa-search"></i> Consultar Usuario</h1>
+		<h1 class="text-center" style="font-size: 30px"><i class="fa fa-search"></i> Consultar Ficha</h1>
 		<hr>
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="{{url('user')}}">Lista Usuarios</a></li>
-		    <li class="breadcrumb-item active" aria-current="page">Consultar Usuarios</li>
+			<li class="breadcrumb-item"><a href="{{url('record')}}">Lista Fichas</a></li>
+		    <li class="breadcrumb-item active" aria-current="page">Consultar Fichas</li>
 		</ol>
 		<table class="table table-striped table-hover text-center">
-			{{-- <tr>
-				<th> Id: </th>
-				<td> {{ $user->id }}</td>				
-			</tr> --}}
 			<tr>
-				<th style="text-align: justify;"> Documento: </th>
-				<td style="text-align: justify;"> {{ $user->document }}</td>				
+				<th style="text-align: justify;"> Id: </th>
+				<td style="text-align: justify;"> {{ $record->idrecord }}</td>				
+			</tr>
+			<tr>
+				<th style="text-align: justify;"> Nombre Programa: </th>
+				<td style="text-align: justify;"> {{ $record->name }}</td>				
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Nombre Completo: </th>
-				<td style="text-align: justify;"> {{ $user->fullname }}</td>				
+				<td style="text-align: justify;"> {{ $record->fullname }}</td>				
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Correo: </th>
-				<td style="text-align: justify;"> {{ $user->email }}</td>				
+				<td style="text-align: justify;"> {{ $record->email }}</td>				
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Teléfono: </th>
-				<td style="text-align: justify;"> {{ $user->phonenumber }}</td>
+				<td style="text-align: justify;"> {{ $record->phonenumber }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Municipio: </th>
-				<td style="text-align: justify;"> {{ $user->municipality }}</td>
+				<td style="text-align: justify;"> {{ $record->municipality }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Rol: </th>
-				<td style="text-align: justify;"> {{ $user->role }}</td>				
+				<td style="text-align: justify;"> {{ $record->role }}</td>				
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Tipo de Contrato: </th>
-				<td style="text-align: justify;"> {{ $user->contract }}</td>				
+				<td style="text-align: justify;"> {{ $record->contract }}</td>				
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Estado: </th>
-				<td style="text-align: justify;"> {{ $user->state }}</td>				
+				<td style="text-align: justify;"> {{ $record->state }}</td>				
 			</tr>
 		</table>
 

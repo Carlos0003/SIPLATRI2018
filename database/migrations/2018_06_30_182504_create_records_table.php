@@ -27,8 +27,8 @@ class CreateRecordsTable extends Migration
             $table->integer('groupmanager')->unsigned();
             $table->foreign('groupmanager')->references('id')->on('users');
             $table->string('municipality')->default('Manizales');
-            $table->bigInteger('starttime');
-            $table->bigInteger('endtime');
+            $table->date('starttime');
+            $table->date('endtime');
             $table->string('matter');
             $table->integer('classroom_id')->unsigned();
             $table->foreign('classroom_id')->references('id')->on('classrooms');
