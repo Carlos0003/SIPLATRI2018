@@ -31,6 +31,30 @@
 					<th> Nombre del Programa de Formación: </th>
 					<td> <input type="text" required name="name" class="form-control" placeholder="* " value="{{old('name')}}"></td>				
 				</tr>
+				<tr>
+					<th> Tipo del Programa de Formación: </th>
+					<td> 
+						<select name="type" class="form-control">
+							<option value="">Seleccione Tipo de programa...</option>
+							<option value="Especializacion">Especialización</option>
+							<option value="Tecnologo">Tecnólogo</option>
+							<option value="Tecnico">Técnico</option>
+							<option value="Auxiliar">Auxiliar</option>
+						</select>
+						{{-- <input type="text" required name="type" class="form-control" placeholder="* " value="{{old('type')}}"> --}}
+					</td>				
+				</tr>
+				<tr>
+					<th> Tiempo del Programa de Formación: </th>
+					<td> <select name="timeduration" class="form-control">
+							<option value="">Seleccione Tiempo de duración...</option>
+							<option value="2 trimestres">2 trimestres</option>
+							<option value="4 trimestres">4 trimestres</option>
+							<option value="8 trimestres">8 trimestres</option>
+						</select>
+						{{-- <input type="text" required name="timeduration" class="form-control" placeholder="* " value="timeduration"> --}}
+					</td>				
+				</tr>
 			</table>
 			<div class="form-group">
 				<button class="btn btn-outline-success" type="submit" value="Save">Adicionar</button>

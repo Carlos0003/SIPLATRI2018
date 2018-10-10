@@ -10,12 +10,10 @@
     <link rel="shortcut icon" href="imgs/siplatri2018.ico">
 </head>
 <body class="dark">
-@extends('layouts.navbar')
+{{-- @extends('layouts.navbar') --}}
 <div class="container">
-    <div><br><br><br></div>
-    <div class="row justify-content-center">
-        <div class="col-md-8" style="opacity: 0.92;">
-            @include('layouts.validation_errors')
+    <div class="row popover-left">
+        <div class="col-md-6 offset-6">
             <div class="card">
                 <div class="card-body">
                 <h3 class="text-center"><i class="fa fa-user"></i> Registro de Usuarios</h3>
@@ -62,6 +60,8 @@
                             <div class="col-md-12">
                                 <button type="submit" style="background-color: rgb(35,130,118); color: white; border: none;" class="btn btn-primary btn-block"><strong>Registrarse</strong>
                                 </button>
+                                <a type="button" href="{{ route('login') }}" style="background-color: rgb(35,130,118); color: white; border: none;" class="btn btn-primary btn-block"><strong>Regresar a Inicio</strong>
+                                </a>
                             </div>
                         </div>
                     </form>
@@ -70,8 +70,8 @@
         </div>
     </div>
 </div>
-<div><br></div>
-@include('layouts.footer')
+@include('layouts.validation_errors')
+{{-- @include('layouts.footer') --}}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>

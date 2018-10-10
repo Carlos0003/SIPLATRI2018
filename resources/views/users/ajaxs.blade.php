@@ -2,10 +2,11 @@
 	<tr>
 		<td> {{$user->fullname}} </td>
 		<td> {{$user->email}} </td>
-		<td> {{ $user->phonenumber }}</td>
-		<td> {{ $user->role }}</td>
-		<td> {{ $user->contract }}</td>
-		<td> {{ $user->state }}</td>
+		<td> {{$user->phonenumber}} </td>
+		<td> {{$user->role}}</td>
+		<td> {{$user->munici->name}}</td>
+		<td> {{$user->contract}} </td>
+		<td> {{$user->munici->zone}} </td>
 		<td>
 			<a href="{{url('user/'.$user->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 			<a href="{{url('user/'.$user->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>

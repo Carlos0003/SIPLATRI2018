@@ -16,7 +16,7 @@
 	<body>
 		@extends('layouts.navbar')
 		<div><br><br><br></div>
-		<div class="col-md-8 offset-2">
+		<div class="col-md-10 offset-1">
 			<h1 class="text-center" style="font-size: 30px"><i class="fas fa-warehouse"></i> Lista de Ambientes</h1>
 			<hr>
 			<ol class="breadcrumb">
@@ -50,7 +50,7 @@
 			<table class="table table-striped table-hover text-center" style="font-size: 12px;">
 				<thead class="thead-dark">
 					<tr>
-						<th>Número</th>
+						{{-- <th>Número</th> --}}
 						<th>Ambiente</th>
 						<th>Responsable</th>
 						<th>Estado</th>
@@ -60,21 +60,21 @@
 				</thead>
 				<tbody class="results">
 					@foreach($classroom as $classr)
-							<tr>
-								<td> {{$classr->id}} </td>
-								<td> {{$classr->name}} </td>
-								<td style="text-align: justify;"> {{$classr->user->fullname }} </td>
-								<td> {{$classr->state}} </td>
-								<td> {{$classr->usability}} </td>
-								<td>
-									<a href="{{url('classroom/'.$classr->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
-									<a href="{{url('classroom/'.$classr->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
-									<form action="{{url('classroom/'.$classr->id)}}" method="post" style="display: inline">
-										{!! csrf_field() !!}
-										{!! method_field('delete') !!}
-										<button class="btn btn-outline-danger btn-delete" type="button"><i class="fa fa-trash"></i></button>				
-									</form>
-								</td>
+					<tr>
+						{{-- <td> {{$classr->id}} </td> --}}
+						<td> {{$classr->name}} </td>
+						<td style="text-align: justify;"> {{$classr->user->fullname}} </td>
+						<td> {{$classr->state}} </td>
+						<td> {{$classr->usability}} </td>
+						<td>
+							<a href="{{url('classroom/'.$classr->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
+							<a href="{{url('classroom/'.$classr->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
+							<form action="{{url('classroom/'.$classr->id)}}" method="post" style="display: inline">
+								{!! csrf_field() !!}
+								{!! method_field('delete') !!}
+								<button class="btn btn-outline-danger btn-delete" type="button"><i class="fa fa-trash"></i></button>				
+							</form>
+						</td>
 							</tr>
 					@endforeach
 				</tbody>

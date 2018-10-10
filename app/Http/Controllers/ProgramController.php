@@ -53,9 +53,11 @@ class ProgramController extends Controller
     {
         $program=new Program;
         $program->name=$request->input('name');
+        $program->type=$request->input('type');
+        $program->timeduration=$request->input('timeduration');
         if($program->save()){
             return redirect('program')
-                ->with('status','El programa de formación '.$program->name. ' se adicionó con éxito.');
+                ->with('status','El programa de formación '.$program->name. ' se editó con éxito.');
         };
     }
 
@@ -102,6 +104,8 @@ class ProgramController extends Controller
     {
         $program= Program::find($id);
         $program->name=$request->input('name');
+        $program->type=$request->input('type');
+        $program->timeduration=$request->input('timeduration');
         if($program->save()){
             return redirect('program')->with('status','El programa de formación '.$program->name. ' se Modificó con éxito.');
         };
@@ -131,15 +135,14 @@ class ProgramController extends Controller
     // Generate EXCEL Report
     public function excel(){
         return \Excel::download(new ProgramsExport,'programs.xlsx');
-        // return \Excel::download(new ProgramsExport,'program.xlsx');
     }
     //buscar
     public function search(Request $request){
-        $programs=Program::name($request->input('name'))->orderBy('id','ASC')->paginate(50)->setPath('program');
+        $programs=Program::name($request->input('name'))->orderBy('id','ASC')->paginate(10)->setPath('program');
         return view('programs.index')->with('program',$programs);
     }
     public function ajaxsearch(Request $request){
-        $programs = Program::name($request->input('name'))->orderBy('id', 'ASC')->paginate(50)->setPath('program');
+        $programs = Program::name($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('programs');
         return view('programs.ajaxs')->with('programs',$programs);
     }
 }

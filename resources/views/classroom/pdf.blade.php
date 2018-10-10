@@ -17,19 +17,20 @@ td, th {
 }
 </style>
 <body>
-	<table>
-		<thead>
+	<h1 class="page-header">Listado Ambientes</h1>
+	<table class="table table-striped table-hover text-center" style="text-orientation: use-glyph-orientation; font-size: 10px;">
+		<thead class="thead-dark">
 			<tr>
-				<th>Id</th>
+				{{-- <th>Id</th> --}}
 				<th>Nombre del ambiente</th>
-				<th>Responsable</th>
+				<th>Cuentadante</th>
 				<th>Estado</th>
 				<th>Uso</th>
 			</tr>
 		</thead>
 		@foreach($classrooms as $classr)
 			<tr>
-				<td> {{ $classr->id }} </td>
+				{{-- <td> {{ $classr->id }} </td> --}}
 				<td> {{ $classr->name }} </td>
 				<td> {{ $classr->user->fullname }} </td>
 				<td> {{ $classr->state }} </td>

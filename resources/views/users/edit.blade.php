@@ -50,7 +50,13 @@
 				</tr>
 				<tr>
 					<th> Municipio: </th>
-					<td> <input type="text" required name="municipality" class="form-control" placeholder="Ciudad de Empleo" value="{{$user->municipality}}"></td>
+					<td> <select required name="municipality_id" class="form-control">
+							<option value="">Seleccione Municipio de contrato...</option>
+							@foreach($munici as $mun)
+								<option value="{{ $mun->id }}" {{ $user->munici->id == $mun->id ? 'selected':'' }}>{{ $mun->name }}</option>
+							@endforeach
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<th> Género: </th>

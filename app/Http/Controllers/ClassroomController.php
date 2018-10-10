@@ -26,7 +26,9 @@ class ClassroomController extends Controller
     public function index()
     {
         if(Auth::user()->role=='Admin' Or Auth::user()->role=='Almac') {
-            return view('classroom.index')->with('classroom', Classroom::paginate(10)->setPath('classroom'));
+            return view('classroom.index')
+            ->with('classroom', Classroom::paginate(10)
+            ->setPath('classroom'));
         }else {
                 return view('/home');         
         }
@@ -143,11 +145,11 @@ class ClassroomController extends Controller
     }
     //buscar
     public function search(Request $request){
-        $classrooms=Classroom::name($request->input('name'))->orderBy('id','ASC')->paginate(50)->setPath('classroom');
+        $classrooms=Classroom::name($request->input('name'))->orderBy('id','ASC')->paginate(10)->setPath('classroom');
         return view('classroom.index')->with('classroom',$classrooms);
     }
     public function ajaxsearch(Request $request){
-        $classrooms = Classroom::name($request->input('name'))->orderBy('id', 'ASC')->paginate(50)->setPath('classroom');
+        $classrooms = Classroom::name($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('classroom');
         return view('classroom.ajaxs')->with('classrooms',$classrooms);
     }
 }

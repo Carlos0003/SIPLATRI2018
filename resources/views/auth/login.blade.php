@@ -10,10 +10,10 @@
     <link rel="shortcut icon" href="imgs/siplatri2018.ico">
 </head>
 <body class="dark">
-    @extends('layouts.app')
+    {{-- @extends('layouts.app') --}}
     <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6" style="opacity: 0.92;">
+    <div class="row popover-left">
+        <div class="col-md-6 offset-6">
             <div class="card">
                 <h3 class="text-center" style="margin-top: 20px;"><i class="fa fa-lock"></i> Ingreso de Usuarios</h3>
                 @include('layouts.validation_errors')
@@ -36,6 +36,8 @@
                                 <button style="background-color: rgb(35,130,118); color: white; border: none; opacity: 0.8;" type="submit" class="btn btn-block btn-outline-primary btn-outline-success">
                                     <strong>Ingresar</strong>
                                 </button>
+                                <a type="button" style="background-color: rgb(35,130,118); color: white; border: none; opacity: 0.8;" href="{{ route('register') }}" class="col-md-12 btn btn-block btn-outline-primary btn-outline-success"><strong>Registrarse</strong>
+                                </a>
                                 <a class="btn btn-block btn-link" href="{{ route('password.request') }}">
                                     Olvidó su contraseña <i class="fas fa-question-circle"></i>
                                 </a>
@@ -49,6 +51,6 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-@include('layouts.footer')
+{{-- @include('layouts.footer') --}}
 </body>
 </html>

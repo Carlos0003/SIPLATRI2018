@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route::group(['middleware' => 'admin'], function(){
@@ -32,9 +32,19 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('records/excel', 'RecordsController@excel');
 	Route::get('records/search', 'RecordsController@search');
 	Route::get('records/ajaxsearch', 'RecordsController@ajaxsearch');
+	Route::get('abilities/pdf', 'AbilitiesController@pdf');
+	Route::get('abilities/excel', 'AbilitiesController@excel');
+	Route::get('abilities/search', 'AbilitiesController@search');
+	Route::get('abilities/ajaxsearch', 'AbilitiesController@ajaxsearch');
+	Route::get('municipalities/pdf', 'MunicipalitiesController@pdf');
+	Route::get('municipalities/excel', 'MunicipalitiesController@excel');
+	Route::get('municipalities/search', 'MunicipalitiesController@search');
+	Route::get('municipalities/ajaxsearch', 'MunicipalitiesController@ajaxsearch');
 	// Route::get('departments', 'HomeController@departments');
 	// Route::get('municipalities', 'HomeController@municipalities');
 	Route::resource('user', 'UserController');
+	Route::resource('abilities', 'AbilitiesController');
+	Route::resource('municipalities', 'MunicipalitiesController');
 	Route::resource('classroom', 'ClassroomController');
 	Route::resource('program', 'ProgramController');
 	Route::resource('record', 'RecordController');

@@ -35,15 +35,22 @@
 			<hr>
 			<form class="form-inline" action="{{ url('users/search') }}">
 				<div class="form-group">
-					<input type="search" class="form-control" name="fullname" placeholder="Ingrese su busqueda">&nbsp;
+					<input type="search" class="form-control" name="fullname" placeholder="Nombre a buscar">&nbsp;
 					<button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 			<hr>
 			<form class="form-inline">
-				<input type="search" class="form-control" id="usearch" name="fullname" placeholder="Filtrar" autocomplete="off">
+				<input type="search" class="form-control" id="usearch" name="fullname" placeholder="Buscar Usuario" autocomplete="off">
 			</form>
 			<hr>
+			<tr>
+				<td colspan='4'>
+					<div class="row justify-content-center aling-items-center">
+						{!! $users->render() !!}
+					</div>
+				</td>
+			</tr>
 			<table class="table table-striped table-hover text-center" style="font-size: 12px;">
 				<thead class="thead-dark">
 					<tr>
@@ -51,8 +58,9 @@
 						<th>Correo Electronico</th>
 						<th>Teléfono</th>
 						<th>Rol</th>
+						<th>Municipio</th>
 						<th>Tipo Contrato</th>
-						<th>Estado</th>
+						<th>Zona</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
@@ -62,9 +70,10 @@
 						<td> {{$user->fullname}} </td>
 						<td> {{$user->email}} </td>
 						<td> {{$user->phonenumber}} </td>
-						<td> {{$user->role}}
+						<td> {{$user->role}}</td>
+						<td> {{$user->munici->name}}</td>
 						<td> {{$user->contract}} </td>
-						<td> {{$user->state}} </td>
+						<td> {{$user->munici->zone}} </td>
 						<td>
 							<a href="{{url('user/'.$user->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 							<a href="{{url('user/'.$user->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
@@ -77,7 +86,7 @@
 					</tr>
 					@endforeach
 				</tbody>
-				<tfoot class="text-center" ">
+			</table>
 					<tr>
 						<td colspan='4'>
 							<div class="row justify-content-center aling-items-center">
@@ -85,8 +94,6 @@
 							</div>
 						</td>
 					</tr>
-				</tfoot>
-			</table>
 		</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>

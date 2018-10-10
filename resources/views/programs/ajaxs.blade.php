@@ -1,6 +1,8 @@
 @foreach($programs as $progr)
 	<tr>
 		<td> {{$progr->name}} </td>
+		<td> {{$progr->timeduration}} </td>
+		<td> {{$progr->type}} </td>
 		<td>
 			<a href="{{url('program/'.$progr->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 			<a href="{{url('program/'.$progr->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>

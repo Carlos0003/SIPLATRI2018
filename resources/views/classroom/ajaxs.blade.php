@@ -1,6 +1,6 @@
 @foreach($classrooms as $classr)
 	<tr>
-		<td> {{$classr->id}} </td>
+		{{-- <td> {{$classr->id}} </td> --}}
 		<td> {{$classr->name}} </td>
 		<td> {{$classr->user->fullname }} </td>
 		<td> {{ $classr->state }}</td>

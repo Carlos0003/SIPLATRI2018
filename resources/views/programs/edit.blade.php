@@ -32,6 +32,29 @@
 					<th> Nombre del Programa de Formación: </th>
 					<td> <input type="text" required name="name" class="form-control" placeholder="Nombre del Programa de Formación" value="{{$progr->name}}"></td>				
 				</tr>
+				<tr>
+					<th> Duración del Programa de Formación: </th>
+					<td> {{-- <input type="text" required name="timeduration" class="form-control" placeholder="Duración del Programa de Formación" value="{{$progr->timeduration}}"> --}}
+						<select required name="timeduration" class="form-control">
+							<option value="">Seleccione Tiempo de duración...</option>
+							<option value="2 trimestres"{{$progr->timeduration=='2 trimestres'?'selected':''}}>2 trimestres</option>
+							<option value="4 trimestres"{{$progr->timeduration=='4 trimestres'?'selected':''}}>4 trimestres</option>
+							<option value="8 trimestres"{{$progr->timeduration=='8 trimestres'?'selected':''}}>8 trimestres</option>
+						</select>
+					</td>				
+				</tr>
+				<tr>
+					<th> Tipo del Programa de Formación: </th>
+					<td> {{-- <input type="text" required name="type" class="form-control" placeholder="Tiempo del Programa de Formación" value="{{$progr->type}}"> --}}
+						<select required name="type" class="form-control">
+							<option value="">Seleccione Tipo de programa...</option>
+							<option value="Especializacion"{{$progr->type=='Especializacion'?'selected':''}}>Especialización</option>
+							<option value="Tecnico"{{$progr->type=='Tecnico'?'selected':''}}>Técnico</option>
+							<option value="Tecnologo"{{$progr->type=='Tecnologo'?'selected':''}}>Tecnólogo</option>
+							<option value="Auxiliar"{{$progr->type=='Auxiliar'?'selected':''}}>Auxiliar</option>
+						</select>
+					</td>				
+				</tr>
 			</table>
 			<div class="form-group">
 				<button class="btn btn-outline-success" type="submit" value="Update">Actualizar</button>

@@ -16,7 +16,7 @@
 	<body>
 		@extends('layouts.navbar')
 		<div><br><br><br></div>
-		<div class="col-md-8 offset-2">
+		<div class="col-md-10 offset-1">
 			<h1 class="text-center" style="font-size: 30px"><i class="fas fa-boxes"></i> Lista de Programas</h1>
 			<hr>
 			<ol class="breadcrumb">
@@ -51,13 +51,17 @@
 				<thead class="thead-dark text-center">
 					<tr>
 						<th>Nombre del Programa</th>
+						<th>Duración</th>
+						<th>Tipo</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
 				<tbody class="results" style="text-align: justify;">
 					@foreach($program as $progr)
 					<tr>
-						<td> {{$progr->name}} </td>
+						<td style="width: 400px;"> {{$progr->name}} </td>
+						<td> {{$progr->timeduration}} </td>
+						<td> {{$progr->type}} </td>
 						<td style="text-align: center;">
 							<a href="{{url('program/'.$progr->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 							<a href="{{url('program/'.$progr->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>

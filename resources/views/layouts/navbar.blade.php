@@ -1,11 +1,19 @@
-<nav id="ocultar" class="navbar navbar-expand-md navbar-light fixed-top navbar-static-top" style="background-color: rgb(35,130,118);opacity: 0.8;">
+<nav id="ocultar" class="navbar navbar-expand-md fixed-top navbar-static-top" style="background-color: #238276;">
     <div class="container">
         <div class="navbar-header" style="align-items: center;">
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#app-navbar-collapse"><span class="navbar-toogler-icon"></span>
             </button>
-            <a style="color: white; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('imgs/logosena.png') }}" style="width: 40px; height: 40px;">&nbsp;&nbsp;SIPLATRI-<?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('D M Y'); ?>
-            </a>
+            @if(Auth::user()->role == 'Admin')
+                <a style="color: white; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('imgs/logosena.png') }}" style="width: 40px; height: 40px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
+                </a>
+                @elseif(Auth::user()->role == 'Instructor')
+                <a style="color: white; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('imgs/logosena.png') }}" style="width: 40px; height: 40px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y'); ?>
+                </a>
+                @elseif(Auth::user()->role == 'Almac')
+                <a style="color: white; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('imgs/logosena.png') }}" style="width: 40px; height: 40px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y'); ?>
+                </a>
+            @endif
         </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -36,6 +44,14 @@
 
                                     <a href="{{ url('record') }}" class="dropdown-item">
                                         <i class="fas fa-clipboard-list"></i> Fichas
+                                    </a>
+                                    <a href="{{ url('abilities') }}" class="dropdown-item">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                        Competencias
+                                    </a>
+                                    <a href="{{ url('municipalities') }}" class="dropdown-item">
+                                        <i class="far fa-compass"></i>
+                                        Municipios
                                     </a>
                                     <div class="dropdown-divider"></div>
                                 @elseif(Auth::user()->role == 'Almac')

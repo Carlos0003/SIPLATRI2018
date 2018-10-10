@@ -1,4 +1,3 @@
-@extends('layouts.navbar')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -15,6 +14,7 @@
         <!-- Styles -->
     </head>
     <body class="dark">
+    @extends('layouts.navbar')
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <br>

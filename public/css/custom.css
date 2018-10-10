@@ -1,8 +1,8 @@
 body.dark {
-    background-image: url('../imgs/cpic.jpg');
+    background-image: url('../imgs/fondosennova.png');
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: fixed;
+    background-size: fixed;
     font-weight: 100;
     height: 100vh;
     width: 100%;
@@ -11,8 +11,23 @@ body.dark {
     justify-content: center;
     align-items: center;
 }
-.dark:before{
-    /*font-family: "calibri", Garamond, 'Comic Sans';*/
+body.dash {
+    /*background-image: url('../imgs/cpic.jpg');*/
+    background-color: white;
+    background-repeat: no-repeat;
+    -webkit-background-size: fixed;
+    background-size: fixed;
+    font-weight: 100;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.dash:before{
+    font-family: "calibri", Garamond, 'Comic Sans';
     font-family: times, serif;
     font-size:16pt;
     font-style:italic;
@@ -27,8 +42,7 @@ body.dark {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
+}*/
 .full-height {
     height: 100vh;
     color: white;
@@ -71,7 +85,12 @@ body.dark {
     height: 30px;
 
 }
-
+.scrolldos{
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: auto;
+    width: 800px;
+}
 .m-b-md {
     margin-bottom: 30px;
 }

@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     protected $fillable = [
-        'document','fullname', 'email', 'password', 'phonenumber', 'municipality', 'gender', 'role', 'contract','state',
+        'document','fullname', 'email', 'password', 'phonenumber', 'gender', 'role', 'contract', 'municipality_id', 'state',
     ];
 
     /**
@@ -27,7 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public function munici(){
+        return $this->belongsTo('App\Municipalities','municipality_id');
+    }
     public function classrooms(){
         return $this->hasMany('App\Classroom');
     }

@@ -22,12 +22,16 @@ td, th {
 			<tr>
 				<th>Nro</th>
 				<th>Nombre del Programa de Formación</th>
+				<th>Tipo del Programa de Formación</th>
+				<th>Tiempo del Programa de Formación</th>
 			</tr>
 		</thead>
 		@foreach($programs as $progr)
 		<tr style="text-align: justify;">
 			<td style="text-align: center;">{{ $progr->id }}</td>
 			<td>{{ $progr->name }}</td>
+			<td>{{ $progr->type }}</td>
+			<td>{{ $progr->timeduration }}</td>
 		</tr>
 		@endforeach
 	</table>

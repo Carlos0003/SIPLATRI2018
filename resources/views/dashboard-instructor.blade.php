@@ -14,7 +14,7 @@
         <!-- Styles -->
     </head>
     @extends('layouts.navbar')
-    <body class="dark">
+    <body class="dash">
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <br>

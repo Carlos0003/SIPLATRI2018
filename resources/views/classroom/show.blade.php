@@ -24,17 +24,17 @@
 		    <li class="breadcrumb-item active" aria-current="page">Consultar Ambientes</li>
 		</ol>
 		<table class="table table-striped table-hover text-center">
-			<tr>
+			{{-- <tr>
 				<th> Número: </th>
 				<td> {{ $classroom->id }}</td>				
-			</tr>
+			</tr> --}}
 			<tr>
 				<th> Ambiente: </th>
 				<td> {{ $classroom->name }}</td>				
 			</tr>
 			<tr>
 				<th> Responsable: </th>
-				<td> {{ $classroom->user_id }}</td>				
+				<td> {{ $classroom->user->fullname }}</td>				
 			</tr>
 			<tr>
 				<th> Estado: </th>

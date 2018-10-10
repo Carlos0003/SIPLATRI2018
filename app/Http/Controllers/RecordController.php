@@ -7,10 +7,12 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\ClassroomRequest;
 use App\Http\Requests\ProgramRequest;
 use App\Http\Requests\RecordRequest;
+use App\Http\Requests\AbilitiesRequest;
 use App\User;
 use App\Classroom;
 use App\Program;
 use App\Record;
+use App\AbilitiesModel;
 use Auth;
 use App\Exports\RecordsExport;
 

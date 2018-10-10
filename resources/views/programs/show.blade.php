@@ -32,6 +32,14 @@
 				<th> Nombre del Programa de Formación: </th>
 				<td> {{ $progr->name }}</td>
 			</tr>
+			<tr>
+				<th> Duración: </th>
+				<td> {{ $progr->timeduration }}</td>
+			</tr>
+			<tr>
+				<th> Tipo de Formación: </th>
+				<td> {{ $progr->type }}</td>
+			</tr>
 		</table>
 
 	</div>

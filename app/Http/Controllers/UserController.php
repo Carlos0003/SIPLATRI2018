@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Classroom;
+use App\Municipalities;
+use App\Record;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\ClassroomRequest;
 use App\Http\Requests\RecordRequest;
 use App\Http\Requests\ProgramRequest;
+use App\Http\Requests\MunicipalitiesRequest;
 use App\Exports\UsersExport;
-use App\User;
-use App\Classroom;
+use App\Http\Controllers\MunicipalitiesController;
 use Auth;
+use DB;
 
 
 class UserController extends Controller
@@ -30,7 +35,7 @@ class UserController extends Controller
           ->with('users', User::paginate(10)
           ->setPath('user'));
         }else {
-                return view('/home');         
+            return view('/home');         
         }
 
     }
@@ -43,7 +48,8 @@ class UserController extends Controller
     public function create()
     {
         if(Auth::user()->role=='Admin') {
-            return view('users.create');
+            $munici = Municipalities::all();
+            return view('users.create', compact('munici'));
         }else {
             return view('/home');
         }
@@ -63,14 +69,14 @@ class UserController extends Controller
       $user->email          = $request->input('email');
       $user->password       = bcrypt($request->input('password'));
       $user->phonenumber    = $request->input('phonenumber');
-      $user->municipality   = $request->input('municipality');
+      $user->municipality_id       = $request->input('municipality_id');
       $user->gender         = $request->input('gender');
       $user->role           = $request->input('role');
       $user->contract       = $request->input('contract');
       $user->state          = $request->input('state');
 
       if($user->save()){
-          return redirect('user')->with('status', 'El Usuario '.$user->name.' se guardo con Exito.');
+          return redirect('user')->with('status', 'El Usuario '.$user->fullname.' se guardo con Exito.');
       };
     }
 
@@ -98,13 +104,13 @@ class UserController extends Controller
     public function edit($id)
     {
         if(Auth::user()->role=='Admin') {
-            return view('users.edit')->with('user', User::find($id));
+            return view('users.edit')->with('user', User::findOrFail($id))->with('munici', Municipalities::all());
             }else {
             return view('/home');
         }
 
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -120,14 +126,13 @@ class UserController extends Controller
         $user->email          =$request->input('email');
         $user->password       = bcrypt($request->input('password'));
         $user->phonenumber    = $request->input('phonenumber');
-        $user->municipality   = $request->input('municipality');
+        $user->municipality_id       = $request->input('municipality_id');
         $user->gender          = $request->input('gender');
         $user->role           = $request->input('role');
         $user->contract       = $request->input('contract');
         $user->state          = $request->input('state');
         if($user->save()){
-            return redirect('user')
-                ->with('status', 'El Usuario '.$user->name.' se actualizo con Exito.');
+            return redirect('user')->with('status', 'El Usuario '.$user->fullname.' se actualizo con Exito.');
         };
     }
 

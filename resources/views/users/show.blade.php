@@ -26,19 +26,19 @@
 		<table class="table table-striped table-hover text-center">
 			{{-- <tr>
 				<th> Id: </th>
-				<td> {{ $user->id }}</td>				
+				<td> {{ $user->id }}</td>
 			</tr> --}}
 			<tr>
 				<th style="text-align: justify;"> Documento: </th>
-				<td style="text-align: justify;"> {{ $user->document }}</td>				
+				<td style="text-align: justify;"> {{ $user->document }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Nombre Completo: </th>
-				<td style="text-align: justify;"> {{ $user->fullname }}</td>				
+				<td style="text-align: justify;"> {{ $user->fullname }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Correo: </th>
-				<td style="text-align: justify;"> {{ $user->email }}</td>				
+				<td style="text-align: justify;"> {{ $user->email }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Teléfono: </th>
@@ -46,19 +46,23 @@
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Municipio: </th>
-				<td style="text-align: justify;"> {{ $user->municipality }}</td>
+				<td style="text-align: justify;"> {{ $user->munici->name }} </td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Rol: </th>
-				<td style="text-align: justify;"> {{ $user->role }}</td>				
+				<td style="text-align: justify;"> {{ $user->role }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Tipo de Contrato: </th>
-				<td style="text-align: justify;"> {{ $user->contract }}</td>				
+				<td style="text-align: justify;"> {{ $user->contract }}</td>
+			</tr>
+			<tr>
+				<th style="text-align: justify;"> Zona de contrato: </th>
+				<td style="text-align: justify;"> {{ $user->munici->zone }}</td>
 			</tr>
 			<tr>
 				<th style="text-align: justify;"> Estado: </th>
-				<td style="text-align: justify;"> {{ $user->state }}</td>				
+				<td style="text-align: justify;"> {{ $user->state }}</td>
 			</tr>
 		</table>
 
