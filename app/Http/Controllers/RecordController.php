@@ -13,6 +13,7 @@ use App\Classroom;
 use App\Program;
 use App\Record;
 use App\AbilitiesModel;
+use App\Municipalities;
 use Auth;
 use App\Exports\RecordsExport;
 
@@ -47,7 +48,8 @@ class RecordController extends Controller
             $programsname = Program::all();
             $managers = User::all();
             $classrooms = Classroom::all();
-            return view('records.create', compact('programsname', 'managers', 'classrooms'));
+            $municipalities = Municipalities::all();
+            return view('records.create', compact('programsname', 'managers', 'classrooms', 'municipalities'));
         }else {
             return view('/home');
         }
@@ -62,21 +64,37 @@ class RecordController extends Controller
     public function store(Request $request)
     {
         $record = new Record;
-        $record->idrecord       = $request->input('idrecord');
-        $record->program_id     = $request->input('program_id');
-        $record->totalquarter   = $request->input('totalquarter');
-        $record->currentquarter = $request->input('currentquarter');
-        $record->programtype    = $request->input('programtype');
-        $record->startdate      = $request->input('startdate');
-        $record->endingdate     = $request->input('endingdate');
-        $record->scheduledhours = $request->input('scheduledhours');
-        $record->groupmanager   = $request->input('groupmanager');
-        $record->municipality   = $request->input('municipality');
-        $record->starttime      = $request->input('starttime');
-        $record->endtime        = $request->input('endtime');
-        $record->matter         = $request->input('matter');
-        $record->classroom_id   = $request->input('classroom_id');
-        $record->user_id        = $request->input('user_id');
+        $record->number       = $request->input('idFicha');
+        $record->trimestreActual     = $request->input('trimestreActual');
+        $record->horasProgramadas   = $request->input('hProgramadas');
+        $record->fecha_inicio = $request->input('feinicio');
+        $record->fecha_fin    = $request->input('fefin');
+        $record->hora_inicio      = $request->input('hInicio');
+        $record->hora_fin     = $request->input('hFin');
+        $record->program_id = $request->input('nombrePorgrama');
+        $record->user_id   = $request->input('gestor');
+        $record->municipality_id      = $request->input('municipio');
+        $record->abilities_lunes_id        = 1;
+        $record->classrooms_lunes_id         = $request->input('ambienteLunes');
+        $record->abilities_martes_id   = 2;
+        $record->classrooms_martes_id        = $request->input('ambienteMartes');
+        $record->abilities_miercoles_id   = 3;
+        $record->classrooms_miercoles_id        = $request->input('ambienteMiercoles');
+        $record->abilities_jueves_id   = 4;
+        $record->classrooms_jueves_id        = $request->input('ambienteJueves');
+        $record->abilities_viernes_id   = 5;
+        $record->classrooms_viernes_id        = $request->input('ambienteViernes');
+        $record->abilities_sabado_id   = 6;
+        $record->classrooms_sabado_id        = $request->input('ambienteSabado');
+        $record->instructor_lunes_id        = $request->input('instructorLunes');
+        $record->instructor_martes_id        = $request->input('instructorMartes');
+        $record->instructor_miercoles_id        = $request->input('instructorMiercoles');
+        $record->instructor_jueves_id        = $request->input('instructorJueves');
+        $record->instructor_viernes_id        = $request->input('instructorViernes');
+        $record->instructor_sabado_id        = $request->input('instructorSabado');
+        $record->save();
+
+
 
       if($record->save()){
           return redirect('record')->with('status', 'La ficha de formación '.$record->idrecord.'-'.$record->program->name.' se guardo con Exito.');
@@ -183,4 +201,6 @@ class RecordController extends Controller
         $record = Record::fullname($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('record');
     return view('records.ajaxs')->with('record',$record);
     }
+
+    
 }

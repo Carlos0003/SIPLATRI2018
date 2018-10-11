@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('auth/login');
 });
+Route::get('pruebaFinal', 'HomeController@pruebaFinal');
 
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('users/pdf', 'UserController@pdf');
@@ -40,6 +41,8 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('municipalities/excel', 'MunicipalitiesController@excel');
 	Route::get('municipalities/search', 'MunicipalitiesController@search');
 	Route::get('municipalities/ajaxsearch', 'MunicipalitiesController@ajaxsearch');
+	
+
 	// Route::get('departments', 'HomeController@departments');
 	// Route::get('municipalities', 'HomeController@municipalities');
 	Route::resource('user', 'UserController');

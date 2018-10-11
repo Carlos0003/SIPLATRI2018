@@ -10,9 +10,6 @@ class Program extends Model
     protected $fillable = [
         'name', 'type', 'timeduration',
     ];
-    public function records(){
-        return $this->hasMany('App\Record');
-    }
     public function abilities(){
         return $this->hasMany('App\AbilitiesModel');
     }

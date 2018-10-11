@@ -18,19 +18,22 @@ td, th {
 }
 </style>
 <body>
-	<table>
-		<thead>
+		<table class="table table-striped table-hover text-center" style="text-orientation: use-glyph-orientation; font-size: 10px;">
 			<tr>
-				<th>Nombre de la competencia</th>
-				<th>Programa al que pertenece</th>
-				<th>Horas dedicadas a la competencia</th>
+				<th colspan="2">
+					<h2>Lista de municipios</h2>
+				</th>
+			</tr>
+		<thead thead class="thead-dark">
+			<tr>
+				<th>Municipio</th>
+				<th>Zona del Departamento</th>
 			</tr>
 		</thead>
-		@foreach($abilities as $abilir)
+		@foreach($municipalities as $munici)
 		<tr>
-			<td> {{$abilir->name}} </td>
-			<td> {{$abilir->program->name }} </td>
-			<td> {{$abilir->durationHour}} </td>
+			<td> {{$munici->name}} </td>
+			<td> {{$munici->zone }} </td>
 		</tr>
 		@endforeach
 	</table>

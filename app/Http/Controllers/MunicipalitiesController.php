@@ -130,24 +130,13 @@ class MunicipalitiesController extends Controller
      // Generate PDF Report
     public function pdf(){
 
-        $programs = Program::all();
-        $pdf = \PDF::loadView('programs.pdf', compact('programs'));
-        return $pdf->download('programs.pdf');
+        $municipalities = Municipalities::all();
+        $pdf = \PDF::loadView('municipalities.pdf', compact('municipalities'));
+        return $pdf->download('municipalities.pdf');
     }
     // Generate EXCEL Report
     public function excel(){
-        return \Excel::download(new ProgramsExport,'programs.xlsx');
+        return \Excel::download(new MunicipalitiesExport,'municipalities.xlsx');
         // return \Excel::download(new ProgramsExport,'program.xlsx');
-    }
-    //buscar
-    public function search(Request $request){
-        $programs=Program::name($request->input('name'))->orderBy('id','ASC')->paginate(50)->setPath('program');
-        return view('programs.index')->with('program',$programs);
-    }
-    public function ajaxsearch(Request $request){
-        $programs = Program::name($request->input('name'))->orderBy('id', 'ASC')->paginate(50)->setPath('program');
-        $programs = Program::type($request->input('type'))->paginate(50)->setPath('program');
-        $programs = Program::timeduration($request->input('timeduration'))->paginate(50)->setPath('program');
-        return view('programs.ajaxs')->with('programs',$programs);
     }
 }

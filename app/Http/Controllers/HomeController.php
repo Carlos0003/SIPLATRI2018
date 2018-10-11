@@ -37,4 +37,10 @@ class HomeController extends Controller
             return "El rol no existe";
         }
     }
+
+    public function pruebaFinal(){
+        $programaSeleccionado=Program::where('name','=','TECNOLOGO EN TOPOGRAFIA.')->get();
+
+        return $programaSeleccionado->name;
+    }
 }

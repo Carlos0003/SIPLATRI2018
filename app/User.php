@@ -30,12 +30,34 @@ class User extends Authenticatable
     public function munici(){
         return $this->belongsTo('App\Municipalities','municipality_id');
     }
-    public function classrooms(){
-        return $this->hasMany('App\Classroom');
-    }
     public function records(){
-        return $this->hasMany('App\Record');
+        return $this->hasMany('App\Record', 'user_id');
     }
+
+    public function recordsInstructorLunes(){
+        return $this->hasMany('App\Record', 'instructor_lunes_id');
+    }
+
+    public function recordsInstructorMartes(){
+        return $this->hasMany('App\Record', 'instructor_martes_id');
+    }
+
+    public function recordsInstructorMiercoles(){
+        return $this->hasMany('App\Record', 'instructor_miercoles_id');
+    }
+
+    public function recordsInstructorJueves(){
+        return $this->hasMany('App\Record', 'instructor_jueves_id');
+    }
+
+    public function recordsInstructorViernes(){
+        return $this->hasMany('App\Record', 'instructor_viernes_id');
+    }
+
+    public function recordsInstructorSabado(){
+        return $this->hasMany('App\Record', 'instructor_sabado_id');
+    }
+
     //buscar
     public function scopeFullname($users,$fullname){
         if(trim($fullname)!= ''){

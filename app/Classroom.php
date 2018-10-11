@@ -13,10 +13,31 @@ class Classroom extends Model
 
 
     public function user(){
-    	return $this->belongsTo('App\User');
+    	return $this->belongsTo('App\User', 'user_id');
     }
-    public function records(){
-        return $this->hasMany('App\Record');
+
+    public function recordsClassroomLunes(){
+        return $this->hasMany('App\Record', 'classrooms_lunes_id');
+    }
+
+    public function recordsClassroomMartes(){
+        return $this->hasMany('App\Record', 'classrooms_martes_id');
+    }
+
+    public function recordsClassroomMiercoles(){
+        return $this->hasMany('App\Record', 'classrooms_miercoles_id');
+    }
+
+    public function recordsClassroomJueves(){
+        return $this->hasMany('App\Record', 'classrooms_jueves_id');
+    }
+
+    public function recordsClassroomViernes(){
+        return $this->hasMany('App\Record', 'classrooms_viernes_id');
+    }
+
+    public function recordsClassroomSabado(){
+        return $this->hasMany('App\Record', 'classrooms_sabado_id');
     }
 
     //buscar
@@ -25,8 +46,4 @@ class Classroom extends Model
             $classrooms->where('name','LIKE',"%$name%");
         }
     }
-    // public function ajaxsearch(Request $request){
-    //     $classrooms = Classroom::name($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('classroom');
-    //     return view('classroom.ajaxs')->with('classroom',$classrooms);
-    // }
 }

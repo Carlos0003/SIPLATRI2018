@@ -52,6 +52,14 @@
             //         $('.results').html(data);
             //     });
             // });
+
+            $('form').on('change','#programaFormacionTable', function(event) {
+                event.preventDefault();
+                $did=$(this).val();
+                $.get('programaFormacionSeleccionado',{did:$did}, function(data){
+                    $('#prueba').html(data);
+                });
+            });
         });
     </script>
 </body>

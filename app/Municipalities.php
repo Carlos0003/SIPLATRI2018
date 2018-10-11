@@ -10,7 +10,7 @@ class Municipalities extends Model
     protected $fillable = [
     	'name', 'zone',
     ];
-public function user(){
+	public function user(){
         return $this->hasMany('App\User');
     }
 }

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> PDF-abilities</title>
+        <title> PDF-municipalities</title>
         <!-- Fonts -->
       {{--   <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -14,21 +14,26 @@
         <!-- Styles -->
     </head>
 <body>
-	<table class="table table-striped table-hover text-center" style="text-orientation: use-glyph-orientation; font-size: 10px;">
+	<table class="table table-striped table-hover text-center" style="text-orientation: use-glyph-orientation; font-size: 13px;">
+			<tr>
+				<th colspan="2">
+					<h2>Lista de municipios</h2>
+				</th>
+			</tr>
 		<thead thead class="thead-dark">
 			<tr>
-				<th>Nombre de la competencia</th>
-				<th>Programa al que pertenece</th>
-				<th>Horas dedicadas a la competencia</th>
+				<th>Municipio</th>
+				<th>Zona del Departamento</th>
 			</tr>
 		</thead>
-		@foreach($abilities as $abilir)
+		@foreach($municipalities as $munici)
 		<tr>
-			<td> {{$abilir->name}} </td>
-			<td> {{$abilir->program->name }} </td>
-			<td> {{$abilir->durationHour}} </td>
+			<td> {{$munici->name}} </td>
+			<td> {{$munici->zone }} </td>
 		</tr>
 		@endforeach
 	</table>
 </body>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 </html>

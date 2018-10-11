@@ -1,0 +1,1 @@
+<p>{{ $programaSeleccionado->timeduration }}</p>

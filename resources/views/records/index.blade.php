@@ -56,7 +56,7 @@
 				<tbody class="results">
 					@foreach($record as $rec)
 					<tr>
-						<td> {{$rec->idrecord}} </td>
+						<td> {{$rec->number}} </td>
 						<td> {{$rec->program->name}} </td>
 						<td> {{$rec->user->fullname}} </td>
 						<td>
