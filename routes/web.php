@@ -41,7 +41,10 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('municipalities/excel', 'MunicipalitiesController@excel');
 	Route::get('municipalities/search', 'MunicipalitiesController@search');
 	Route::get('municipalities/ajaxsearch', 'MunicipalitiesController@ajaxsearch');
-	
+    Route::get('/programaFormacionSeleccionado', 'RecordController@programaFormacionSeleccionado');
+    Route::get('/competencias', 'RecordController@competencias');
+
+
 
 	// Route::get('departments', 'HomeController@departments');
 	// Route::get('municipalities', 'HomeController@municipalities');
@@ -69,7 +72,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 	Route::get('/home', 'HomeController@index')->name('home');
-	
+
 	Route::resource('mydata', 'MydataController');
 
 

@@ -33,7 +33,7 @@ class RecordController extends Controller
         if(Auth::user()->role=='Admin') {
           return view('records.index')->with('record', Record::paginate(10)->setPath('record'));
         }else {
-                return view('/home');         
+                return view('/home');
         }
     }
 
@@ -74,17 +74,17 @@ class RecordController extends Controller
         $record->program_id = $request->input('nombrePorgrama');
         $record->user_id   = $request->input('gestor');
         $record->municipality_id      = $request->input('municipio');
-        $record->abilities_lunes_id        = 1;
+        $record->abilities_lunes_id        = $request->input('abilities_lunes_id');
         $record->classrooms_lunes_id         = $request->input('ambienteLunes');
-        $record->abilities_martes_id   = 2;
+        $record->abilities_martes_id   = $request->input('abilities_martes_id');
         $record->classrooms_martes_id        = $request->input('ambienteMartes');
-        $record->abilities_miercoles_id   = 3;
+        $record->abilities_miercoles_id   = $request->input('abilities_miercoles_id');
         $record->classrooms_miercoles_id        = $request->input('ambienteMiercoles');
-        $record->abilities_jueves_id   = 4;
+        $record->abilities_jueves_id   = $request->input('abilities_jueves_id');
         $record->classrooms_jueves_id        = $request->input('ambienteJueves');
-        $record->abilities_viernes_id   = 5;
+        $record->abilities_viernes_id   = $request->input('abilities_viernes_id');
         $record->classrooms_viernes_id        = $request->input('ambienteViernes');
-        $record->abilities_sabado_id   = 6;
+        $record->abilities_sabado_id   = $request->input('abilities_sabado_id');;
         $record->classrooms_sabado_id        = $request->input('ambienteSabado');
         $record->instructor_lunes_id        = $request->input('instructorLunes');
         $record->instructor_martes_id        = $request->input('instructorMartes');
@@ -92,7 +92,6 @@ class RecordController extends Controller
         $record->instructor_jueves_id        = $request->input('instructorJueves');
         $record->instructor_viernes_id        = $request->input('instructorViernes');
         $record->instructor_sabado_id        = $request->input('instructorSabado');
-        $record->save();
 
 
 
@@ -133,7 +132,7 @@ class RecordController extends Controller
             ->with('classrooms', Classroom::all());
            }else {
             return view('/home');
-        } 
+        }
     }
 
     /**
@@ -202,5 +201,13 @@ class RecordController extends Controller
     return view('records.ajaxs')->with('record',$record);
     }
 
-    
+    public function programaFormacionSeleccionado(Request $request){
+        $data = Program::select('type', 'timeduration')->where('id',$request->id)->first();
+        return response()->json($data);
+    }
+
+    public function competencias(Request $request){
+        $data = AbilitiesModel::select('id', 'name')->where('program_id',$request->id)->get();
+        return response()->json($data);
+    }
 }
