@@ -4,13 +4,49 @@
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#app-navbar-collapse"><span class="navbar-toogler-icon"></span>
         </button>
         @if(Auth::user()->role == 'Admin')
-            <a style="color: #238276; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
+        <style>
+            .hover01 img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover01 img:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+        </style>
+            <a class="hover01 column" style="color: #238276; font-size: 20px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
             @elseif(Auth::user()->role == 'Instructor')
-            <a style="color: #238276; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('imgs/logoverde.png') }}" style="width: 40px; height: 40px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y'); ?>
+            <style>
+            .hover01 img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover01 img:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+        </style>
+            <a class="hover01 column" style="color: #238276; font-size: 24px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
             @elseif(Auth::user()->role == 'Almac')
-            <a style="color: #238276; font-size: 24px; font-weight: 600;" class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('imgs/logoverde.png') }}" style="width: 40px; height: 40px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y'); ?>
+            <style>
+            .hover01 img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover01 img:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+        </style>
+            <a class="hover01 column" style="color: #238276; font-size: 24px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
         @endif
     </div>
@@ -28,8 +64,20 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu" style="position: absolute; left: 150px;">
-                        <li>
+                        <li class="hover01">
                             @if(Auth::user()->role == 'Admin')
+                             <style>
+            .hover01 a {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover01 a:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+        </style>
 
                                 <a href="{{ url('user') }}" class="dropdown-item">
                                     <i class="fa fa-users"></i> Instructores
@@ -68,8 +116,6 @@
                                     <i class="fas fa-clipboard-list"></i> Mi perfil
                                 </a>
                             @endif
-
-
                             <a href="{{ route('logout') }}" class="dropdown-item"
                                 onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
