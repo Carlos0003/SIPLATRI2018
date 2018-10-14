@@ -48,7 +48,7 @@ class Record extends Model
     }
 
     public function classroomSabado1(){
-        return $this->belongsTo('App\Classroom', 'classroom_PSabado_id');
+        return $this->belongsTo('App\Classroom', 'classrooms_PSabado_id');
     }
 
     public function classroomLunes2(){

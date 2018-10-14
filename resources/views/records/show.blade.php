@@ -54,7 +54,7 @@
 					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">{{ $record->fecha_inicio }}</td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">FECHA DE FIN</th>
 					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">{{ $record->fecha_fin }}</td>
-					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">HORAS PROGRAMADAS</th>
+					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">HORAS PROGRAMADAS TRIMESTRE</th>
 					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">{{ $record->horasProgramadas }}</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">GESTOR</th>
 					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;" colspan="6">
@@ -119,10 +119,10 @@
 						{{ $record->hora_fin_PMartes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_PMartes_id}}
+                        {{ $record->abilitiesMartes1->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_PMartes_id}}
+						{{ $record->classroomMartes1->name}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PMiercoles}}
@@ -131,10 +131,10 @@
 						{{ $record->hora_fin_PMiercoles}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_PMiercoles_id}}
+                        {{ $record->abilitiesMiercoles1->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_PMiercoles_id}}
+						{{ $record->classroomMiercoles1->name}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PJueves}}
@@ -143,10 +143,10 @@
 						{{ $record->hora_fin_PJueves}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilities_SJueves_id}}
+                       {{ $record->abilitiesJueves1->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_PJueves_id}}
+						{{ $record->classroomJueves1->name}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PViernes}}
@@ -155,10 +155,10 @@
 						{{ $record->hora_fin_PViernes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilities_PViernes_id}}
+                       {{ $record->abilitiesViernes1->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_PViernes_id}}</td>
+						{{ $record->classroomViernes1->name}}</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PSabado}}
 					</td>
@@ -166,33 +166,33 @@
 						{{ $record->hora_fin_PSabado}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_PSabado_id}}
+                        {{ $record->abilitiesSabado1->name}}
                     </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classrooms_PSabado_id}}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classroomSabado1->name}}
 					</td>
 				</tr>
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_PLunes_id }}
+						{{ $record->instructorLunes1->fullname }}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->instructor_PMartes_id }}
-					</td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_PMiercoles_id}}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->instructorMartes1->fullname  }}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_PJueves_id}}
+						{{ $record->instructorMiercoles1->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_PViernes_id }}
+						{{ $record->instructorJueves1->fullname }}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->instructor_PSabado_id }}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
+						{{ $record->instructorViernes1->fullname  }}
+					</td>
+					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->instructorSabado1->fullname  }}
 					</td>
 				</tr>
 				<tr>
@@ -215,10 +215,10 @@
 						{{ $record->hora_fin_SMartes }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilities_SMartes_id }}
+                       {{ $record->abilitiesMartes2->name }}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_SMartes_id }}
+						{{ $record->classroomMartes2->name }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SMiercoles }}
@@ -227,10 +227,10 @@
 						{{ $record->hora_fin_SMiercoles }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_SMiercoles_id }}
+                        {{ $record->abilitiesMiercoles2->name }}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_SMiercoles_id }}
+						{{ $record->classroomMiercoles2->name }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SJueves }}
@@ -239,10 +239,10 @@
 						{{ $record->hora_fin_SJueves }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_SJueves_id }}
+                        {{ $record->abilitiesJueves2->name }}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classrooms_SJueves_id }}
+						{{ $record->classroomJueves2->name }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SViernes }}
@@ -251,10 +251,10 @@
 						{{ $record->hora_fin_SViernes }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilities_SViernes_id }}
+                       {{ $record->abilitiesViernes2->name }}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{$record->classroomLunes1->name}}
+						{{$record->classroomViernes2->name}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SSabado }}
@@ -263,9 +263,9 @@
 						{{ $record->hora_fin_SSabado }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilities_SSabado_id }}
+                       {{ $record->abilitiesSabado2->name }}
                     </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classrooms_SSabado_id }}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classroomSabado2->name }}
 					</td>
 				</tr>
 				<tr>
@@ -275,23 +275,23 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_SMartes_id}}
+						{{ $record->instructorMartes2->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_SMiercoles_id}}
+						{{ $record->instructorMiercoles2->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_SJueves_id}}
+						{{ $record->instructorJueves2->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_SViernes_id}}
+						{{ $record->instructorViernes2->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_SSabado_id}}
+						{{ $record->instructorSabado2->fullname}}
 					</td>
 				</tr>
 				<tr>
@@ -302,10 +302,10 @@
 						{{ $record->hora_fin_TLunes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                    	{{ $record->abilities_TLunes_id}}
+                    	{{ $record->abilitiesLunes3->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroom_TLunes_id}}
+						{{ $record->classroomLunes3->name}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TMartes}}
@@ -314,10 +314,10 @@
 						{{ $record->hora_fin_TMartes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                    	{{ $record->abilities_PMartes_id}} 
+                    	{{ $record->abilitiesMartes3->name}} 
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroom_TMartes_id}}
+						{{ $record->classroomMartes3->name}}
 					</td>
 					
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
@@ -327,10 +327,10 @@
 						{{ $record->hora_fin_TMiercoles}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_TMiercoles_id}}
+                        {{ $record->abilitiesMiercoles3->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroom_TMiercoles_id}}
+						{{ $record->classroomMiercoles3->name}}
 					</td>				
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TJueves}}
@@ -339,10 +339,10 @@
 						{{ $record->hora_fin_TJueves}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_TJueves_id}}
+                        {{ $record->abilitiesJueves3->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroom_TJueves_id}}
+						{{ $record->classroomJueves3->name}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TViernes}}
@@ -351,13 +351,13 @@
 						{{ $record->hora_fin_TViernes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilities_TViernes_id}}
+                        {{ $record->abilitiesViernes3->name}}
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroom_TViernes_id}}
+						{{ $record->classroomViernes3->name}}
 					</td>
-					<td colspan="4" rowspan="2" style="background-color: #AEB6BF;">
-						<div class="contenedor" style="width: 780px; height: 76px; display: -webkit-flex; display: -ms-flexbox; display: flex; justify-content: space-between; align-items: flex-end; text-align: center;">
+					<td colspan="4" rowspan="2" style="background-color: #AEB6BF; border: 1px solid black;">
+						<div class="contenedor" style="width: 780px; height: 400px; display: -webkit-flex; display: -ms-flexbox; display: flex; justify-content: space-between; align-items: flex-end; text-align: center;">
 							<div class="elemento" style="text-decoration: overline;">FIRMA COORDINADOR ACADÉMICO</div>
 							<div class="elemento" style="text-decoration: overline;">FIRMA GESTOR DE GRUPO</div>
 							<div class="elemento" style="text-decoration: overline;">FIRMA SUBDIRECTOR CPIC</div>
@@ -367,23 +367,23 @@
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_TLunes_id}}
+						{{ $record->instructorLunes3->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_TMartes_id}}
+						{{ $record->instructorMartes3->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_TMiercoles_id}}
+						{{ $record->instructorMiercoles3->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_TJueves_id}}
+						{{ $record->instructorJueves3->fullname}}
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructor_TViernes_id}}
+						{{ $record->instructorViernes3->fullname}}
 					</td>
 				</tr>
 				<tr>

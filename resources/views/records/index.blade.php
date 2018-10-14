@@ -16,7 +16,7 @@
 	<body>
 		@extends('layouts.navbar')
 		<div><br><br><br></div>
-		<div class="col-md-8 offset-2">
+		<div class="col-md-12">
 			<h1 class="text-center" style="font-size: 30px"><i class="fas fa-clipboard-list"></i> Lista de Fichas</h1>
 			<hr>
 			<ol class="breadcrumb">
