@@ -10,7 +10,13 @@ class Municipalities extends Model
     protected $fillable = [
     	'name', 'zone',
     ];
+    //conexión con usuarios//
 	public function user(){
         return $this->hasMany('App\User');
+    }
+
+    //conexión con records//
+	public function recordmunicipality(){
+        return $this->hasMany('App\Record');
     }
 }

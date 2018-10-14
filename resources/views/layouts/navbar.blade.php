@@ -8,15 +8,15 @@
             .hover01 img {
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
 }
 .hover01 img:hover {
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
 }
         </style>
-            <a class="hover01 column" style="color: #238276; font-size: 20px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
+            <a class="hover01 column" style="width: 200px; color: #238276; font-size: 16px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
             @elseif(Auth::user()->role == 'Instructor')
             <style>
@@ -31,7 +31,7 @@
     transform: scale(1.3);
 }
         </style>
-            <a class="hover01 column" style="color: #238276; font-size: 24px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
+            <a class="hover01 column" style="color: #238276; font-size: 16px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
             @elseif(Auth::user()->role == 'Almac')
             <style>
@@ -46,7 +46,7 @@
     transform: scale(1.3);
 }
         </style>
-            <a class="hover01 column" style="color: #238276; font-size: 24px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
+            <a class="hover01 column" style="color: #238276; font-size: 16px; font-weight: 600; text-decoration: none;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoverde.png') }}" style="width: 60px; height: 60px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
         @endif
     </div>
@@ -54,11 +54,11 @@
     <div class="collapse navbar-collapse col-md-4" id="app-navbar-collapse">
         <ul class="navbar-nav ml-auto">
             @if (Auth::guest())
-                <li><a style="color: #238276; font-weight: 700; font-size: 18px;" href="{{ route('login') }}" class="nav-link"><i class="fa fa-lock"></i> Ingresar </a></li>
-                <li><a style="color: #238276; font-weight: 700; font-size: 18px;" href="{{ route('register') }}" class="nav-link"><i class="fa fa-users"></i> Registrar</a></li>
+                <li><a style="color: #238276; font-weight: 700; font-size: 16px;" href="{{ route('login') }}" class="nav-link"><i class="fa fa-lock"></i> Ingresar </a></li>
+                <li><a style="color: #238276; font-weight: 700; font-size: 16px;" href="{{ route('register') }}" class="nav-link"><i class="fa fa-users"></i> Registrar</a></li>
             @else
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false" style="color: #238276; font-size: 18px;">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false" style="color: #238276; font-size: 16px;">
                       {{ Auth::user()->role }} 
                        <strong>{{ Auth::user()->fullname }}</strong> <span class="caret"></span>
                     </a>
@@ -70,8 +70,8 @@
             .hover01 a {
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
 }
 .hover01 a:hover {
     -webkit-transform: scale(1.3);

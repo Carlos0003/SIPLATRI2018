@@ -64,6 +64,10 @@
 				<th style="text-align: justify;"> Estado: </th>
 				<td style="text-align: justify;"> {{ $user->state }}</td>
 			</tr>
+			<tr>
+				<th style="text-align: justify;"> Horas acumuladas: </th>
+				<td style="text-align: justify;"> {{ $user->cumulativeHour }}</td>
+			</tr>
 		</table>
 
 	</div>

@@ -69,7 +69,7 @@ class UserController extends Controller
       $user->email          = $request->input('email');
       $user->password       = bcrypt($request->input('password'));
       $user->phonenumber    = $request->input('phonenumber');
-      $user->municipality_id       = $request->input('municipality_id');
+      $user->municipality_id= $request->input('municipality_id');
       $user->gender         = $request->input('gender');
       $user->role           = $request->input('role');
       $user->contract       = $request->input('contract');

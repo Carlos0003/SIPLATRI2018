@@ -19,10 +19,10 @@
     transform: rotate(0) scale(1);
 }
 .hover06 a.tuer:hover  {
-    -webkit-transform: rotate(15deg) scale(1.2);
-    transform: rotate(15deg) scale(1.2);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transform: rotate(10deg) scale(1.2);
+    transform: rotate(10deg) scale(1.2);
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
 
 }
         </style>

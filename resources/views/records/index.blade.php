@@ -57,7 +57,7 @@
 					@foreach($record as $rec)
 					<tr>
 						<td> {{$rec->number}} </td>
-						<td> {{$rec->program->name}} </td>
+						<td> {{$rec->nameprogram->name}} </td>
 						<td> {{$rec->user->fullname}} </td>
 						<td>
 							<a href="{{url('record/'.$rec->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>

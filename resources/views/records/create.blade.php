@@ -34,22 +34,31 @@
 				</tr>
 				<tr>
 					<th colspan="2" class="text-center" style="width: 95px;font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">ID</th>
-					<td colspan="2" style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input placeholder="Digite ID de la Ficha" name="idFicha" type="number" style="width: 95px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td colspan="2" style="text-align: center; font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input required placeholder="Digite ID de la Ficha" name="number" type="number" style="width: 95px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">NOMBRE DEL PROGRAMA</th>
-					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;" colspan="12">
-						<select style="font-size: 12px; background-color: #AEB6BF;" required class="form-control" name="nombrePorgrama" id="programaFormacionTable">
+					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;" colspan="10">
+						<select style="font-size: 12px; background-color: #AEB6BF;" required class="form-control" name="program_id" id="programaFormacionTable">
 							<option value="">Seleccione programa...</option>
 							@foreach($programsname as $key => $program)
 								<option value="{{ $program->id }}">{{ $program->name }}</option>
 							@endforeach
 						</select>
 					</td>
+					<th class="text-center" style="width: 95px;font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">MODALIDAD</th>
+					<td style="text-align: center; font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">
+						<select required name="modalidad" class="form-control" style="font-size: 12px; background-color: #AEB6BF;">
+							<option value="">Seleccione Modalidad...</option>
+							<option value="Jornada Diurna">Jornada Diurna</option>
+							<option value="Jornada Nocturna">Jornada Nocturna</option>
+							<option value="Jornada Mixta">Jornada Mixta</option>
+							<option value="Jornada Sabatina">Jornada Sabatina</option>
+						</select></td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">TOTAL DE TRIMESTRES</th>
 					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">
                         <input type="text" id="timeduration" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" disabled>
 					</td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">TRIMESTRE ACTUAL</th>
-					<td colspan="2" style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input type="number" name="trimestreActual" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" placeholder="# de trimestre"></td>
+					<td colspan="2" style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input type="number" required name="trimestreActual" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" placeholder="# de trimestre"></td>
 				</tr>
 				<tr>
 					<th colspan="2" class="text-center" style="width: 95px;font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">TIPO DE PROGRAMA</th>
@@ -57,14 +66,14 @@
                         <input type="text" id="typeprogram" style="width: 95px;font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" disabled>
                     </td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">FECHA DE INICIO</th>
-					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" name="feinicio" type="date"></td>
+					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" name="fecha_inicio" required type="date"></td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">FECHA DE FIN</th>
-					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" name="fefin" type="date"></td>
+					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" name="fecha_fin" type="date" required></td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">HORAS PROGRAMADAS</th>
-					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input type="number" name="hProgramadas" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input type="number" required name="horasProgramadas" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">GESTOR</th>
 					<td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;" colspan="6">
-						<select style="font-size: 12px; background-color: #AEB6BF;" required name="gestor" class="form-control">
+						<select style="font-size: 12px; background-color: #AEB6BF;" required name="user_id" class="form-control">
 							<option value="">Seleccione Gestor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -73,7 +82,7 @@
 					</td>
 					<th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">MUNICIPIO DE DESARROLLO</th>
 					<td colspan="2" style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="font-size: 12px; background-color: #AEB6BF;" required name="municipio" class="form-control">
+						<select style="font-size: 12px; background-color: #AEB6BF;" required name="municipality_id" class="form-control">
 							<option value="">Seleccione Municipio...</option>
 							@foreach($municipalities as $munici)
 								<option value="{{ $munici->id }}">{{ $munici->name }}</option>
@@ -82,7 +91,6 @@
 					</td>
 				</tr>
 				<tr>
-					{{-- <th class="text-center" style="width: 250px;font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;" colspan="2">HORAS PROGRAMADAS</th> --}}
 					<th colspan="4" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;" colspan="2">LUNES</th>
 					<th colspan="4" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;" colspan="2">MARTES</th>
 					<th colspan="4" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;" colspan="2">MIERCOLES</th>
@@ -116,90 +124,92 @@
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">COMPETENCIA</th>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">AMBIENTE</th>
 				</tr>
-								<tr>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+				<tr>
+				{{-- PRIMERA CLASE DIA A DIA --}}
+
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_PLunes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_PLunes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_lunes_id" required>
+                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_PLunes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" required name="ambienteLunes" class="form-control">
+						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;"  name="classrooms_PLunes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_PMartes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_PMartes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_martes_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_PMartes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMartes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_PMartes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_PMiercoles" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_PMiercoles" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_miercoles_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_PMiercoles_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMiercoles" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_PMiercoles_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_PJueves" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_PJueves" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_jueves_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SJueves_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteJueves" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_PJueves_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_PViernes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_PViernes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_viernes_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SViernes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteViernes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_PViernes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_PSabado" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_PSabado" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_sabado_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SSabado_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteSabado" class="form-control">
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_PSabado_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -209,7 +219,7 @@
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorLunes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PLunes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -218,7 +228,7 @@
 
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMartes" class="form-control">
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PMartes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -226,7 +236,7 @@
 						</select></td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMiercoles" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PMiercoles_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -235,7 +245,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorJueves" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PJueves_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -244,7 +254,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorViernes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PViernes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -254,7 +264,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorSabado" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PSabado_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -262,90 +272,96 @@
 						</select>
 					</td>
 				</tr>
-								<tr>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+
+
+				{{-- SEGUNDA CLASE DIA A DIA --}}
+
+				<tr>
+				
+
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_SLunes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_SLunes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_lunes_id" required>
+                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SLunes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" required name="ambienteLunes" class="form-control">
+						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;"  name="classrooms_SLunes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_SMartes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_SMartes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_martes_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SMartes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMartes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_SMartes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_SMiercoles" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_SMiercoles" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_miercoles_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SMiercoles_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMiercoles" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_SMiercoles_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_SJueves" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_SJueves" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_jueves_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SJueves_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteJueves" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_SJueves_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_SViernes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_SViernes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_viernes_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SViernes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteViernes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_SViernes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_SSabado" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_SSabado" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_sabado_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_SSabado_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteSabado" class="form-control">
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classrooms_SSabado_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -355,7 +371,7 @@
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorLunes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SLunes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -364,7 +380,7 @@
 
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMartes" class="form-control">
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SMartes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -372,7 +388,7 @@
 						</select></td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMiercoles" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SMiercoles_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -381,7 +397,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorJueves" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SJueves_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -390,7 +406,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorViernes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SViernes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -400,7 +416,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorSabado" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SSabado_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -408,100 +424,100 @@
 						</select>
 					</td>
 				</tr>
-								<tr>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+				
+				{{-- tercera clase dia a dia --}}
+				<tr>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_TLunes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_TLunes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_lunes_id" required>
+                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_TLunes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" required name="ambienteLunes" class="form-control">
+						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;"  name="classroom_TLunes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_TMartes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_TMartes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_martes_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_PMartes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMartes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classroom_TMartes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_TMiercoles" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_TMiercoles" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_miercoles_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_TMiercoles_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMiercoles" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classroom_TMiercoles_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_TJueves" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_TJueves" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_jueves_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_TJueves_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteJueves" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classroom_TJueves_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_inicio_TViernes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hora_fin_TViernes" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_viernes_id" required>
+                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_TViernes_id" >
                             <option value="0" selected disabled>Seleccione competencia</option>
                         </select>
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteViernes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="classroom_TViernes_id" class="form-control">
 							<option value="">Seleccione Ambientes...</option>
 							@foreach($classrooms as $class)
 								<option value="{{ $class->id }}">{{ $class->name }}</option>
 							@endforeach
 						</select>
 					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_sabado_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteSabado" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select></td>
+					<td colspan="4" rowspan="2" style="background-color: #AEB6BF;">
+						<div class="contenedor" style="width: 780px; height: 76px; display: -webkit-flex; display: -ms-flexbox; display: flex; justify-content: space-between; align-items: flex-end; text-align: center;">
+							<div class="elemento" style="text-decoration: overline;">FIRMA COORDINADOR ACADÉMICO</div>
+							<div class="elemento" style="text-decoration: overline;">FIRMA GESTOR DE GRUPO</div>
+							<div class="elemento" style="text-decoration: overline;">FIRMA SUBDIRECTOR CPIC</div>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorLunes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TLunes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -510,7 +526,7 @@
 
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMartes" class="form-control">
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TMartes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -518,7 +534,7 @@
 						</select></td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMiercoles" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TMiercoles_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -527,7 +543,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorJueves" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TJueves_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -536,7 +552,7 @@
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorViernes" class="form-control">
+						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TViernes_id" class="form-control">
 							<option value="">Seleccione Instructor...</option>
 							@foreach($managers as $user)
 								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -544,173 +560,15 @@
 						</select>
 
 					</td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorSabado" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select>
-					</td>
-				</tr>
+				</tr>					
 				<tr>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_lunes_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" required name="ambienteLunes" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select>
-					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_martes_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMartes" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select>
-					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_miercoles_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteMiercoles" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select>
-					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_jueves_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteJueves" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select>
-					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_viernes_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteViernes" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select>
-					</td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hInicio" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center"><input type="time" name="hFin" style="width: 200px; font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" class="competenciaPrueba form-control" name="abilities_sabado_id" required>
-                            <option value="0" selected disabled>Seleccione competencia</option>
-                        </select>
-                    </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="ambienteSabado" class="form-control">
-							<option value="">Seleccione Ambientes...</option>
-							@foreach($classrooms as $class)
-								<option value="{{ $class->id }}">{{ $class->name }}</option>
-							@endforeach
-						</select></td>
-				</tr>
-				<tr>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorLunes" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select>
-
-					</td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMartes" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select></td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorMiercoles" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select>
-					</td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorJueves" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select>
-					</td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorViernes" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select>
-
-					</td>
-					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" required name="instructorSabado" class="form-control">
-							<option value="">Seleccione Instructor...</option>
-							@foreach($managers as $user)
-								<option value="{{ $user->id }}">{{ $user->fullname }}</option>
-							@endforeach
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<th colspan="24" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; padding: 12px; border: 1px solid black;"><strong><i class="fas fa-info-circle"></i> php que imprima nombre Id, Nombre del programa seleccionado y gestor.</strong>
+					<th colspan="24" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; padding: 12px; border: 1px solid black;"><strong><i class="fas fa-info-circle"></i> {{ 'number','program_id', 'user_id' }}php que imprima nombre Id, Nombre del programa seleccionado y gestor.</strong>
 					</th>
 				</tr>
 				<tr>
 					<th colspan="24"><button class="btn btn-secondary btn-lg btn-block" style="font-size: 12px; height: 30px; line-height: 50%; font-size: 18px; background-color: #238276;"> <i class="fa fa-save"></i> Enviar</button></th>
 				</tr>
 			</table>
-			{{-- <div class="form-group">
-				<button class="btn btn-outline-success" type="submit" value="Save">Adicionar</button>
-			</div> --}}
 		</form>
 	</div>
 	<br><br>

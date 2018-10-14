@@ -52,6 +52,8 @@
 							<option value="Tecnico"{{$progr->type=='Tecnico'?'selected':''}}>Técnico</option>
 							<option value="Tecnologo"{{$progr->type=='Tecnologo'?'selected':''}}>Tecnólogo</option>
 							<option value="Auxiliar"{{$progr->type=='Auxiliar'?'selected':''}}>Auxiliar</option>
+							<option value="Curso"{{$progr->type=='Curso'?'selected':''}}>Curso</option>
+							<option value="Empresa"{{$progr->type=='Empresa'?'selected':''}}>Empresa</option>
 						</select>
 					</td>				
 				</tr>

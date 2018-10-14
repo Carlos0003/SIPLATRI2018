@@ -10,9 +10,17 @@ class Program extends Model
     protected $fillable = [
         'name', 'type', 'timeduration',
     ];
+
+//conexión con abilities//
     public function abilities(){
         return $this->hasMany('App\AbilitiesModel');
     }
+
+//conexión con records//
+    public function nombreprograma(){
+        return $this->hasMany('App\Record', 'program_id');
+    }
+
    //buscar
     public function scopeName($programs,$name){
         if(trim($name)!= ''){

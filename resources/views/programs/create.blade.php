@@ -40,6 +40,8 @@
 							<option value="Tecnologo">Tecnólogo</option>
 							<option value="Tecnico">Técnico</option>
 							<option value="Auxiliar">Auxiliar</option>
+							<option value="Curso">Curso</option>
+							<option value="Empresa">Empresa</option>
 						</select>
 						{{-- <input type="text" required name="type" class="form-control" placeholder="* " value="{{old('type')}}"> --}}
 					</td>				
