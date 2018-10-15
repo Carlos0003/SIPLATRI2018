@@ -17,6 +17,10 @@ use App\Municipalities;
 use Auth;
 use App\Exports\RecordsExport;
 
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class RecordController extends Controller
 {
     /**
@@ -354,5 +358,121 @@ class RecordController extends Controller
     public function competencias(Request $request){
         $data = AbilitiesModel::select('id', 'name')->where('program_id',$request->id)->get();
         return response()->json($data);
+    }
+
+    public function descargarPrograma($idRecord){
+        $record = Record::findOrFail($idRecord);
+
+        $file           = storage_path('app/public/Programa.xlsx');
+        $spreadsheet    = IOFactory::load($file);
+        $sheet          = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('C2', $record->number);
+        $sheet->setCellValue('G2', $record->nameprogram->name);
+        $sheet->setCellValue('R2', $record->modalidad);
+        $sheet->setCellValue('T2', $record->nameprogram->timeduration);
+        $sheet->setCellValue('W2', $record->trimestreActual);
+        $sheet->setCellValue('C3', $record->nameprogram->type);
+        $sheet->setCellValue('G3', $record->fecha_inicio);
+        $sheet->setCellValue('J3', $record->fecha_fin);
+        $sheet->setCellValue('M3', $record->horasProgramadas);
+        $sheet->setCellValue('O3', $record->user->fullname);
+        $sheet->setCellValue('W3', $record->municipios->name);
+        $sheet->setCellValue('A6', $record->hora_inicio_PLunes);
+        $sheet->setCellValue('B6', $record->hora_fin_PLunes);
+        $sheet->setCellValue('E6', $record->hora_inicio_PMartes);
+        $sheet->setCellValue('F6', $record->hora_fin_PMartes);
+        $sheet->setCellValue('I6', $record->hora_inicio_PMiercoles);
+        $sheet->setCellValue('J6', $record->hora_fin_PMiercoles);
+        $sheet->setCellValue('M6', $record->hora_inicio_PJueves);
+        $sheet->setCellValue('N6', $record->hora_fin_PJueves);
+        $sheet->setCellValue('Q6', $record->hora_inicio_PViernes);
+        $sheet->setCellValue('R6', $record->hora_fin_PViernes);
+        $sheet->setCellValue('U6', $record->hora_inicio_PSabado);
+        $sheet->setCellValue('V6', $record->hora_fin_PSabado);
+        $sheet->setCellValue('A8', $record->hora_inicio_SLunes);
+        $sheet->setCellValue('B8', $record->hora_fin_SLunes);
+        $sheet->setCellValue('E8', $record->hora_inicio_SMartes);
+        $sheet->setCellValue('F8', $record->hora_fin_SMartes);
+        $sheet->setCellValue('I8', $record->hora_inicio_SMiercoles);
+        $sheet->setCellValue('J8', $record->hora_fin_SMiercoles);
+        $sheet->setCellValue('M8', $record->hora_inicio_SJueves);
+        $sheet->setCellValue('N8', $record->hora_fin_SJueves);
+        $sheet->setCellValue('Q8', $record->hora_inicio_SViernes);
+        $sheet->setCellValue('R8', $record->hora_fin_SViernes);
+        $sheet->setCellValue('U8', $record->hora_inicio_SSabado);
+        $sheet->setCellValue('V8', $record->hora_fin_SSabado);
+        $sheet->setCellValue('A10', $record->hora_inicio_TLunes);
+        $sheet->setCellValue('B10', $record->hora_fin_TLunes);
+        $sheet->setCellValue('E10', $record->hora_inicio_TMartes);
+        $sheet->setCellValue('F10', $record->hora_fin_TMartes);
+        $sheet->setCellValue('I10', $record->hora_inicio_TMiercoles);
+        $sheet->setCellValue('J10', $record->hora_fin_TMiercoles);
+        $sheet->setCellValue('M10', $record->hora_inicio_TJueves);
+        $sheet->setCellValue('N10', $record->hora_fin_TJueves);
+        $sheet->setCellValue('Q10', $record->hora_inicio_TViernes);
+        $sheet->setCellValue('R10', $record->hora_fin_TViernes);
+        $sheet->setCellValue('C6', $record->abilitiesLunes1->name);
+        $sheet->setCellValue('G6', $record->abilitiesMartes1->name);
+        $sheet->setCellValue('K6', $record->abilitiesMiercoles1->name);
+        $sheet->setCellValue('O6', $record->abilitiesJueves1->name);
+        $sheet->setCellValue('S6', $record->abilitiesViernes1->name);
+        $sheet->setCellValue('W6', $record->abilitiesSabado1->name);
+        $sheet->setCellValue('C8', $record->abilitiesLunes2->name);
+        $sheet->setCellValue('G8', $record->abilitiesMartes2->name);
+        $sheet->setCellValue('K8', $record->abilitiesMiercoles2->name);
+        $sheet->setCellValue('O8', $record->abilitiesJueves2->name);
+        $sheet->setCellValue('S8', $record->abilitiesViernes2->name);
+        $sheet->setCellValue('W8', $record->abilitiesSabado2->name);
+        $sheet->setCellValue('C10', $record->abilitiesLunes3->name);
+        $sheet->setCellValue('G10', $record->abilitiesMartes3->name);
+        $sheet->setCellValue('K10', $record->abilitiesMiercoles3->name);
+        $sheet->setCellValue('O10', $record->abilitiesJueves3->name);
+        $sheet->setCellValue('S10', $record->abilitiesViernes3->name);
+        $sheet->setCellValue('D6', $record->classroomLunes1->name);
+        $sheet->setCellValue('H6', $record->classroomMartes1->name);
+        $sheet->setCellValue('L6', $record->classroomMiercoles1->name);
+        $sheet->setCellValue('P6', $record->classroomJueves1->name);
+        $sheet->setCellValue('T6', $record->classroomViernes1->name);
+        $sheet->setCellValue('X6', $record->classroomSabado1->name);
+        $sheet->setCellValue('D8', $record->classroomLunes2->name);
+        $sheet->setCellValue('H8', $record->classroomMartes2->name);
+        $sheet->setCellValue('L8', $record->classroomMiercoles2->name);
+        $sheet->setCellValue('P8', $record->classroomJueves2->name);
+        $sheet->setCellValue('T8', $record->classroomViernes2->name);
+        $sheet->setCellValue('X8', $record->classroomSabado2->name);
+        $sheet->setCellValue('D10', $record->classroomLunes3->name);
+        $sheet->setCellValue('H10', $record->classroomMartes3->name);
+        $sheet->setCellValue('L10', $record->classroomMiercoles3->name);
+        $sheet->setCellValue('P10', $record->classroomJueves3->name);
+        $sheet->setCellValue('T10', $record->classroomViernes3->name);
+        $sheet->setCellValue('D7', $record->instructorLunes1->fullname);
+        $sheet->setCellValue('H7', $record->instructorMartes1->fullname);
+        $sheet->setCellValue('L7', $record->instructorMiercoles1->fullname);
+        $sheet->setCellValue('P7', $record->instructorJueves1->fullname);
+        $sheet->setCellValue('T7', $record->instructorViernes1->fullname);
+        $sheet->setCellValue('X7', $record->instructorSabado1->fullname);
+        $sheet->setCellValue('D9', $record->instructorLunes2->fullname);
+        $sheet->setCellValue('H9', $record->instructorMartes2->fullname);
+        $sheet->setCellValue('L9', $record->instructorMiercoles2->fullname);
+        $sheet->setCellValue('P9', $record->instructorJueves2->fullname);
+        $sheet->setCellValue('T9', $record->instructorViernes2->fullname);
+        $sheet->setCellValue('X9', $record->instructorSabado2->fullname);
+        $sheet->setCellValue('D12',$record->instructorLunes3->fullname);
+        $sheet->setCellValue('H12',$record->instructorMartes3->fullname);
+        $sheet->setCellValue('L12',$record->instructorMiercoles3->fullname);
+        $sheet->setCellValue('P12',$record->instructorJueves3->fullname);
+        $sheet->setCellValue('T12',$record->instructorViernes3->fullname);
+        $sheet->setCellValue('A13', $record->nameprogram->name. ' ID ' .$record->number. ' GESTOR ' .$record->user->fullname);
+
+
+        
+
+
+        
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Disposition: attachment; filename='.$record->number. '.xlsx');
+        $writer->save('php://output');
+
     }
 }

@@ -43,6 +43,8 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('municipalities/ajaxsearch', 'MunicipalitiesController@ajaxsearch');
     Route::get('/programaFormacionSeleccionado', 'RecordController@programaFormacionSeleccionado');
     Route::get('/competencias', 'RecordController@competencias');
+    Route::get('/descargarExcel/{idRecord}', 'RecordController@descargarPrograma')->name('descargarExcel.descargarPrograma');
+
 
 
 

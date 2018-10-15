@@ -4,23 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Report Excel</title>
 </head>
-<style>
-table {
-   border-collapse: separate;
-   border-spacing: 5px;
-   background: #000 url("gradient.gif") bottom left repeat-x;
-   color: #fff;
-   border: 2px solid black;
-}
-td, th {
-   background: #fff;
-   color: #000;
-}
-</style>
 <body>
-		<table class="table table-striped table-hover text-center" style="text-orientation: use-glyph-orientation; font-size: 10px;">
+		<table class="table table-striped table-hover text-center" style="text-orientation: use-glyph-orientation; font-size: 10px; border: 1px solid black;">
 			<tr>
-				<th colspan="2">
+				<th colspan="2" style="border: 1px solid black;">
 					<h2>Lista de municipios</h2>
 				</th>
 			</tr>

@@ -22,6 +22,8 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="{{url('record')}}">Lista Fichas</a></li>
 		    <li class="breadcrumb-item active" aria-current="page">Consultar Fichas</li>
+		    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('descargarExcel.descargarPrograma', $record->id) }}">Descargar Ficha</a></li>
+
 		</ol>
 		<table class="table table-striped table-hover text-center">
 				<tr>
