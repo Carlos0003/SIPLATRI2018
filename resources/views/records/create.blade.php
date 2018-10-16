@@ -98,7 +98,8 @@
                             <th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">FECHA DE FIN</th>
                             <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" name="fecha_fin" type="date" required></td>
                             <th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">HORAS PROGRAMADAS TRIMESTRE</th>
-                            <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input type="number" required name="horasProgramadas" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+                            <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">
+                                <input type="number" required name="horasProgramadas" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
                             <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">GESTOR</th>
                             <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;" colspan="6">
                                 <select style="font-size: 12px; background-color: #AEB6BF;" required name="user_id" class="form-control">
@@ -621,10 +622,6 @@
                                         </select>
 
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th colspan="24" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; padding: 12px; border: 1px solid black;"><strong><i class="fas fa-info-circle"></i> {{ 'number','program_id', 'user_id' }}php que imprima nombre Id, Nombre del programa seleccionado y gestor.</strong>
-                                    </th>
                                 </tr>
                                 <tr>
                                     <th colspan="24"><button class="btn btn-secondary btn-lg btn-block" style="font-size: 12px; height: 30px; line-height: 50%; font-size: 18px; background-color: #238276;"> <i class="fa fa-save"></i> Enviar</button></th>

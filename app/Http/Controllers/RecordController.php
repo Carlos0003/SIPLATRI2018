@@ -319,6 +319,7 @@ class RecordController extends Controller
             ->with('programsname', Program::all())
             ->with('managers', User::all())
             ->with('classrooms', Classroom::all())
+            ->with('municipalities', Municipalities::all())
             ->with('abilities', AbilitiesModel::all());
            }else {
             return view('/home');

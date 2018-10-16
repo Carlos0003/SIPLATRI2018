@@ -109,10 +109,19 @@
 						{{ $record->hora_fin_PLunes }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesLunes1->name }}
+                        
+                        @if ($record->abilities_PLunes_id != '' )
+							{{ $record->abilitiesLunes1->name }}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomLunes1->name}}
+						@if ($record->classrooms_PLunes_id != '' )
+							{{ $record->classroomLunes1->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PMartes}}
@@ -121,10 +130,18 @@
 						{{ $record->hora_fin_PMartes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesMartes1->name}}
+                        @if ($record->abilities_PMartes_id != '' )
+	                        {{ $record->abilitiesMartes1->name}}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomMartes1->name}}
+						@if ($record->classrooms_PMartes_id != '' )
+							{{ $record->classroomMartes1->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PMiercoles}}
@@ -133,10 +150,18 @@
 						{{ $record->hora_fin_PMiercoles}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesMiercoles1->name}}
+                        @if ($record->abilities_PMiercoles_id != '' )
+ 	                       {{ $record->abilitiesMiercoles1->name}}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomMiercoles1->name}}
+						@if ($record->classrooms_PMiercoles_id != '' )
+							{{ $record->classroomMiercoles1->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PJueves}}
@@ -150,10 +175,13 @@
 						@else
 							0
 						@endif
-                       
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomJueves1->name}}
+						@if ($record->classrooms_PJueves_id != '' )
+							{{ $record->classroomJueves1->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PViernes}}
@@ -170,7 +198,12 @@
                        
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomViernes1->name}}</td>
+						@if ($record->classrooms_PViernes_id != '' )
+							{{ $record->classroomViernes1->name}}
+						@else
+							0
+						@endif
+					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_PSabado}}
 					</td>
@@ -185,31 +218,62 @@
 						@endif
                         
                     </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classroomSabado1->name}}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		
+						@if ($record->classrooms_PSabado_id != '' )
+							{{ $record->classroomSabado1->name}}
+						@else
+							0
+						@endif
 					</td>
 				</tr>
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorLunes1->fullname }}
+						@if ($record->instructor_PLunes_id != '' )
+							{{ $record->instructorLunes1->fullname }}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->instructorMartes1->fullname  }}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		
+						@if ($record->instructor_PMartes_id != '' )
+							{{ $record->instructorMartes1->fullname  }}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorMiercoles1->fullname}}
+						@if ($record->instructor_PMiercoles_id != '' )
+							{{ $record->instructorMiercoles1->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorJueves1->fullname }}
+						@if ($record->instructor_PJueves_id != '' )
+							{{ $record->instructorJueves1->fullname }}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorViernes1->fullname  }}
+						@if ($record->instructor_PViernes_id != '' )
+							{{ $record->instructorViernes1->fullname  }}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->instructorSabado1->fullname  }}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		
+						@if ($record->instructor_PSabado_id != '' )
+							{{ $record->instructorSabado1->fullname  }}
+						@else
+							0
+						@endif
 					</td>
 				</tr>
 				<tr>
@@ -220,10 +284,18 @@
 						{{ $record->hora_fin_SLunes }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilitiesLunes2->name }}
+						@if ($record->abilities_SLunes_id != '' )
+                       		{{ $record->abilitiesLunes2->name }}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomLunes2->name  }}
+						@if ($record->abilities_SLunes_id != '' )
+							{{ $record->classroomLunes2->name  }}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SMartes }}
@@ -232,10 +304,18 @@
 						{{ $record->hora_fin_SMartes }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilitiesMartes2->name }}
+						 @if ($record->abilities_SMartes_id != '' )
+	                       	{{ $record->abilitiesMartes2->name }}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomMartes2->name }}
+						 @if ($record->classroom_SMartes_id != '' )
+							{{ $record->classroomMartes2->name }}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SMiercoles }}
@@ -244,10 +324,18 @@
 						{{ $record->hora_fin_SMiercoles }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesMiercoles2->name }}
+						@if ($record->abilities_SMiercoles_id != '' )
+                        	{{ $record->abilitiesMiercoles2->name }}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomMiercoles2->name }}
+						@if ($record->classroom_SMiercoles_id != '' )
+							{{ $record->classroomMiercoles2->name }}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SJueves }}
@@ -256,10 +344,18 @@
 						{{ $record->hora_fin_SJueves }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesJueves2->name }}
+                        @if ($record->abilities_SJueves_id != '' )
+                        	{{ $record->abilitiesJueves2->name }}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomJueves2->name }}
+						@if ($record->classroom_SJueves_id != '' )
+							{{ $record->classroomJueves2->name }}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SViernes }}
@@ -268,10 +364,18 @@
 						{{ $record->hora_fin_SViernes }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilitiesViernes2->name }}
+                        @if ($record->abilities_SViernes_id != '' )
+                       		{{ $record->abilitiesViernes2->name }}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{$record->classroomViernes2->name}}
+						@if ($record->classroom_SViernes_id != '' )
+							{{$record->classroomViernes2->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_SSabado }}
@@ -280,35 +384,68 @@
 						{{ $record->hora_fin_SSabado }}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilitiesSabado2->name }}
+						@if ($record->abilities_SSabado_id != '' )
+                       		{{ $record->abilitiesSabado2->name }}
+						@else
+							0
+						@endif
                     </td>
-					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classroomSabado2->name }}
+					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		
+						@if ($record->abilities_SSabado_id != '' )
+							{{ $record->classroomSabado2->name }}
+						@else
+							0
+						@endif
 					</td>
 				</tr>
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorLunes2->fullname}}
+						@if ($record->abilities_SLunes_id != '' )
+							{{ $record->instructorLunes2->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorMartes2->fullname}}
+						@if ($record->abilities_SMartes_id != '' )
+							{{ $record->instructorMartes2->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorMiercoles2->fullname}}
+						@if ($record->abilities_SMiercoles_id != '' )
+							{{ $record->instructorMiercoles2->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorJueves2->fullname}}
+						@if ($record->abilities_SJueves_id != '' )
+							{{ $record->instructorJueves2->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorViernes2->fullname}}
+						@if ($record->abilities_SViernes_id != '' )
+							{{ $record->instructorViernes2->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorSabado2->fullname}}
+						@if ($record->abilities_SSabado_id != '' )
+							{{ $record->instructorSabado2->fullname}}
+						@else
+							0
+						@endif
 					</td>
 				</tr>
 				<tr>
@@ -319,10 +456,18 @@
 						{{ $record->hora_fin_TLunes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                    	{{ $record->abilitiesLunes3->name}}
+						@if ($record->abilities_TLunes_id != '' )
+                    		{{ $record->abilitiesLunes3->name}}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomLunes3->name}}
+						@if ($record->classroom_TLunes_id != '' )
+							{{ $record->classroomLunes3->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TMartes}}
@@ -336,12 +481,14 @@
 						@else
 							0
 						@endif
-                    	
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomMartes3->name}}
+						@if ($record->classroom_TMartes_id != '' )
+							{{ $record->classroomMartes3->name}}
+						@else
+							0
+						@endif
 					</td>
-					
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TMiercoles}}
 					</td>
@@ -349,10 +496,18 @@
 						{{ $record->hora_fin_TMiercoles}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesMiercoles3->name}}
+						@if ($record->abilities_TMiercoles_id != '')
+                        	{{ $record->abilitiesMiercoles3->name}}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomMiercoles3->name}}
+						@if ($record->abilities_TMiercoles_id != '')
+							{{ $record->classroomMiercoles3->name}}
+						@else
+							0
+						@endif
 					</td>				
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TJueves}}
@@ -361,10 +516,18 @@
 						{{ $record->hora_fin_TJueves}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesJueves3->name}}
+                        @if ($record->abilities_TJueves_id != '')
+							{{ $record->abilitiesJueves3->name}} 
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomJueves3->name}}
+						@if ($record->classroom_TJueves_id != '')
+							{{ $record->classroomJueves3->name}}							
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
 						{{ $record->hora_inicio_TViernes}}
@@ -373,10 +536,18 @@
 						{{ $record->hora_fin_TViernes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesViernes3->name}}
+                        @if ($record->abilities_TViernes_id != '')
+                        	{{ $record->abilitiesViernes3->name}}
+						@else
+							0
+						@endif
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->classroomViernes3->name}}
+						@if ($record->classroom_TViernes_id != '')
+							{{ $record->classroomViernes3->name}}
+						@else
+							0
+						@endif
 					</td>
 					<td colspan="4" rowspan="2" style="background-color: #AEB6BF; border: 1px solid black; text-decoration: overline;">
 							<br><br><br>FIRMA COORDINADOR ACADÉMICO<hr><br><br>
@@ -387,27 +558,47 @@
 				<tr>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorLunes3->fullname}}
+						@if ($record->instructor_TLunes_id != '')	
+							{{ $record->instructorLunes3->fullname}} 
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorMartes3->fullname}}
+						@if ($record->instructor_TMartes_id != '')
+							{{ $record->instructorMartes3->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorMiercoles3->fullname}}
+						@if ($record->instructor_TMiercoles_id != '')
+							{{ $record->instructorMiercoles3->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorJueves3->fullname}}
+						@if ($record->instructor_TJueves_id != '')
+							{{ $record->instructorJueves3->fullname}}
+						@else
+							0
+						@endif
 					</td>
 					<th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-						{{ $record->instructorViernes3->fullname}}
+						@if ($record->instructor_TViernes_id != '')
+							{{ $record->instructorViernes3->fullname}}
+						@else
+							0
+						@endif
 					</td>
 				</tr>
 				<tr>
-					<th colspan="24" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; padding: 12px; border: 1px solid black;"><strong><i class="fas fa-info-circle"></i> {{ $record->nameprogram->name }}-{{ $record->number }}, GESTOR DE GRUPO {{ $record->user->fullname }}</strong>
+					<th colspan="24" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; padding: 12px; border: 1px solid black;"><strong><i class="fas fa-info-circle"></i> {{ $record->nameprogram->name }} -ID: {{ $record->number }}, GESTOR DE GRUPO {{ $record->user->fullname }}</strong>
 					</th>
 				</tr>
 			</table>
