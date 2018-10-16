@@ -34,10 +34,25 @@
         <div class="col-md-12 scrolldos">
             <form action="{{url('record')}}" method="post" enctype="multipart/form-data">
                 {!! csrf_field() !!}
+                <div style="display: none;">
                 <input type="text" name="horas_InstructorPLUNES" id="horas_justificacion_real">
                 <input type="text" placeholder="horas PMARTES" name="horas_InstructorPMartes" id="horas_InstructorPMartes">
                 <input type="text" placeholder="horas_InstructorTLunes" name="horas_InstructorTLunes" id="horas_InstructorTLunes">
                 <input type="text" placeholder="horas_InstructorSLunes" name="horas_InstructorSLunes" id="horas_InstructorSLunes">
+                <input type="text" placeholder="horas_InstructorSMartes" name="horas_InstructorSMartes" id="horas_InstructorSMartes">
+                <input type="text" placeholder="horas_InstructorTMartes" name="horas_InstructorTMartes" id="horas_InstructorTMartes">
+                <input type="text" placeholder="horas_InstructorPMiercoles" name="horas_InstructorPMiercoles" id="horas_InstructorPMiercoles">
+                <input type="text" placeholder="horas_InstructorSMiercoles" name="horas_InstructorSMiercoles" id="horas_InstructorSMiercoles">
+                <input type="text" placeholder="horas_InstructorTMiercoles" name="horas_InstructorTMiercoles" id="horas_InstructorTMiercoles">
+                <input type="text" placeholder="horas_InstructorPJueves" name="horas_InstructorPJueves" id="horas_InstructorPJueves">
+                <input type="text" placeholder="horas_InstructorSJueves" name="horas_InstructorSJueves" id="horas_InstructorSJueves">
+                <input type="text" placeholder="horas_InstructorTJueves" name="horas_InstructorTJueves" id="horas_InstructorTJueves">
+                <input type="text" placeholder="horas_InstructorPViernes" name="horas_InstructorPViernes" id="horas_InstructorPViernes">
+                <input type="text" placeholder="horas_InstructorSViernes" name="horas_InstructorSViernes" id="horas_InstructorSViernes">
+                <input type="text" placeholder="horas_InstructorTViernes" name="horas_InstructorTViernes" id="horas_InstructorTViernes">
+                <input type="text" placeholder="horas_InstructorPSabado" name="horas_InstructorPSabado" id="horas_InstructorPSabado">
+                <input type="text" placeholder="horas_InstructorSSabado" name="horas_InstructorSSabado" id="horas_InstructorSSabado">
+                </div>
 
 
                 <table class="col-md-12" border="1px solid black" style="font-size: 12px;">
@@ -909,6 +924,31 @@
                     $('#classrooms_SMartes_id').removeAttr("disabled");
 
                     // console.log($dateHasta);
+
+                     // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_SMartes').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_SMartes').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorSMartes').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -940,6 +980,31 @@
                     });
                     $('#classroom_TMartes_id').removeAttr("disabled");
 
+                     // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_TMartes').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_TMartes').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorTMartes').val(prefijo(horas));
+					// FIN CONTEO DE HORAS                    
+
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -969,6 +1034,31 @@
                         $(this).show();
                     });
                     $('#classrooms_PMiercoles_id').removeAttr("disabled");
+
+                     // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_PMiercoles').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_PMiercoles').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorPMiercoles').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',
@@ -1000,6 +1090,31 @@
                     });
                     $('#classrooms_SMiercoles_id').removeAttr("disabled");
 
+                     // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_SMiercoles').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_SMiercoles').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorSMiercoles').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
+
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -1029,6 +1144,31 @@
                         $(this).show();
                     });
                     $('#classroom_TMiercoles_id').removeAttr("disabled");
+
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_TMiercoles').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_TMiercoles').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorTMiercoles').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',
@@ -1060,6 +1200,31 @@
                     });
                     $('#classrooms_PJueves_id').removeAttr("disabled");
 
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_PJueves').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_PJueves').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorPJueves').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
+
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -1081,14 +1246,39 @@
 
                 $('form').on('change','#hora_fin_SJueves', function(event) {
                     event.preventDefault();
-                    $dateDesde = $('#hora_inicio_TJueves').val();
+                    $dateDesde = $('#hora_inicio_SJueves').val();
                     $dateHasta = $('#hora_fin_SJueves').val();
                     $horario = "horarioTJueves";
 
-                    $('select#classroom_TJueves_id option').each(function(){
+                    $('select#classroom_SJueves_id option').each(function(){
                         $(this).show();
                     });
-                    $('#classroom_TJueves_id').removeAttr("disabled");
+                    $('#classroom_SJueves_id').removeAttr("disabled");
+
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_SJueves').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_SJueves').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorSJueves').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',
@@ -1120,6 +1310,31 @@
                     });
                     $('#classroom_TJueves_id').removeAttr("disabled");
 
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_TJueves').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_TJueves').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorTJueves').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
+
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -1149,6 +1364,31 @@
                         $(this).show();
                     });
                     $('#classrooms_PViernes_id').removeAttr("disabled");
+
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_PViernes').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_PViernes').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorPViernes').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',
@@ -1180,6 +1420,31 @@
                     });
                     $('#classrooms_SViernes_id').removeAttr("disabled");
 
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_SViernes').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_SViernes').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorSViernes').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
+
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -1209,6 +1474,31 @@
                         $(this).show();
                     });
                     $('#classroom_TViernes_id').removeAttr("disabled");
+
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_TViernes').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_TViernes').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorTViernes').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',
@@ -1240,6 +1530,31 @@
                     });
                     $('#classrooms_PSabado_id').removeAttr("disabled");
 
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_PSabado').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_PSabado').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorPSabado').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
+
                     $.ajax({
                         'type': 'get',
                         url: '{{URL::to('/validacion')}}',
@@ -1269,6 +1584,31 @@
                         $(this).show();
                     });
                     $('#classrooms_SSabado_id').removeAttr("disabled");
+
+                    // CONTEO DE HORAS
+                    function newDate(partes) {
+    				var date = new Date(0);
+    				date.setHours(partes[0]);
+    				date.setMinutes(partes[1]);
+    				return date;
+					}
+
+					function prefijo(num) {
+					    return num < 10 ? ("0" + num) : num;
+					}
+
+					    var hora_i = newDate($('#hora_inicio_SSabado').val().split(":"));
+					    var hora_f = newDate($('#hora_fin_SSabado').val().split(":"));
+
+					    if (hora_f <  hora_i) {
+					        alert('hora final menor a hora inicial');
+					    }
+					    var minutos = (hora_f - hora_i)/1000/60;
+					    var horas = Math.floor(minutos/60);
+					    minutos = minutos % 60;
+
+					$('#horas_InstructorSSabado').val(prefijo(horas));
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',

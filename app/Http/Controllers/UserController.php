@@ -180,4 +180,8 @@ class UserController extends Controller
         $user = User::findOrFail($iduser);
         
     }
+
+    public function horario() {
+        return view('users.horario');
+    }
 }

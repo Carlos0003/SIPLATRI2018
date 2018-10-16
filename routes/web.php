@@ -50,6 +50,7 @@ Route::group(['middleware' => 'admin'], function(){
 
     Route::get('/users/info', 'UserController@info');
     Route::put('miuser/{iduser}', 'UserController@editarMiInfo');
+    Route::get('/horario', 'UserController@horario');
 
 
 

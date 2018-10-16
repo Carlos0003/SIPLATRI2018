@@ -181,6 +181,15 @@ class RecordController extends Controller
         $user3->cumulativeHour = $conteo;
         $user3->save();
 
+//horas asignadas clase 3 lunes
+
+        $user2 = User::findOrFail($request->input('instructor_TLunes_id'));
+        $horas2 = $user2->cumulativeHour;
+        $conteo = $horas2 + $request->input('horas_InstructorTLunes');
+        $user2->cumulativeHour = $conteo;
+        $user2->save();
+
+//horas asignadas clases martes
 
         $user1 = User::findOrFail($request->input('instructor_PMartes_id'));
         $horas1 = $user1->cumulativeHour;
@@ -188,11 +197,91 @@ class RecordController extends Controller
         $user1->cumulativeHour = $conteo;
         $user1->save();
 
-        $user2 = User::findOrFail($request->input('instructor_TLunes_id'));
-        $horas2 = $user2->cumulativeHour;
-        $conteo = $horas2 + $request->input('horas_InstructorTLunes');
-        $user2->cumulativeHour = $conteo;
-        $user2->save();
+        $user4 = User::findOrFail($request->input('instructor_SMartes_id'));
+        $horas4 = $user4->cumulativeHour;
+        $conteo = $horas4 + $request->input('horas_InstructorSMartes');
+        $user4->cumulativeHour = $conteo;
+        $user4->save();
+
+        $user5 = User::findOrFail($request->input('instructor_TMartes_id'));
+        $horas5 = $user5->cumulativeHour;
+        $conteo = $horas5 + $request->input('horas_InstructorTMartes');
+        $user5->cumulativeHour = $conteo;
+        $user5->save();
+
+//horas asignadas clases Miercoles
+
+        $user6 = User::findOrFail($request->input('instructor_PMiercoles_id'));
+        $horas6 = $user6->cumulativeHour;
+        $conteo = $horas6 + $request->input('horas_InstructorPMiercoles');
+        $user6->cumulativeHour = $conteo;
+        $user6->save();
+
+        $user7 = User::findOrFail($request->input('instructor_SMiercoles_id'));
+        $horas7 = $user7->cumulativeHour;
+        $conteo = $horas7 + $request->input('horas_InstructorSMiercoles');
+        $user7->cumulativeHour = $conteo;
+        $user7->save();
+
+        $user8 = User::findOrFail($request->input('instructor_TMiercoles_id'));
+        $horas8 = $user8->cumulativeHour;
+        $conteo = $horas8 + $request->input('horas_InstructorTMiercoles');
+        $user8->cumulativeHour = $conteo;
+        $user8->save();
+
+//horas asignadas clases Jueves
+
+        $user9 = User::findOrFail($request->input('instructor_PJueves_id'));
+        $horas9 = $user9->cumulativeHour;
+        $conteo = $horas9 + $request->input('horas_InstructorPJueves');
+        $user9->cumulativeHour = $conteo;
+        $user9->save();
+
+        $user10 = User::findOrFail($request->input('instructor_SJueves_id'));
+        $horas10 = $user10->cumulativeHour;
+        $conteo = $horas10 + $request->input('horas_InstructorSJueves');
+        $user10->cumulativeHour = $conteo;
+        $user10->save();
+
+        $user11 = User::findOrFail($request->input('instructor_TJueves_id'));
+        $horas11 = $user11->cumulativeHour;
+        $conteo = $horas11 + $request->input('horas_InstructorTJueves');
+        $user11->cumulativeHour = $conteo;
+        $user11->save();
+
+//horas asignadas clases Viernes
+
+        $user12 = User::findOrFail($request->input('instructor_PViernes_id'));
+        $horas12 = $user12->cumulativeHour;
+        $conteo = $horas12 + $request->input('horas_InstructorPViernes');
+        $user12->cumulativeHour = $conteo;
+        $user12->save();
+
+        $user13 = User::findOrFail($request->input('instructor_SViernes_id'));
+        $horas13 = $user13->cumulativeHour;
+        $conteo = $horas13 + $request->input('horas_InstructorSViernes');
+        $user13->cumulativeHour = $conteo;
+        $user13->save();
+
+        $user14 = User::findOrFail($request->input('instructor_TViernes_id'));
+        $horas14 = $user14->cumulativeHour;
+        $conteo = $horas14 + $request->input('horas_InstructorTViernes');
+        $user14->cumulativeHour = $conteo;
+        $user14->save();
+
+//horas asignadas clases Sabado
+
+        $user15 = User::findOrFail($request->input('instructor_PSabado_id'));
+        $horas15 = $user15->cumulativeHour;
+        $conteo = $horas15 + $request->input('horas_InstructorPSabado');
+        $user15->cumulativeHour = $conteo;
+        $user15->save();
+
+        $user16 = User::findOrFail($request->input('instructor_SSabado_id'));
+        $horas16 = $user16->cumulativeHour;
+        $conteo = $horas16 + $request->input('horas_InstructorSSabado');
+        $user16->cumulativeHour = $conteo;
+        $user16->save();
 
 
       if($record->save()){

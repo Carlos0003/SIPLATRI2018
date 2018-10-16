@@ -61,6 +61,7 @@
 						<th>Municipio</th>
 						<th>Tipo Contrato</th>
 						<th>Zona</th>
+						<th>Horas<br>Laboradas</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
@@ -74,6 +75,7 @@
 						<td> {{$user->munici->name}}</td>
 						<td> {{$user->contract}} </td>
 						<td> {{$user->munici->zone}} </td>
+						<td> {{$user->cumulativeHour}} </td>
 						<td>
 							<a href="{{url('user/'.$user->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 							<a href="{{url('user/'.$user->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>
