@@ -21,25 +21,27 @@ td, th {
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Documento</th>
-				<th>Nombre Completo</th>
-				<th>Correo Electronico</th>
-				<th>Teléfono</th>
-				<th>Rol</th>
-				<th>Tipo Contrato</th>
-				<th>Estado</th>
+				<th>Nombre</th>
+				<th>Tipo de programa</th>
+				<th>Gestor</th>
+				<th>Fecha Inicio</th>
+				<th>Fecha Fin</th>
+				<th>Trimestre Actual</th>
+				<th>Jornada</th>
+				<th>Ciudad</th>
 			</tr>
 		</thead>
-		@foreach($users as $user)
+		@foreach($records as $record)
 		<tr>
-			<td>{{ $user->id }} </td>
-			<td>{{ $user->document }} </td>
-			<td>{{ $user->fullname }}</td>
-			<td>{{ $user->email }}</td>
-			<td>{{ $user->phonenumber }}</td>
-			<td>{{ $user->role }}</td>
-			<td>{{ $user->contract }}</td>
-			<td>{{ $user->state }}</td>
+			<td>{{ $record->number }} </td>
+			<td>{{ $record->nameprogram->name }} </td>
+			<td>{{ $record->nameprogram->type }}</td>
+			<td>{{ $record->user->fullname }}</td>
+			<td>{{ $record->fecha_inicio }}</td>
+			<td>{{ $record->fecha_fin }}</td>
+			<td>{{ $record->trimestreActual }}</td>
+			<td>{{ $record->modalidad }}</td>
+			<td>{{ $record->municipios->name }}</td>
 		</tr>
 		@endforeach
 	</table>

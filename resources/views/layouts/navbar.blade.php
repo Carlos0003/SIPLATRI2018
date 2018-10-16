@@ -105,15 +105,15 @@
                                 <div class="dropdown-divider"></div>
                             @elseif(Auth::user()->role == 'Almac')
                                 <a href="{{ url('classroom') }}" class="dropdown-item">
-                                    <i class="fa fa-newspaper"></i>Ambientes
+                                    <i class="fas fa-warehouse"></i>Ambientes
                                 </a>
-                                <a href="{{ url('#') }}" class="dropdown-item">
-                                    <i class="fas fa-clipboard-list"></i> Competencias
+                                <a href="{{ url('users/info') }}" class="dropdown-item">
+                                    <i class="fa fa-users"></i> Mi perfil
                                 </a>
                                 <div class="dropdown-divider"></div>
                             @elseif(Auth::user()->role == 'Instructor')
-                            <a href="{{ url('#') }}" class="dropdown-item">
-                                    <i class="fas fa-clipboard-list"></i> Mi perfil
+                            <a href="{{ url('users/info') }}" class="dropdown-item">
+                                    <i class="fa fa-users"></i> Mi perfil
                                 </a>
                             @endif
                             <a href="{{ route('logout') }}" class="dropdown-item"

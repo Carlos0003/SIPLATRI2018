@@ -25,9 +25,9 @@
                     <h2 class="text-center"><strong>Sistema de Planeación Trimestral</strong></h2>
                     <h4 class="text-center"><strong>SIPLATRI</strong></h4>
                     <hr>
-                    <p class="p-2 text-justify">
+                    {{-- <p class="p-2 text-justify">
                         <strong>Es un sistema de información que facilita la planeación trimestral de los programas de formación integral en las diferentes modalidades para el Centro de Procesos Industriales y Construcción CPIC del SENA Regional Caldas, de acuerdo con las necesidades orientadas a cubrir la programación académica para los aprendices.</strong>
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>

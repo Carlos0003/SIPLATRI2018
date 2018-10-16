@@ -26,10 +26,10 @@
 			<a href="{{ url('record/create')}}" class="btn btn-outline-info">
 				<i class="fa fa-plus"></i> Agregar Ficha
 			</a>
-			<a href="{{url('record/pdf')}}" class="btn btn-outline-primary">
+			<a href="{{url('records/pdf')}}" class="btn btn-outline-primary">
 				<i class="fa fa-file-pdf">  Exportar</i>
 			</a>
-			<a href="{{url('record/excel')}}" class="btn btn-outline-success">
+			<a href="{{url('records/excel')}}" class="btn btn-outline-success">
 				<i class="fa fa-file-excel">  Exportar</i>
 			</a>
 			<hr>

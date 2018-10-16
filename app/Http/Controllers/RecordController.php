@@ -14,8 +14,8 @@ use App\Program;
 use App\Record;
 use App\AbilitiesModel;
 use App\Municipalities;
-use Auth;
 use App\Exports\RecordsExport;
+use Auth;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -135,12 +135,12 @@ class RecordController extends Controller
         $record->classrooms_PJueves_id     = $request->input('classrooms_PJueves_id');
         $record->classrooms_PViernes_id    = $request->input('classrooms_PViernes_id');
         $record->classrooms_PSabado_id     = $request->input('classrooms_PSabado_id');
-        $record->classroom_SLunes_id       = $request->input('classroom_SLunes_id');
-        $record->classroom_SMartes_id      = $request->input('classroom_SMartes_id');
-        $record->classroom_SMiercoles_id   = $request->input('classroom_SMiercoles_id');
-        $record->classroom_SJueves_id      = $request->input('classroom_SJueves_id');
-        $record->classroom_SViernes_id     = $request->input('classroom_SViernes_id');
-        $record->classroom_SSabado_id      = $request->input('classroom_SSabado_id');
+        $record->classroom_SLunes_id       = $request->input('classrooms_SLunes_id');
+        $record->classroom_SMartes_id      = $request->input('classrooms_SMartes_id');
+        $record->classroom_SMiercoles_id   = $request->input('classrooms_SMiercoles_id');
+        $record->classroom_SJueves_id      = $request->input('classrooms_SJueves_id');
+        $record->classroom_SViernes_id     = $request->input('classrooms_SViernes_id');
+        $record->classroom_SSabado_id      = $request->input('classrooms_SSabado_id');
         $record->classroom_TLunes_id       = $request->input('classroom_TLunes_id');
         $record->classroom_TMartes_id      = $request->input('classroom_TMartes_id');
         $record->classroom_TMiercoles_id   = $request->input('classroom_TMiercoles_id');
@@ -163,6 +163,37 @@ class RecordController extends Controller
         $record->instructor_TMiercoles_id  = $request->input('instructor_TMiercoles_id');
         $record->instructor_TJueves_id     = $request->input('instructor_TJueves_id');
         $record->instructor_TViernes_id    = $request->input('instructor_TViernes_id');
+
+        // ASIGNACIÓN DE HORAS
+
+//horas asignadas clase 1 lunes
+        $user = User::findOrFail($request->input('instructor_PLunes_id'));
+        $horas = $user->cumulativeHour;
+        $conteo = $horas + $request->input('horas_InstructorPLUNES');
+        $user->cumulativeHour = $conteo;
+        $user->save();
+
+//horas asignadas clase 2 lunes
+
+        $user3 = User::findOrFail($request->input('instructor_SLunes_id'));
+        $horas3 = $user3->cumulativeHour;
+        $conteo = $horas3 + $request->input('horas_InstructorSLunes');
+        $user3->cumulativeHour = $conteo;
+        $user3->save();
+
+
+        $user1 = User::findOrFail($request->input('instructor_PMartes_id'));
+        $horas1 = $user1->cumulativeHour;
+        $conteo = $horas1 + $request->input('horas_InstructorPMartes');
+        $user1->cumulativeHour = $conteo;
+        $user1->save();
+
+        $user2 = User::findOrFail($request->input('instructor_TLunes_id'));
+        $horas2 = $user2->cumulativeHour;
+        $conteo = $horas2 + $request->input('horas_InstructorTLunes');
+        $user2->cumulativeHour = $conteo;
+        $user2->save();
+
 
       if($record->save()){
           return redirect('record')->with('status', 'La ficha de formación '.$record->number.'-'.$record->nameprogram->name.' se guardo con Exito.');
@@ -281,12 +312,12 @@ class RecordController extends Controller
         $record->classrooms_PJueves_id     = $request->input('classrooms_PJueves_id');
         $record->classrooms_PViernes_id    = $request->input('classrooms_PViernes_id');
         $record->classrooms_PSabado_id     = $request->input('classrooms_PSabado_id');
-        $record->classroom_SLunes_id       = $request->input('classroom_SLunes_id');
-        $record->classroom_SMartes_id      = $request->input('classroom_SMartes_id');
-        $record->classroom_SMiercoles_id   = $request->input('classroom_SMiercoles_id');
-        $record->classroom_SJueves_id      = $request->input('classroom_SJueves_id');
-        $record->classroom_SViernes_id     = $request->input('classroom_SViernes_id');
-        $record->classroom_SSabado_id      = $request->input('classroom_SSabado_id');
+        $record->classroom_SLunes_id       = $request->input('classrooms_SLunes_id');
+        $record->classroom_SMartes_id      = $request->input('classrooms_SMartes_id');
+        $record->classroom_SMiercoles_id   = $request->input('classrooms_SMiercoles_id');
+        $record->classroom_SJueves_id      = $request->input('classrooms_SJueves_id');
+        $record->classroom_SViernes_id     = $request->input('classrooms_SViernes_id');
+        $record->classroom_SSabado_id      = $request->input('classrooms_SSabado_id');
         $record->classroom_TLunes_id       = $request->input('classroom_TLunes_id');
         $record->classroom_TMartes_id      = $request->input('classroom_TMartes_id');
         $record->classroom_TMiercoles_id   = $request->input('classroom_TMiercoles_id');
@@ -311,7 +342,7 @@ class RecordController extends Controller
         $record->instructor_TViernes_id    = $request->input('instructor_TViernes_id');
 
       if($record->save()){
-          return redirect('record')->with('status', 'La ficha de formación '.$record->program_id.'-'.$record->program->name.' se editó con Exito.');
+          return redirect('record')->with('status', 'La ficha de formación '.$record->numer.'-'.$record->program->name.' se editó con Exito.');
       };
     }
 
@@ -326,20 +357,17 @@ class RecordController extends Controller
         $record = record::find($id);
         if($record->delete()){
             return redirect('record')
-                ->with('status', 'La Ficha '.$record->idrecord.'-'.$record->program->name.' se eliminó con éxito.');
+                ->with('status', 'La Ficha '.$record->id.'-'.$record->nameprogram->name.' se eliminó con éxito.');
         };
     }
     // Generate PDF Report
-    public function pdf(){
+    public function pdf1(){
 
         $records = Record::all();
         $pdf = \PDF::loadView('records.pdf', compact('records'));
         return $pdf->download('records.pdf');
     }
-    // Generate EXCEL Report
-    public function excel(){
-        return \Excel::download(new UsersExport,'users.xlsx');
-    }
+    
     //buscar
     public function search(Request $request){
         $record=Record::fullname($request->input('name'))->orderBy('id','ASC')->paginate(10)->setPath('record');
@@ -359,6 +387,15 @@ class RecordController extends Controller
         $data = AbilitiesModel::select('id', 'name')->where('program_id',$request->id)->get();
         return response()->json($data);
     }
+
+
+    public function pdf(){
+
+        $record = Record::all();
+        $pdf = \PDF::loadView('records.pdf', compact('record'));
+        return $pdf->download('records.pdf');
+    }
+
 
     public function descargarPrograma($idRecord){
         $record = Record::findOrFail($idRecord);
@@ -463,16 +500,118 @@ class RecordController extends Controller
         $sheet->setCellValue('L12',$record->instructorMiercoles3->fullname);
         $sheet->setCellValue('P12',$record->instructorJueves3->fullname);
         $sheet->setCellValue('T12',$record->instructorViernes3->fullname);
-        $sheet->setCellValue('A13', $record->nameprogram->name. ' ID ' .$record->number. ' GESTOR ' .$record->user->fullname);
-
-
-        
-
-
-        
+        $sheet->setCellValue('A13', $record->nameprogram->name. ' ID ' .$record->number. ' GESTOR ' .$record->user->fullname);      
         $writer = new Xlsx($spreadsheet);
         header('Content-Disposition: attachment; filename='.$record->number. '.xlsx');
         $writer->save('php://output');
 
+    }
+    public function excel(){
+        return \Excel::download(new RecordsExport,'records.xlsx');
+    }
+
+       public function validacion(Request $request){
+
+        if ($request->horario == "horarioPLunes") {
+            $data = Record::select('classrooms_PLunes_id')->where('hora_inicio_PLunes', '<=', $request->dateDesde)
+            ->where('hora_fin_PLunes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioSLunes") {
+            $data = Record::select('classroom_SLunes_id')->where('hora_inicio_SLunes', '<=', $request->dateDesde)
+            ->where('hora_fin_SLunes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioTLunes") {
+            $data = Record::select('classroom_TLunes_id')->where('hora_inicio_TLunes', '<=', $request->dateDesde)
+            ->where('hora_fin_TLunes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioPMartes") {
+            $data = Record::select('classrooms_PMartes_id')->where('hora_inicio_PMartes', '<=', $request->dateDesde)
+            ->where('hora_fin_PMartes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioSMartes") {
+            $data = Record::select('classroom_SMartes_id')->where('hora_inicio_SMartes', '<=', $request->dateDesde)
+            ->where('hora_fin_SMartes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioTMartes") {
+            $data = Record::select('classroom_TMartes_id')->where('hora_inicio_TMartes', '<=', $request->dateDesde)
+            ->where('hora_fin_TMartes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioPMiercoles") {
+            $data = Record::select('classrooms_PMiercoles_id')->where('hora_inicio_PMiercoles', '<=', $request->dateDesde)
+            ->where('hora_fin_PMiercoles', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioSMiercoles") {
+            $data = Record::select('classroom_SMiercoles_id')->where('hora_inicio_SMiercoles', '<=', $request->dateDesde)
+            ->where('hora_fin_SMiercoles', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioTMiercoles") {
+            $data = Record::select('classroom_TMiercoles_id')->where('hora_inicio_TMiercoles', '<=', $request->dateDesde)
+            ->where('hora_fin_TMiercoles', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioPJueves") {
+            $data = Record::select('classrooms_PJueves_id')->where('hora_inicio_PJueves', '<=', $request->dateDesde)
+            ->where('hora_fin_PJueves', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioSJueves") {
+            $data = Record::select('classroom_SJueves_id')->where('hora_inicio_SJueves', '<=', $request->dateDesde)
+            ->where('hora_fin_SJueves', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioTJueves") {
+            $data = Record::select('classroom_TJueves_id')->where('hora_inicio_TJueves', '<=', $request->dateDesde)
+            ->where('hora_fin_TJueves', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioPViernes") {
+            $data = Record::select('classrooms_PViernes_id')->where('hora_inicio_PViernes', '<=', $request->dateDesde)
+            ->where('hora_fin_PViernes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioSViernes") {
+            $data = Record::select('classroom_SViernes_id')->where('hora_inicio_SViernes', '<=', $request->dateDesde)
+            ->where('hora_fin_SViernes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioTViernes") {
+            $data = Record::select('classroom_TViernes_id')->where('hora_inicio_TViernes', '<=', $request->dateDesde)
+            ->where('hora_fin_TViernes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioPSabado") {
+            $data = Record::select('classrooms_PSabado_id')->where('hora_inicio_PSabado', '<=', $request->dateDesde)
+            ->where('hora_fin_PSabado', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horario == "horarioSSabado") {
+            $data = Record::select('classroom_SSabado_id')->where('hora_inicio_SSabado', '<=', $request->dateDesde)
+            ->where('hora_fin_SSabado', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
     }
 }

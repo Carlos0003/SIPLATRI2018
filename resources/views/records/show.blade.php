@@ -20,8 +20,8 @@
 		<h1 class="text-center" style="font-size: 30px"><i class="fa fa-search"></i> Consultar Ficha</h1>
 		<hr>
 		<ol class="breadcrumb">
+		    <li class="breadcrumb-item active" aria-current="page">Ver Ficha</li>
 			<li class="breadcrumb-item"><a href="{{url('record')}}">Lista Fichas</a></li>
-		    <li class="breadcrumb-item active" aria-current="page">Consultar Fichas</li>
 		    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('descargarExcel.descargarPrograma', $record->id) }}">Descargar Ficha</a></li>
 
 		</ol>
@@ -145,7 +145,12 @@
 						{{ $record->hora_fin_PJueves}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilitiesJueves1->name}}
+						@if ($record->abilities_PJueves_id != '' )
+							{{ $record->abilitiesJueves1->name}}
+						@else
+							0
+						@endif
+                       
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						{{ $record->classroomJueves1->name}}
@@ -157,7 +162,12 @@
 						{{ $record->hora_fin_PViernes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                       {{ $record->abilitiesViernes1->name}}
+						@if ($record->abilities_PViernes_id != '' )
+							{{ $record->abilitiesViernes1->name}}
+						@else
+							0
+						@endif
+                       
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						{{ $record->classroomViernes1->name}}</td>
@@ -168,7 +178,12 @@
 						{{ $record->hora_fin_PSabado}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                        {{ $record->abilitiesSabado1->name}}
+						@if ($record->abilities_PSabado_id != '' )
+							{{ $record->abilitiesSabado1->name}}
+						@else
+							0
+						@endif
+                        
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">		{{ $record->classroomSabado1->name}}
 					</td>
@@ -316,7 +331,12 @@
 						{{ $record->hora_fin_TMartes}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                    	{{ $record->abilitiesMartes3->name}} 
+						@if ($record->abilities_TMartes_id != '')
+							{{ $record->abilitiesMartes3->name}} 
+						@else
+							0
+						@endif
+                    	
                     </td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						{{ $record->classroomMartes3->name}}
@@ -358,12 +378,10 @@
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						{{ $record->classroomViernes3->name}}
 					</td>
-					<td colspan="4" rowspan="2" style="background-color: #AEB6BF; border: 1px solid black;">
-						<div class="contenedor" style="width: 780px; height: 400px; display: -webkit-flex; display: -ms-flexbox; display: flex; justify-content: space-between; align-items: flex-end; text-align: center;">
-							<div class="elemento" style="text-decoration: overline;">FIRMA COORDINADOR ACADÉMICO</div>
-							<div class="elemento" style="text-decoration: overline;">FIRMA GESTOR DE GRUPO</div>
-							<div class="elemento" style="text-decoration: overline;">FIRMA SUBDIRECTOR CPIC</div>
-						</div>
+					<td colspan="4" rowspan="2" style="background-color: #AEB6BF; border: 1px solid black; text-decoration: overline;">
+							<br><br><br>FIRMA COORDINADOR ACADÉMICO<hr><br><br>
+							<br>FIRMA GESTOR DE GRUPO<hr><br><br>
+							<br><br>FIRMA SUBDIRECTOR CPIC
 					</td>
 				</tr>
 				<tr>

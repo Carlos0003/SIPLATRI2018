@@ -170,4 +170,14 @@ class UserController extends Controller
         $users = User::fullname($request->input('fullname'))->orderBy('id', 'ASC')->paginate(10)->setPath('user');
     return view('users.ajaxs')->with('users',$users);
     }
+
+    public function info(){
+        $munici = Municipalities::all();
+        return view('users.info', compact('munici'));
+    }
+
+    public function editarMiInfo($iduser) {
+        $user = User::findOrFail($iduser);
+        
+    }
 }

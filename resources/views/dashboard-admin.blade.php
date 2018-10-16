@@ -26,7 +26,7 @@
 
 }
         </style>
-    <body {{-- class="dash" --}}>
+    <body {{-- class="dash" --}} style="background-color: #D9D9D9;">
     @extends('layouts.navbar')
         <div class="flex-center position-ref full-height">
             <div class="content">

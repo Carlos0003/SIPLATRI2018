@@ -28,7 +28,7 @@
                         <strong>Este espacio está diseñado para el administrador de los ambientes de formación. El usuario oficial es de directa selección del Jefe de Almacén.</strong>
                     </p>
                     <a class="btn btn-secondary active" type="button" href="{{url('classroom')}}" style="line-height: 27px;"><strong>Ambientes</strong></a>
-                    <a class="btn btn-secondary active" type="button" href="{{url('user->id')}}" style="line-height: 27px;"><strong>Mi Perfil</strong></a>
+                    <a class="btn btn-secondary active" type="button" href="{{url('users/info')}}" style="line-height: 27px;"><strong>Mi Perfil</strong></a>
                 </div>
             </div>
         </div>

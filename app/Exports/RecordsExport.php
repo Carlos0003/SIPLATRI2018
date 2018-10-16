@@ -1,14 +1,16 @@
-<?php
+<?php 
 namespace App\Exports;
 
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
-use App\Classroom;
+use App\Record;
 
 
-class ClassroomExport implements FromView{
+class RecordsExport implements FromView{
 	public function view():View{
-		return view('classroom.excel',[
-			'classroom'=>Classroom::all()]);
+		return view('records.excel',[
+			'records'=>Record::all()]);
 	}
 }
+
+?>

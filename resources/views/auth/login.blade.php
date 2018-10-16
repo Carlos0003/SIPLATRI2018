@@ -38,9 +38,6 @@
                                 </button>
                                 <a type="button" style="background-color: rgb(35,130,118); color: white; border: none; opacity: 0.8;" href="{{ route('register') }}" class="col-md-12 btn btn-block btn-outline-primary btn-outline-success"><strong>Registrarse</strong>
                                 </a>
-                                <a class="btn btn-block btn-link" href="{{ route('password.request') }}">
-                                    Olvidó su contraseña <i class="fas fa-question-circle"></i>
-                                </a>
                             </div>
                         </div>
                     </form>

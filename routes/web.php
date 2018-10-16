@@ -29,10 +29,10 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('programs/excel', 'ProgramController@excel');
 	Route::get('programs/search', 'ProgramController@search');
 	Route::get('programs/ajaxsearch', 'ProgramController@ajaxsearch');
-	Route::get('records/pdf', 'RecordsController@pdf');
-	Route::get('records/excel', 'RecordsController@excel');
-	Route::get('records/search', 'RecordsController@search');
-	Route::get('records/ajaxsearch', 'RecordsController@ajaxsearch');
+	Route::get('records/pdf', 'RecordController@pdf');
+	Route::get('records/excel', 'RecordController@excel');
+	Route::get('records/search', 'RecordController@search');
+	Route::get('records/ajaxsearch', 'RecordController@ajaxsearch');
 	Route::get('abilities/pdf', 'AbilitiesController@pdf');
 	Route::get('abilities/excel', 'AbilitiesController@excel');
 	Route::get('abilities/search', 'AbilitiesController@search');
@@ -45,6 +45,11 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('/competencias', 'RecordController@competencias');
     Route::get('/descargarExcel/{idRecord}', 'RecordController@descargarPrograma')->name('descargarExcel.descargarPrograma');
 
+    Route::get('/validacion', 'RecordController@validacion');
+
+
+    Route::get('/users/info', 'UserController@info');
+    Route::put('miuser/{iduser}', 'UserController@editarMiInfo');
 
 
 

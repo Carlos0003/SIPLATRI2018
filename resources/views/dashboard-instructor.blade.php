@@ -28,6 +28,7 @@
                         <strong>Este espacio está diseñado para que pueda conocer sus horarios de clase semanales, así como de su grupo en caso de ser gestor.</strong>
                     </p>
                     <a class="btn btn-secondary active" type="button" href="{{url('#')}}" style="line-height: 27px;"><strong>Mi Horario Semanal</strong></a>
+                    <a class="btn btn-secondary active" type="button" href="{{url('users/info')}}" style="line-height: 27px;"><strong>Mi Información</strong></a>
                 </div>
             </div>
         </div>

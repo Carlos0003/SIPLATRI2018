@@ -113,4 +113,11 @@ class User extends Authenticatable
             $users->where('fullname','LIKE',"%$fullname%");
         }
     }
+
+
+    //horas
+
+    // public function recordhoras(){
+    //     return $this->belongsTo('App\Record','municipality_id');
+    // }
 }
