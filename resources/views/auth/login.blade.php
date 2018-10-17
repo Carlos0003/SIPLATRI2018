@@ -14,29 +14,47 @@
     <div class="container">
     <div class="row popover-left">
         <div class="col-md-6 offset-6">
-            <div class="card">
-                <h3 class="text-center" style="margin-top: 20px;"><i class="fa fa-lock"></i> Ingreso de Usuarios</h3>
+            <div class="card" style="background-color: #20c997">
+                <h3 class="text-center" style="margin-top: 20px;"><i class="fas fa-sign-in-alt"></i> Ingreso de Usuarios</h3>
                 @include('layouts.validation_errors')
-                <div class="card-header">Todos los campos obligatorios.</div>
+                <div class="card-header" style="font-size: x-large;"><strong>Todos los campos obligatorios.</strong></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="email" type="email" class="form-control" placeholder="Correo Electrónico" name="email" value="{{ old('email') }}" autofocus>
+                                <input id="email" type="email" class="form-control entrar" placeholder="Correo Electrónico" name="email" value="{{ old('email') }}" autofocus>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                                <input id="password" type="password" class="form-control contras" name="password" placeholder="Contraseña">
                             </div>
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
-                                <button style="background-color: rgb(35,130,118); color: white; border: none; opacity: 0.8;" type="submit" class="btn btn-block btn-outline-primary btn-outline-success">
+                                <style>
+                                    .entrar:hover{
+                                        transform: scale(1.5);
+                                        background-color: #161616;
+                                        transition: all 300ms;
+                                        cursor: pointer;
+                                        background-color: gray;
+                                        color: black;
+                                    }
+                                    /*.contras:hover{
+                                        transform: scale(0.7);
+                                        background-color: #161616;
+                                        transition: all 300ms;
+                                        cursor: pointer;
+                                        background-color: gray;
+                                        color: black;
+                                    }*/
+                                </style>
+                                <button style="background-color: #209997; color: white; border: none; opacity: 0.8;" type="submit" class="btn btn-block btn-outline-primary btn-outline-success">
                                     <strong>Ingresar</strong>
                                 </button>
-                                <a type="button" style="background-color: rgb(35,130,118); color: white; border: none; opacity: 0.8;" href="{{ route('register') }}" class="col-md-12 btn btn-block btn-outline-primary btn-outline-success"><strong>Registrarse</strong>
+                                <a type="button" style="background-color: #209997; color: white; border: none; opacity: 0.8;" href="{{ route('register') }}" class="col-md-12 btn btn-block btn-outline-primary btn-outline-success"><strong>Registrarse</strong>
                                 </a>
                             </div>
                         </div>

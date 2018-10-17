@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -98,8 +97,7 @@
                             <th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">FECHA DE FIN</th>
                             <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;" name="fecha_fin" type="date" required></td>
                             <th colspan="2" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">HORAS PROGRAMADAS TRIMESTRE</th>
-                            <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;">
-                                <input type="number" required name="horasProgramadas" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
+                            <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;"><input type="number" required name="horasProgramadas" style="font-size: 12px; border-style: none; text-align: center;background-color: #AEB6BF;"></td>
                             <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black;">GESTOR</th>
                             <td style="font-size: 12px; border: 1px solid black; background-color: #AEB6BF;" colspan="6">
                                 <select style="font-size: 12px; background-color: #AEB6BF;" required name="user_id" class="form-control">
@@ -185,7 +183,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PMartes_id" name="classrooms_PMartes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PMartes_id" disabled name="classrooms_PMartes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -202,7 +200,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PMiercoles_id" name="classrooms_PMiercoles_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PMiercoles_id" disabled name="classrooms_PMiercoles_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -217,7 +215,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PJueves_id"  name="classrooms_PJueves_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PJueves_id" disabled name="classrooms_PJueves_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -232,7 +230,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="classrooms_PViernes_id" name="classrooms_PViernes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="classrooms_PViernes_id" disabled name="classrooms_PViernes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -247,7 +245,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PSabado_id" name="classrooms_PSabado_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_PSabado_id" disabled name="classrooms_PSabado_id" class="form-control">
                                         <option value="">Seleccione Ambientes...</option>
                                         @foreach($classrooms as $class)
                                         <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -257,7 +255,7 @@
                                 <tr>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PLunes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PLunes_id" name="instructor_PLunes_id" disabled class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -267,7 +265,8 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                    	<select style="width: 190px;font-size: 12px; background-color: #AEB6BF; overflow-x: scroll;"  name="instructor_PMartes_id" class="form-control">
+                                    	<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PMartes_id" name="instructor_PMartes_id" disabled class="form-control">
+
                                         <option value="">Seleccione Instructor...</option>
                                         @foreach($managers as $user)
                                         <option value="{{ $user->id }}">
@@ -279,13 +278,13 @@
                                         			Horas laboradas: {{ $user->cumulativeHour }}
                                         		@endif
                                         	@endif
-                                        	
+
                                     </option>
                                         @endforeach
                                     </select></td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PMiercoles_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PMiercoles_id" name="instructor_PMiercoles_id" disabled class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -294,7 +293,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PJueves_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PJueves_id" disabled name="instructor_PJueves_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -303,7 +302,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PViernes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PViernes_id" disabled name="instructor_PViernes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -313,7 +312,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_PSabado_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"   id="instructor_PSabado_id" disabled name="instructor_PSabado_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -338,7 +337,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" id="classrooms_SLunes_id"  name="classrooms_SLunes_id" class="form-control">
+                                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" id="classrooms_SLunes_id" disabled  name="classrooms_SLunes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -355,7 +354,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SMartes_id" name="classrooms_SMartes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SMartes_id" disabled name="classrooms_SMartes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -372,7 +371,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SMiercoles_id"  name="classrooms_SMiercoles_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SMiercoles_id" disabled  name="classrooms_SMiercoles_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -387,7 +386,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SJueves_id"  name="classrooms_SJueves_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SJueves_id" disabled  name="classrooms_SJueves_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -402,7 +401,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="classrooms_SViernes_id" name="classrooms_SViernes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="classrooms_SViernes_id" disabled name="classrooms_SViernes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -417,7 +416,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SSabado_id" name="classrooms_SSabado_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classrooms_SSabado_id" disabled name="classrooms_SSabado_id" class="form-control">
                                         <option value="">Seleccione Ambientes...</option>
                                         @foreach($classrooms as $class)
                                         <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -427,7 +426,7 @@
                                 <tr>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SLunes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SLunes_id" disabled name="instructor_SLunes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -436,7 +435,7 @@
 
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-                                    <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SMartes_id" class="form-control">
+                                    <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SMartes_id" name="instructor_SMartes_id" disabled class="form-control">
                                         <option value="">Seleccione Instructor...</option>
                                         @foreach($managers as $user)
                                         <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -444,7 +443,7 @@
                                     </select></td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SMiercoles_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SMiercoles_id" disabled name="instructor_SMiercoles_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -453,7 +452,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SJueves_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SJueves_id" disabled name="instructor_SJueves_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -462,7 +461,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SViernes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SViernes_id" disabled name="instructor_SViernes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -472,7 +471,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_SSabado_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SSabado_id" disabled name="instructor_SSabado_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -493,7 +492,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" id="classroom_TLunes_id" name="classroom_TLunes_id" class="form-control">
+                                        <select style="width: 190px; font-size: 12px; background-color: #AEB6BF;" id="classroom_TLunes_id" disabled name="classroom_TLunes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -511,7 +510,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classroom_TMartes_id" name="classroom_TMartes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classroom_TMartes_id" disabled name="classroom_TMartes_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -529,7 +528,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classroom_TMiercoles_id"  name="classroom_TMiercoles_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classroom_TMiercoles_id" disabled name="classroom_TMiercoles_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -545,7 +544,7 @@
                                         </select>
                                     </td>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classroom_TJueves_id" name="classroom_TJueves_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;" id="classroom_TJueves_id" disabled name="classroom_TJueves_id" class="form-control">
                                             <option value="">Seleccione Ambientes...</option>
                                             @foreach($classrooms as $class)
                                             <option value="{{ $class->id }}">{{ $class->name }}</option>
@@ -579,7 +578,7 @@
                                 <tr>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TLunes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TLunes_id" disabled name="instructor_TLunes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -588,7 +587,7 @@
 
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
-                                    <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TMartes_id" class="form-control">
+                                    <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TMartes_id" disabled name="instructor_TMartes_id" class="form-control">
                                         <option value="">Seleccione Instructor...</option>
                                         @foreach($managers as $user)
                                         <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -596,7 +595,7 @@
                                     </select></td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TMiercoles_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TMiercoles_id" disabled name="instructor_TMiercoles_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -605,7 +604,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TJueves_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TJueves_id" disabled name="instructor_TJueves_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -614,7 +613,7 @@
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  name="instructor_TViernes_id" class="form-control">
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"   id="instructor_TViernes_id" disabled name="instructor_TViernes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
                                             <option value="{{ $user->id }}">{{ $user->fullname }}</option>
@@ -686,6 +685,8 @@
                     $dateDesde = $('#hora_desde').val();
                     $dateHasta = $('#hora_hasta').val();
                     $horario = "horarioPLunes";
+                    $horarioInstructor = "horarioIPLunes";
+
                 	// CONTEO DE HORAS
                     function newDate(partes) {
     				var date = new Date(0);
@@ -716,7 +717,12 @@
                     $('select#pruebaSelect option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_PLunes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#pruebaSelect').removeAttr("disabled");
+                    $('#instructor_PLunes_id').removeAttr("disabled");
+
 
                     $.ajax({
                         'type': 'get',
@@ -734,6 +740,22 @@
                         }
                     });
 
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            for (var i = 0; i < data.length; i++) {
+                                $('#instructor_PLunes_id option[value="'+data[i].instructor_PLunes_id+'"]').hide();
+                                console.log('INSTRUCTOR:' + data[i].instructor_PLunes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
+
 
                 });
 
@@ -742,11 +764,18 @@
                     $dateDesde = $('#hora_inicio_SLunes').val();
                     $dateHasta = $('#hora_fin_SLunes').val();
                     $horario = "horarioSLunes";
+                    $horarioInstructor = "horarioISLunes";
+
 
                     $('select#classrooms_SLunes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_SLunes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_SLunes_id').removeAttr("disabled");
+                    $('#instructor_SLunes_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -791,6 +820,25 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_SLunes_id option[value="'+data[i].instructor_SLunes_id+'"]').hide();
+                                console.log('Instructor' + data[i].instructor_SLunes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
+
                 });
 
                 $('form').on('change','#hora_fin_TLunes', function(event) {
@@ -798,11 +846,18 @@
                     $dateDesde = $('#hora_inicio_TLunes').val();
                     $dateHasta = $('#hora_fin_TLunes').val();
                     $horario = "horarioTLunes";
+                    $horarioInstructor = "horarioITLunes";
+
 
                     $('select#classroom_TLunes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_TLunes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classroom_TLunes_id').removeAttr("disabled");
+                    $('#instructor_TLunes_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -848,6 +903,26 @@
 
                         }
                     });
+
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                                $('#instructor_TLunes_id option[value="'+data[i].instructor_TLunes_id+'"]').hide();
+                                console.log('Instructor' + data[i].instructor_TLunes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_PMartes', function(event) {
@@ -855,6 +930,7 @@
                     $dateDesde = $('#hora_inicio_PMartes').val();
                     $dateHasta = $('#hora_fin_PMartes').val();
                     $horario = "horarioPMartes";
+                    $horarioInstructor = "horarioIPMartes";
 
                         // CONTEO DE HORAS
                     function newDate(partes) {
@@ -884,7 +960,9 @@
                     $('select#classrooms_PMartes_id option').each(function(){
                         $(this).show();
                     });
+
                     $('#classrooms_PMartes_id').removeAttr("disabled");
+
 
 
 
@@ -907,6 +985,25 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                                $('#instructor_PLunes_id option[value="'+data[i].instructor_PMartes_id+'"]').hide();
+                                console.log('Instructor'+data[i].instructor_PMartes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_SMartes', function(event) {
@@ -914,11 +1011,18 @@
                     $dateDesde = $('#hora_inicio_SMartes').val();
                     $dateHasta = $('#hora_fin_SMartes').val();
                     $horario = "horarioSMartes";
+                    $horarioInstructor = "horarioISMartes";
+
 
                     $('select#classrooms_SMartes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_SMartes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_SMartes_id').removeAttr("disabled");
+                    $('#instructor_SMartes_id').removeAttr("disabled");
+
 
                     // console.log($dateHasta);
 
@@ -964,6 +1068,24 @@
 
                         }
                     });
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                                $('#instructor_SMartes_id option[value="'+data[i].instructor_SMartes_id+'"]').hide();
+                                console.log('Instructor'+data[i].instructor_SMartes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_TMartes', function(event) {
@@ -971,11 +1093,17 @@
                     $dateDesde = $('#hora_inicio_TMartes').val();
                     $dateHasta = $('#hora_fin_TMartes').val();
                     $horario = "horarioTMartes";
+                    $horarioInstructor = "horarioITMartes";
+
 
                     $('select#classroom_TMartes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_TMartes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classroom_TMartes_id').removeAttr("disabled");
+                    $('#instructor_TMartes_id').removeAttr("disabled");
 
                      // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1000,7 +1128,7 @@
 					    minutos = minutos % 60;
 
 					$('#horas_InstructorTMartes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS                    
+					// FIN CONTEO DE HORAS
 
                     $.ajax({
                         'type': 'get',
@@ -1019,6 +1147,24 @@
 
                         }
                     });
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_TMartes_id option[value="'+data[i].instructor_TMartes_id+'"]').hide();
+                                console.log('Instructor'+data[i].instructor_TMartes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
+
                 });
 
                 $('form').on('change','#hora_fin_PMiercoles', function(event) {
@@ -1026,11 +1172,17 @@
                     $dateDesde = $('#hora_inicio_PMiercoles').val();
                     $dateHasta = $('#hora_fin_PMiercoles').val();
                     $horario = "horarioPMiercoles";
+                    $horarioInstructor = "horarioIPMiercoles";
 
                     $('select#classrooms_PMiercoles_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_PMiercoles_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_PMiercoles_id').removeAttr("disabled");
+                    $('#instructor_PMiercoles_id').removeAttr("disabled");
+
 
                      // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1074,6 +1226,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_PMiercoles_id option[value="'+data[i].instructor_PMiercoles_id+'"]').hide();
+                                console.log('Instructor'+data[i].instructor_PMiercoles_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_SMiercoles', function(event) {
@@ -1081,11 +1251,17 @@
                     $dateDesde = $('#hora_inicio_SMiercoles').val();
                     $dateHasta = $('#hora_fin_SMiercoles').val();
                     $horario = "horarioSMiercoles";
+                    $horarioInstructor = "horarioISMiercoles";
 
                     $('select#classrooms_SMiercoles_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_SMiercoles_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_SMiercoles_id').removeAttr("disabled");
+                    $('#instructor_SMiercoles_id').removeAttr("disabled");
+
 
                      // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1129,6 +1305,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_SMiercoles_id option[value="'+data[i].instructor_SMiercoles_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_SMiercoles_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_TMiercoles', function(event) {
@@ -1136,11 +1330,17 @@
                     $dateDesde = $('#hora_inicio_TMiercoles').val();
                     $dateHasta = $('#hora_fin_TMiercoles').val();
                     $horario = "horarioTMiercoles";
+                    $horarioInstructor = "horarioITMiercoles";
 
                     $('select#classroom_TMiercoles_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_TMiercoles_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classroom_TMiercoles_id').removeAttr("disabled");
+                    $('#instructor_TMiercoles_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1184,6 +1384,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_TMiercoles_id option[value="'+data[i].instructor_TMiercoles_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_TMiercoles_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_PJueves', function(event) {
@@ -1191,11 +1409,17 @@
                     $dateDesde = $('#hora_inicio_PJueves').val();
                     $dateHasta = $('#hora_fin_PJueves').val();
                     $horario = "horarioPJueves";
+                    $horarioInstructor = "horarioIPJueves";
 
                     $('select#classrooms_PJueves_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_PJueves_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_PJueves_id').removeAttr("disabled");
+                    $('#instructor_PJueves_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1239,6 +1463,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_PJueves_id option[value="'+data[i].instructor_PJueves_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_PJueves_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_SJueves', function(event) {
@@ -1246,11 +1488,17 @@
                     $dateDesde = $('#hora_inicio_SJueves').val();
                     $dateHasta = $('#hora_fin_SJueves').val();
                     $horario = "horarioTJueves";
+                    $horarioInstructor = "horarioITJueves";
 
-                    $('select#classroom_SJueves_id option').each(function(){
+                    $('select#classrooms_SJueves_id option').each(function(){
                         $(this).show();
                     });
-                    $('#classroom_SJueves_id').removeAttr("disabled");
+                    $('select#instructor_SJueves_id option').each(function(){
+                        $(this).show();
+                    });
+                    $('#classrooms_SJueves_id').removeAttr("disabled");
+                    $('#instructor_SJueves_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1286,8 +1534,26 @@
                             console.log(data);
                             for (var i = 0; i < data.length; i++) {
 
-                                $('#classroom_TJueves_id option[value="'+data[i].classroom_SJueves_id+'"]').hide();
+                                $('#classroom_SJueves_id option[value="'+data[i].classroom_SJueves_id+'"]').hide();
                                 console.log(data[i].classroom_SJueves_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_SJueves_id option[value="'+data[i].instructor_SJueves_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_SJueves_id);
                             }
                         },
                         error:function(){
@@ -1301,11 +1567,17 @@
                     $dateDesde = $('#hora_inicio_TJueves').val();
                     $dateHasta = $('#hora_fin_TJueves').val();
                     $horario = "horarioTJueves";
+                    $horarioInstructor = "horarioITJueves";
 
                     $('select#classroom_TJueves_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_TJueves_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classroom_TJueves_id').removeAttr("disabled");
+                    $('#instructor_TJueves_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1349,6 +1621,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_TJueves_id option[value="'+data[i].instructor_TJueves_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_TJueves_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_PViernes', function(event) {
@@ -1356,11 +1646,17 @@
                     $dateDesde = $('#hora_inicio_PViernes').val();
                     $dateHasta = $('#hora_fin_PViernes').val();
                     $horario = "horarioPViernes";
+                    $horarioInstructor = "horarioIPViernes";
 
                     $('select#classrooms_PViernes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_PViernes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_PViernes_id').removeAttr("disabled");
+                    $('#instructor_PViernes_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1404,6 +1700,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_PViernes_id option[value="'+data[i].instructor_PViernes_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_PViernes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_SViernes', function(event) {
@@ -1411,11 +1725,16 @@
                     $dateDesde = $('#hora_inicio_SViernes').val();
                     $dateHasta = $('#hora_fin_SViernes').val();
                     $horario = "horarioSViernes";
-
+                    $horarioInstructor = "horarioISViernes";
                     $('select#classrooms_SViernes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_SViernes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_SViernes_id').removeAttr("disabled");
+                    $('#instructor_SViernes_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1459,6 +1778,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_SViernes_id option[value="'+data[i].instructor_SViernes_id+'"]').hide();
+                                console.log(data[i].instructor_SViernes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_TViernes', function(event) {
@@ -1466,11 +1803,15 @@
                     $dateDesde = $('#hora_inicio_TViernes').val();
                     $dateHasta = $('#hora_fin_TViernes').val();
                     $horario = "horarioTViernes";
-
+                    $horarioInstructor = "horarioITViernes";
                     $('select#classroom_TViernes_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_TViernes_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classroom_TViernes_id').removeAttr("disabled");
+                    $('#instructor_TViernes_id').removeAttr("disabled");
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1514,6 +1855,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_TViernes_id option[value="'+data[i].instructor_TViernes_id+'"]').hide();
+                                console.log('INSTRUCTOR'+data[i].instructor_TViernes_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_PSabado', function(event) {
@@ -1521,11 +1880,16 @@
                     $dateDesde = $('#hora_inicio_PSabado').val();
                     $dateHasta = $('#hora_fin_PSabado').val();
                     $horario = "horarioPSabado";
+                    $horarioInstructor = "horarioIPSabado";
 
                     $('select#classrooms_PSabado_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_PSabado_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_PSabado_id').removeAttr("disabled");
+                    $('#instructor_PSabado_id').removeAttr("disabled");
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1569,6 +1933,24 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_PSabado_id option[value="'+data[i].instructor_PSabado_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_PSabado_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
 
                 $('form').on('change','#hora_fin_SSabado', function(event) {
@@ -1576,11 +1958,17 @@
                     $dateDesde = $('#hora_inicio_SSabado').val();
                     $dateHasta = $('#hora_fin_SSabado').val();
                     $horario = "horarioSSabado";
+                    $horarioInstructor = "horarioISSabado";
 
                     $('select#classrooms_SSabado_id option').each(function(){
                         $(this).show();
                     });
+                    $('select#instructor_SSabado_id option').each(function(){
+                        $(this).show();
+                    });
                     $('#classrooms_SSabado_id').removeAttr("disabled");
+                    $('#instructor_SSabado_id').removeAttr("disabled");
+
 
                     // CONTEO DE HORAS
                     function newDate(partes) {
@@ -1624,6 +2012,23 @@
 
                         }
                     });
+
+                    $.ajax({
+                        'type': 'get',
+                        url: '{{URL::to('/validacion_instructor')}}',
+                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+                        success:function(data){
+                            console.log(data);
+                            for (var i = 0; i < data.length; i++) {
+
+                                $('#instructor_SSabado_id option[value="'+data[i].instructor_SSabado_id+'"]').hide();
+                                console.log('instructor'+data[i].instructor_SSabado_id);
+                            }
+                        },
+                        error:function(){
+
+                        }
+                    });
                 });
             </script>
-

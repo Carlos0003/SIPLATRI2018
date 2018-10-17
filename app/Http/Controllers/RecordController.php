@@ -166,122 +166,140 @@ class RecordController extends Controller
 
         // ASIGNACIÓN DE HORAS
 
-//horas asignadas clase 1 lunes
-        $user = User::findOrFail($request->input('instructor_PLunes_id'));
-        $horas = $user->cumulativeHour;
-        $conteo = $horas + $request->input('horas_InstructorPLUNES');
-        $user->cumulativeHour = $conteo;
-        $user->save();
+// //horas asignadas clase 1 lunes
+        if ($request->input('instructor_PLunes_id') != '') {
+            $user = User::findOrFail($request->input('instructor_PLunes_id'));
+            $horas = $user->cumulativeHour;
+            $conteo = $horas + $request->input('horas_InstructorPLUNES');
+            $user->cumulativeHour = $conteo;
+            $user->save();
+        }
+       
+        
 
-//horas asignadas clase 2 lunes
+// //horas asignadas clase 2 lunes
+        if ($request->input('instructor_SLunes_id') != '') {
+            $user3 = User::findOrFail($request->input('instructor_SLunes_id'));
+            $horas3 = $user3->cumulativeHour;
+            $conteo = $horas3 + $request->input('horas_InstructorSLunes');
+            $user3->cumulativeHour = $conteo;
+            $user3->save();
+        }
+        
 
-        $user3 = User::findOrFail($request->input('instructor_SLunes_id'));
-        $horas3 = $user3->cumulativeHour;
-        $conteo = $horas3 + $request->input('horas_InstructorSLunes');
-        $user3->cumulativeHour = $conteo;
-        $user3->save();
+// //horas asignadas clase 3 lunes
+        if ($request->input('instructor_TLunes_id') != '') {    
+            $user2 = User::findOrFail($request->input('instructor_TLunes_id'));
+            $horas2 = $user2->cumulativeHour;
+            $conteo = $horas2 + $request->input('horas_InstructorTLunes');
+            $user2->cumulativeHour = $conteo;
+            $user2->save();
+        }
+// //horas asignadas clases martes
+        if ($request->input('instructor_PMartes_id') != '') {    
+            $user1 = User::findOrFail($request->input('instructor_PMartes_id'));
+            $horas1 = $user1->cumulativeHour;
+            $conteo = $horas1 + $request->input('horas_InstructorPMartes');
+            $user1->cumulativeHour = $conteo;
+            $user1->save();
+        }
+        if ($request->input('instructor_SMartes_id') != '') {
+            $user4 = User::findOrFail($request->input('instructor_SMartes_id'));
+            $horas4 = $user4->cumulativeHour;
+            $conteo = $horas4 + $request->input('horas_InstructorSMartes');
+            $user4->cumulativeHour = $conteo;
+            $user4->save();
+        }
+        if ($request->input('instructor_TMartes_id') != '') {
+            $user5 = User::findOrFail($request->input('instructor_TMartes_id'));
+            $horas5 = $user5->cumulativeHour;
+            $conteo = $horas5 + $request->input('horas_InstructorTMartes');
+            $user5->cumulativeHour = $conteo;
+            $user5->save();
+        }
+// //horas asignadas clases Miercoles
+        if ($request->input('instructor_PMiercoles_id') != '') {
+            $user6 = User::findOrFail($request->input('instructor_PMiercoles_id'));
+            $horas6 = $user6->cumulativeHour;
+            $conteo = $horas6 + $request->input('horas_InstructorPMiercoles');
+            $user6->cumulativeHour = $conteo;
+            $user6->save();
+        }
+        if ($request->input('instructor_SMiercoles_id') != '') {
+            $user7 = User::findOrFail($request->input('instructor_SMiercoles_id'));
+            $horas7 = $user7->cumulativeHour;
+            $conteo = $horas7 + $request->input('horas_InstructorSMiercoles');
+            $user7->cumulativeHour = $conteo;
+            $user7->save();
+        }
+        if ($request->input('instructor_TMiercoles_id') != '') {
+            $user8 = User::findOrFail($request->input('instructor_TMiercoles_id'));
+            $horas8 = $user8->cumulativeHour;
+            $conteo = $horas8 + $request->input('horas_InstructorTMiercoles');
+            $user8->cumulativeHour = $conteo;
+            $user8->save();
+        }
+// //horas asignadas clases Jueves
+        if ($request->input('instructor_PJueves_id') != '') {
+            $user9 = User::findOrFail($request->input('instructor_PJueves_id'));
+            $horas9 = $user9->cumulativeHour;
+            $conteo = $horas9 + $request->input('horas_InstructorPJueves');
+            $user9->cumulativeHour = $conteo;
+            $user9->save();
+        }
+        if ($request->input('instructor_SJueves_id') != '') {
+            $user10 = User::findOrFail($request->input('instructor_SJueves_id'));
+            $horas10 = $user10->cumulativeHour;
+            $conteo = $horas10 + $request->input('horas_InstructorSJueves');
+            $user10->cumulativeHour = $conteo;
+            $user10->save();
+        }
+        if ($request->input('instructor_TJueves_id') != '') {
+            $user11 = User::findOrFail($request->input('instructor_TJueves_id'));
+            $horas11 = $user11->cumulativeHour;
+            $conteo = $horas11 + $request->input('horas_InstructorTJueves');
+            $user11->cumulativeHour = $conteo;
+            $user11->save();
+        }
 
-//horas asignadas clase 3 lunes
+// //horas asignadas clases Viernes
+        if ($request->input('instructor_PViernes_id') != '') {
+            $user12 = User::findOrFail($request->input('instructor_PViernes_id'));
+            $horas12 = $user12->cumulativeHour;
+            $conteo = $horas12 + $request->input('horas_InstructorPViernes');
+            $user12->cumulativeHour = $conteo;
+            $user12->save();
+        }
+        if ($request->input('instructor_SViernes_id') != '') {
+            $user13 = User::findOrFail($request->input('instructor_SViernes_id'));
+            $horas13 = $user13->cumulativeHour;
+            $conteo = $horas13 + $request->input('horas_InstructorSViernes');
+            $user13->cumulativeHour = $conteo;
+            $user13->save();
+        }
+        if ($request->input('instructor_TViernes_id') != '') {
+            $user14 = User::findOrFail($request->input('instructor_TViernes_id'));
+            $horas14 = $user14->cumulativeHour;
+            $conteo = $horas14 + $request->input('horas_InstructorTViernes');
+            $user14->cumulativeHour = $conteo;
+            $user14->save();
+        }
 
-        $user2 = User::findOrFail($request->input('instructor_TLunes_id'));
-        $horas2 = $user2->cumulativeHour;
-        $conteo = $horas2 + $request->input('horas_InstructorTLunes');
-        $user2->cumulativeHour = $conteo;
-        $user2->save();
-
-//horas asignadas clases martes
-
-        $user1 = User::findOrFail($request->input('instructor_PMartes_id'));
-        $horas1 = $user1->cumulativeHour;
-        $conteo = $horas1 + $request->input('horas_InstructorPMartes');
-        $user1->cumulativeHour = $conteo;
-        $user1->save();
-
-        $user4 = User::findOrFail($request->input('instructor_SMartes_id'));
-        $horas4 = $user4->cumulativeHour;
-        $conteo = $horas4 + $request->input('horas_InstructorSMartes');
-        $user4->cumulativeHour = $conteo;
-        $user4->save();
-
-        $user5 = User::findOrFail($request->input('instructor_TMartes_id'));
-        $horas5 = $user5->cumulativeHour;
-        $conteo = $horas5 + $request->input('horas_InstructorTMartes');
-        $user5->cumulativeHour = $conteo;
-        $user5->save();
-
-//horas asignadas clases Miercoles
-
-        $user6 = User::findOrFail($request->input('instructor_PMiercoles_id'));
-        $horas6 = $user6->cumulativeHour;
-        $conteo = $horas6 + $request->input('horas_InstructorPMiercoles');
-        $user6->cumulativeHour = $conteo;
-        $user6->save();
-
-        $user7 = User::findOrFail($request->input('instructor_SMiercoles_id'));
-        $horas7 = $user7->cumulativeHour;
-        $conteo = $horas7 + $request->input('horas_InstructorSMiercoles');
-        $user7->cumulativeHour = $conteo;
-        $user7->save();
-
-        $user8 = User::findOrFail($request->input('instructor_TMiercoles_id'));
-        $horas8 = $user8->cumulativeHour;
-        $conteo = $horas8 + $request->input('horas_InstructorTMiercoles');
-        $user8->cumulativeHour = $conteo;
-        $user8->save();
-
-//horas asignadas clases Jueves
-
-        $user9 = User::findOrFail($request->input('instructor_PJueves_id'));
-        $horas9 = $user9->cumulativeHour;
-        $conteo = $horas9 + $request->input('horas_InstructorPJueves');
-        $user9->cumulativeHour = $conteo;
-        $user9->save();
-
-        $user10 = User::findOrFail($request->input('instructor_SJueves_id'));
-        $horas10 = $user10->cumulativeHour;
-        $conteo = $horas10 + $request->input('horas_InstructorSJueves');
-        $user10->cumulativeHour = $conteo;
-        $user10->save();
-
-        $user11 = User::findOrFail($request->input('instructor_TJueves_id'));
-        $horas11 = $user11->cumulativeHour;
-        $conteo = $horas11 + $request->input('horas_InstructorTJueves');
-        $user11->cumulativeHour = $conteo;
-        $user11->save();
-
-//horas asignadas clases Viernes
-
-        $user12 = User::findOrFail($request->input('instructor_PViernes_id'));
-        $horas12 = $user12->cumulativeHour;
-        $conteo = $horas12 + $request->input('horas_InstructorPViernes');
-        $user12->cumulativeHour = $conteo;
-        $user12->save();
-
-        $user13 = User::findOrFail($request->input('instructor_SViernes_id'));
-        $horas13 = $user13->cumulativeHour;
-        $conteo = $horas13 + $request->input('horas_InstructorSViernes');
-        $user13->cumulativeHour = $conteo;
-        $user13->save();
-
-        $user14 = User::findOrFail($request->input('instructor_TViernes_id'));
-        $horas14 = $user14->cumulativeHour;
-        $conteo = $horas14 + $request->input('horas_InstructorTViernes');
-        $user14->cumulativeHour = $conteo;
-        $user14->save();
-
-//horas asignadas clases Sabado
-
-        $user15 = User::findOrFail($request->input('instructor_PSabado_id'));
-        $horas15 = $user15->cumulativeHour;
-        $conteo = $horas15 + $request->input('horas_InstructorPSabado');
-        $user15->cumulativeHour = $conteo;
-        $user15->save();
-
-        $user16 = User::findOrFail($request->input('instructor_SSabado_id'));
-        $horas16 = $user16->cumulativeHour;
-        $conteo = $horas16 + $request->input('horas_InstructorSSabado');
-        $user16->cumulativeHour = $conteo;
-        $user16->save();
+// //horas asignadas clases Sabado
+        if ($request->input('instructor_PSabado_id') != '') {
+            $user15 = User::findOrFail($request->input('instructor_PSabado_id'));
+            $horas15 = $user15->cumulativeHour;
+            $conteo = $horas15 + $request->input('horas_InstructorPSabado');
+            $user15->cumulativeHour = $conteo;
+            $user15->save();
+        }
+        if ($request->input('instructor_SSabado_id') != '') {
+            $user16 = User::findOrFail($request->input('instructor_SSabado_id'));
+            $horas16 = $user16->cumulativeHour;
+            $conteo = $horas16 + $request->input('horas_InstructorSSabado');
+            $user16->cumulativeHour = $conteo;
+            $user16->save();
+        }
 
 
       if($record->save()){
@@ -600,7 +618,7 @@ class RecordController extends Controller
         return \Excel::download(new RecordsExport,'records.xlsx');
     }
 
-       public function validacion(Request $request){
+    public function validacion(Request $request){
 
         if ($request->horario == "horarioPLunes") {
             $data = Record::select('classrooms_PLunes_id')->where('hora_inicio_PLunes', '<=', $request->dateDesde)
@@ -704,4 +722,104 @@ class RecordController extends Controller
             return response()->json($data);
         }
     }
+    public function validacionInstructor(Request $request) {
+        if ($request->horarioInstructor == "horarioIPLunes") {
+            $data = Record::select('instructor_PLunes_id')->where('hora_inicio_PLunes', '<=', $request->dateDesde)
+            ->where('hora_fin_PLunes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioISLunes") {
+            $data = Record::select('instructor_SLunes_id')->where('hora_inicio_SLunes', '<=', $request->dateDesde)
+            ->where('hora_fin_SLunes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioITLunes") {
+            $data = Record::select('instructor_TLunes_id')->where('hora_inicio_TLunes', '<=', $request->dateDesde)
+            ->where('hora_fin_TLunes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioIPMartes") {
+            $data = Record::select('instructor_PMartes_id')->where('hora_inicio_PMartes', '<=', $request->dateDesde)
+            ->where('hora_fin_PMartes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioISMartes") {
+            $data = Record::select('instructor_SMartes_id')->where('hora_inicio_SMartes', '<=', $request->dateDesde)
+            ->where('hora_fin_SMartes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioITMartes") {
+            $data = Record::select('instructor_TMartes_id')->where('hora_inicio_TMartes', '<=', $request->dateDesde)
+            ->where('hora_fin_TMartes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioIPMiercoles") {
+            $data = Record::select('instructor_PMiercoles_id')->where('hora_inicio_PMiercoles', '<=', $request->dateDesde)
+            ->where('hora_fin_PMiercoles', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioISMiercoles") {
+            $data = Record::select('instructor_SMiercoles_id')->where('hora_inicio_SMiercoles', '<=', $request->dateDesde)
+            ->where('hora_fin_SMiercoles', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioITMiercoles") {
+            $data = Record::select('instructor_TMiercoles_id')->where('hora_inicio_TMiercoles', '<=', $request->dateDesde)
+            ->where('hora_fin_TMiercoles', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioIPJueves") {
+            $data = Record::select('instructor_PJueves_id')->where('hora_inicio_PJueves', '<=', $request->dateDesde)
+            ->where('hora_fin_PJueves', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioITJueves") {
+            $data = Record::select('instructor_SJueves_id')->where('hora_inicio_SJueves', '<=', $request->dateDesde)
+            ->where('hora_fin_SJueves', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioITJueves") {
+            $data = Record::select('instructor_TJueves_id')->where('hora_inicio_TJueves', '<=', $request->dateDesde)
+            ->where('hora_fin_TJueves', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+
+        if ($request->horarioInstructor == "horarioIPViernes") {
+            $data = Record::select('instructor_PViernes_id')->where('hora_inicio_PViernes', '<=', $request->dateDesde)
+            ->where('hora_fin_PViernes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+        if ($request->horarioInstructor == "horarioISViernes") {
+            $data = Record::select('instructor_SViernes_id')->where('hora_inicio_SViernes', '<=', $request->dateDesde)
+            ->where('hora_fin_SViernes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+        if ($request->horarioInstructor == "horarioITViernes") {
+            $data = Record::select('instructor_TViernes_id')->where('hora_inicio_TViernes', '<=', $request->dateDesde)
+            ->where('hora_fin_TViernes', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+        if ($request->horarioInstructor == "horarioIPSabado") {
+            $data = Record::select('instructor_PSabado_id')->where('hora_inicio_PSabado', '<=', $request->dateDesde)
+            ->where('hora_fin_PSabado', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+        if ($request->horarioInstructor == "horarioISSabado") {
+            $data = Record::select('instructor_SSabado_id')->where('hora_inicio_SSabado', '<=', $request->dateDesde)
+            ->where('hora_fin_SSabado', '>=', $request->dateHasta)->get();
+            return response()->json($data);
+        }
+    }
+
 }

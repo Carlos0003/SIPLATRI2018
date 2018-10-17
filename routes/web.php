@@ -46,6 +46,8 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('/descargarExcel/{idRecord}', 'RecordController@descargarPrograma')->name('descargarExcel.descargarPrograma');
 
     Route::get('/validacion', 'RecordController@validacion');
+    Route::get('/validacion_instructor', 'RecordController@validacionInstructor');
+    
 
 
     Route::get('/users/info', 'UserController@info');
