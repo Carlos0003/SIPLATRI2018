@@ -35,13 +35,13 @@
 			<hr>
 			<form class="form-inline" action="{{ url('record/search') }}">
 				<div class="form-group">
-					<input type="search" class="form-control" name="name" placeholder="Ingrese su busqueda">&nbsp;
+					<input type="search" class="form-control" name="number" placeholder="Ingrese su busqueda">&nbsp;
 					<button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 			<hr>
 			<form class="form-inline">
-				<input type="search" class="form-control" id="rsearch" name="name" placeholder="Filtrar" autocomplete="off">
+				<input type="search" class="form-control" id="rsearch" name="number" placeholder="Filtrar" autocomplete="off">
 			</form>
 			<hr>
 			<table class="table table-striped table-hover text-center" style="font-size: 12px;">
@@ -111,8 +111,8 @@
             });
             $('form').on('keyup','#rsearch', function(event) {
                 event.preventDefault();
-                $name=$(this).val();
-                $.get('records/ajaxsearch',{name:$name}, function(data){
+                $number=$(this).val();
+                $.get('records/ajaxsearch',{number:$number}, function(data){
                     $('.results').html(data);
                 });
             });

@@ -139,4 +139,13 @@ class MunicipalitiesController extends Controller
         return \Excel::download(new MunicipalitiesExport,'municipalities.xlsx');
         // return \Excel::download(new ProgramsExport,'program.xlsx');
     }
+
+    public function search(Request $request){
+        $municipalities=Municipalities::name($request->input('name'))->orderBy('id','ASC')->paginate(10)->setPath('municipalities');
+        return view('municipalities.index')->with('municipalities',$municipalities);
+    }
+    public function ajaxsearch(Request $request){
+        $municipalities = Municipalities::name($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('municipalities');
+        return view('municipalities.ajaxs')->with('municipalities',$municipalities);
+    }
 }

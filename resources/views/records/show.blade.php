@@ -103,10 +103,19 @@
 				</tr>
 				<tr>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
-						{{ $record->hora_inicio_PLunes }}
+						@if ($record->hora_inicio_PLunes != '')
+							{{$record->hora_inicio_PLunes}}
+						@else
+							0
+						@endif
+						{{-- {{ $record->hora_inicio_PLunes }} --}}
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
-						{{ $record->hora_fin_PLunes }}
+						@if ($record->hora_fin_PLunes != '')
+							{{ $record->hora_fin_PLunes }}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         
@@ -124,10 +133,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_PMartes != '')
+							{{-- {{$record->hora_inicio_PLunes}} --}}
 						{{ $record->hora_inicio_PMartes}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_PMartes != '')
+							{{-- {{$record->hora_inicio_PLunes}} --}}
 						{{ $record->hora_fin_PMartes}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         @if ($record->abilities_PMartes_id != '' )
@@ -144,10 +163,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_PMiercoles != '')
+							{{-- {{$record->hora_inicio_PLunes}} --}}
 						{{ $record->hora_inicio_PMiercoles}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_PMiercoles != '')
+							{{-- {{$record->hora_inicio_PLunes}} --}}
 						{{ $record->hora_fin_PMiercoles}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         @if ($record->abilities_PMiercoles_id != '' )
@@ -164,10 +193,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_PJueves != '')
+							{{-- {{$record->hora_inicio_PLunes}} --}}
 						{{ $record->hora_inicio_PJueves}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_PJueves != '')
 						{{ $record->hora_fin_PJueves}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_PJueves_id != '' )
@@ -184,10 +223,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_PViernes != '')
 						{{ $record->hora_inicio_PViernes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_PViernes != '')
 						{{ $record->hora_fin_PViernes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_PViernes_id != '' )
@@ -205,10 +254,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_PSabado != '')
 						{{ $record->hora_inicio_PSabado}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_PSabado != '')
 						{{ $record->hora_fin_PSabado}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_PSabado_id != '' )
@@ -278,10 +337,20 @@
 				</tr>
 				<tr>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SLunes != '')
 						{{ $record->hora_inicio_SLunes }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_SLunes != '')
 						{{ $record->hora_fin_SLunes }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_SLunes_id != '' )
@@ -298,10 +367,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SMartes != '')
 						{{ $record->hora_inicio_SMartes }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_SMartes != '')
 						{{ $record->hora_fin_SMartes }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						 @if ($record->abilities_SMartes_id != '' )
@@ -318,10 +397,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SMiercoles != '')
 						{{ $record->hora_inicio_SMiercoles }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_SMiercoles != '')
 						{{ $record->hora_fin_SMiercoles }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_SMiercoles_id != '' )
@@ -338,10 +427,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SJueves != '')
 						{{ $record->hora_inicio_SJueves }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_SJueves != '')
 						{{ $record->hora_fin_SJueves }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         @if ($record->abilities_SJueves_id != '' )
@@ -358,10 +457,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SViernes != '')
 						{{ $record->hora_inicio_SViernes }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SViernes != '')
 						{{ $record->hora_fin_SViernes }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         @if ($record->abilities_SViernes_id != '' )
@@ -378,10 +487,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_SSabado != '')
 						{{ $record->hora_inicio_SSabado }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_SSabado != '')
 						{{ $record->hora_fin_SSabado }}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_SSabado_id != '' )
@@ -450,10 +569,20 @@
 				</tr>
 				<tr>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_TLunes != '')
 						{{ $record->hora_inicio_TLunes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_TLunes != '')
 						{{ $record->hora_fin_TLunes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_TLunes_id != '' )
@@ -470,10 +599,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_TMartes != '')
 						{{ $record->hora_inicio_TMartes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_PLunes != '')
 						{{ $record->hora_fin_TMartes}}
+							{{-- {{$record->hora_fin_TMartes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_TMartes_id != '')
@@ -490,10 +629,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_TMiercoles != '')
 						{{ $record->hora_inicio_TMiercoles}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_TMiercoles != '')
 						{{ $record->hora_fin_TMiercoles}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
 						@if ($record->abilities_TMiercoles_id != '')
@@ -510,10 +659,20 @@
 						@endif
 					</td>				
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_TJueves != '')
 						{{ $record->hora_inicio_TJueves}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_TJueves != '')
 						{{ $record->hora_fin_TJueves}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         @if ($record->abilities_TJueves_id != '')
@@ -530,10 +689,20 @@
 						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_inicio_TViernes != '')
 						{{ $record->hora_inicio_TViernes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;" rowspan="2" class="text-center">
+						@if ($record->hora_fin_TViernes != '')
 						{{ $record->hora_fin_TViernes}}
+							{{-- {{$record->hora_inicio_PLunes}} --}}
+						@else
+							0
+						@endif
 					</td>
 					<td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                         @if ($record->abilities_TViernes_id != '')

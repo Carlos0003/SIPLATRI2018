@@ -15,7 +15,7 @@ main{
 header{
 	width: 100%;
 	height: 70px;
-	background: #227fbc;
+	background: #161616;
 }
 
 header span{
@@ -40,6 +40,20 @@ header span:hover{
 }
 .content-menu2{
 	margin-left: -120px;
+	transform: translateX(60px);
+}
+
+.content-menu2 li{
+	transform: translateX(30px);
+}
+.content-menu2:hover li{
+	transform: translateX(30px) translateY(10px);
+	transition: all 300ms;
+}
+.content-menu2:hover h4{
+	transform: translateX(-30px);
+	transition: all 300ms;
+	color: #161616;
 }
 .content-menu li{
 	list-style: none;
@@ -172,4 +186,21 @@ article p{
 	font-size: 40px;
 	margin-top: 20px;
 	text-align: justify;
+}
+.contenedor{
+	width: 800px;
+	height: 600px;
+	padding: 10px;
+	margin: 20px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #ff8000;
+}
+.elemento{
+	flex-basis: 180px;
 }

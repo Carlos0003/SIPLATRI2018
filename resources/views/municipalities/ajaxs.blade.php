@@ -2,6 +2,7 @@
 	<tr>
 		<td> {{$munici->id}} </td>
 		<td> {{$munici->name}} </td>
+		<td> {{$munici->zone}} </td>
 		<td>
 			<a href="{{url('municipalities/'.$munici->id)}}" class="btn btn-outline-primary"> <i class="fa fa-search"></i></a>
 			<a href="{{url('municipalities/'.$munici->id.'/edit')}}" class="btn btn-outline-primary"> <i class="fa fa-pencil-alt"></i></a>

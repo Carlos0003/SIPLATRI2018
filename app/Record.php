@@ -234,10 +234,11 @@ class Record extends Model
     }
 
 
-   //buscar
-    public function scopeName($record,$name){
-        if(trim($name)!= ''){
-            $record->where('name','LIKE',"%$name%");
+   // buscar
+    public function scopeName($record,$number){
+        if(trim($number)!= ''){
+            $record->where('number','LIKE',"%$number%");
         }
     }
+
 }

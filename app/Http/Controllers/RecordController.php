@@ -468,21 +468,15 @@ class RecordController extends Controller
                 ->with('status', 'La Ficha '.$record->id.'-'.$record->nameprogram->name.' se eliminó con éxito.');
         };
     }
-    // Generate PDF Report
-    public function pdf1(){
-
-        $records = Record::all();
-        $pdf = \PDF::loadView('records.pdf', compact('records'));
-        return $pdf->download('records.pdf');
-    }
     
     //buscar
+
     public function search(Request $request){
-        $record=Record::fullname($request->input('name'))->orderBy('id','ASC')->paginate(10)->setPath('record');
-        return view('records.index')->with('record',$record);
+        $record=Record::number($request->input('number'))->orderBy('id','ASC')->paginate(10)->setPath('record');
+        return view('records.index')->with('records',$record);
     }
     public function ajaxsearch(Request $request){
-        $record = Record::fullname($request->input('name'))->orderBy('id', 'ASC')->paginate(10)->setPath('record');
+        $record = Record::number($request->input('number'))->orderBy('id', 'ASC')->paginate(10)->setPath('record');
     return view('records.ajaxs')->with('record',$record);
     }
 
@@ -618,6 +612,8 @@ class RecordController extends Controller
         return \Excel::download(new RecordsExport,'records.xlsx');
     }
 
+    //HORARIOS CRUCE DE AMBIENTES
+
     public function validacion(Request $request){
 
         if ($request->horario == "horarioPLunes") {
@@ -722,6 +718,8 @@ class RecordController extends Controller
             return response()->json($data);
         }
     }
+
+    //HORARIOS CRUCE DE INSTRUCTORES
     public function validacionInstructor(Request $request) {
         if ($request->horarioInstructor == "horarioIPLunes") {
             $data = Record::select('instructor_PLunes_id')->where('hora_inicio_PLunes', '<=', $request->dateDesde)
@@ -783,7 +781,7 @@ class RecordController extends Controller
             return response()->json($data);
         }
 
-        if ($request->horarioInstructor == "horarioITJueves") {
+        if ($request->horarioInstructor == "horarioISJueves") {
             $data = Record::select('instructor_SJueves_id')->where('hora_inicio_SJueves', '<=', $request->dateDesde)
             ->where('hora_fin_SJueves', '>=', $request->dateHasta)->get();
             return response()->json($data);

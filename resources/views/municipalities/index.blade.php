@@ -33,7 +33,7 @@
 				<i class="fa fa-file-excel">  Exportar</i>
 			</a>
 			<hr>
-			<form class="form-inline" action="{{ url('municipalities/search') }}">
+			{{-- <form class="form-inline" action="{{ url('municipalities/search') }}">
 				<div class="form-group">
 					<input type="search" class="form-control" name="name" placeholder="Ingrese su busqueda">&nbsp;
 					<button type="submit" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
@@ -42,7 +42,7 @@
 			<hr>
 			<form class="form-inline">
 				<input type="search" class="form-control" id="csearch" name="name" placeholder="Filtrar" autocomplete="off">
-			</form>
+			</form> --}}
 			<hr>
 			<div class="row justify-content-center aling-items-center">
 				{!! $municipality->render() !!}
@@ -111,7 +111,7 @@
                     }
                 });
             });
-            $('form').on('keyup','#csearch', function(event) {
+            $('form').on('keyup','#msearch', function(event) {
                 event.preventDefault();
                 $name=$(this).val();
                 $.get('municipalities/ajaxsearch',{name:$name}, function(data){

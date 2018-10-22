@@ -52,8 +52,6 @@
                 <input type="text" placeholder="horas_InstructorPSabado" name="horas_InstructorPSabado" id="horas_InstructorPSabado">
                 <input type="text" placeholder="horas_InstructorSSabado" name="horas_InstructorSSabado" id="horas_InstructorSSabado">
                 </div>
-
-
                 <table class="col-md-12" border="1px solid black" style="font-size: 12px;">
                     <tr>
                         <th colspan="24" class="text-center" style="font-size: 12px; background-color: #34495E; color: white; padding: 12px; border: 1px solid black;"><strong><i class="fas fa-info-circle"></i> INFORMACIÓN DE LA FICHA</strong>
@@ -258,36 +256,53 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PLunes_id" name="instructor_PLunes_id" disabled class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
 
                                     </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
-                                    	<select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PMartes_id" name="instructor_PMartes_id" disabled class="form-control">
-
-                                        <option value="">Seleccione Instructor...</option>
-                                        @foreach($managers as $user)
-                                        <option value="{{ $user->id }}">
-                                        	{{ $user->fullname }}
-                                        	@if ($user->cumulativeHour >= 1)
-                                        		@if ($user->cumulativeHour >= 40)
-													<strong>Cumplio {{ $user->cumulativeHour }} Horas Laboradas</strong>
-                                        		@else
-                                        			Horas laboradas: {{ $user->cumulativeHour }}
-                                        		@endif
-                                        	@endif
-
-                                    </option>
-                                        @endforeach
-                                    </select></td>
+                                        <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PMartes_id" name="instructor_PMartes_id" disabled class="form-control">
+                                            <option value="">Seleccione Instructor...</option>
+                                            @foreach($managers as $user)
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                    </td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PMiercoles_id" name="instructor_PMiercoles_id" disabled class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -296,7 +311,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PJueves_id" disabled name="instructor_PJueves_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -305,7 +329,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_PViernes_id" disabled name="instructor_PViernes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
 
@@ -315,7 +348,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"   id="instructor_PSabado_id" disabled name="instructor_PSabado_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -429,7 +471,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SLunes_id" disabled name="instructor_SLunes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
 
@@ -437,16 +488,34 @@
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SMartes_id" name="instructor_SMartes_id" disabled class="form-control">
                                         <option value="">Seleccione Instructor...</option>
-                                        @foreach($managers as $user)
-                                        <option value="{{ $user->id }}">{{ $user->fullname }}</option>
-                                        @endforeach
+                                       @foreach($managers as $user)
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
+                                            @endforeach
                                     </select></td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SMiercoles_id" disabled name="instructor_SMiercoles_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -455,7 +524,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SJueves_id" disabled name="instructor_SJueves_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -464,7 +542,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SViernes_id" disabled name="instructor_SViernes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
 
@@ -474,7 +561,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_SSabado_id" disabled name="instructor_SSabado_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -580,8 +676,17 @@
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TLunes_id" disabled name="instructor_TLunes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
-                                            @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                           @foreach($managers as $user)
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
 
@@ -589,16 +694,34 @@
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;"><select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TMartes_id" disabled name="instructor_TMartes_id" class="form-control">
                                         <option value="">Seleccione Instructor...</option>
-                                        @foreach($managers as $user)
-                                        <option value="{{ $user->id }}">{{ $user->fullname }}</option>
-                                        @endforeach
+                                       @foreach($managers as $user)
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
+                                            @endforeach
                                     </select></td>
                                     <th class="text-center" style="font-size: 12px; background-color: #34495E; color: white; border: 1px solid black; width: 200px;">INSTRUCTOR</th>
                                     <td style="font-size: 12px; width:200px; border: 1px solid black; background-color: #AEB6BF;">
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TMiercoles_id" disabled name="instructor_TMiercoles_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -607,7 +730,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"  id="instructor_TJueves_id" disabled name="instructor_TJueves_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -616,7 +748,16 @@
                                         <select style="width: 190px;font-size: 12px; background-color: #AEB6BF;"   id="instructor_TViernes_id" disabled name="instructor_TViernes_id" class="form-control">
                                             <option value="">Seleccione Instructor...</option>
                                             @foreach($managers as $user)
-                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
+                                            <option value="{{ $user->id }}">
+                                                {{ $user->fullname }}
+                                                @if ($user->cumulativeHour >= 1)
+                                                @if ($user->cumulativeHour >= 40)
+                                                    <strong>Cumplió {{ $user->cumulativeHour }} Horas Laboradas</strong>
+                                                @else
+                                                    Horas laboradas: {{ $user->cumulativeHour }}
+                                                @endif
+                                            @endif
+                                            </option>
                                             @endforeach
                                         </select>
 
@@ -625,1410 +766,1410 @@
                                 <tr>
                                     <th colspan="24"><button class="btn btn-secondary btn-lg btn-block" style="font-size: 12px; height: 30px; line-height: 50%; font-size: 18px; background-color: #238276;"> <i class="fa fa-save"></i> Enviar</button></th>
                                 </tr>
-                            </table>
-                        </form>
-                    </div>
-                    <br><br>
-                </div>
-                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-            </body>
-            </html>
-
-            <script>
-                $('form').on('change','#programaFormacionTable', function(event) {
-                    event.preventDefault();
-                    $did=$(this).val();
-                    $a=$(this).parent();
-                    $op = " ";
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/programaFormacionSeleccionado')}}',
-                        data:{'id':$did},
-                        success:function(data){
-
-                            $timeduration = data.timeduration;
-                            $('#timeduration').val($timeduration);
-                            $typeprogram = data.type;
-                            console.log($timeduration);
-                            $('#typeprogram').val($typeprogram);
-
-
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/competencias')}}',
-                        data:{'id':$did},
-                        success:function(data){
-
-                            $op+='<option value="0" selected disabled>Seleccione competencia</option>';
-                            for (var i = 0; i < data.length; i++) {
-                                $op+= '<option value="'+data[i].id+'">'+data[i].name+'</option>';
-                            }
-                            $('.competenciaPrueba').html($op);
-
-
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_hasta', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_desde').val();
-                    $dateHasta = $('#hora_hasta').val();
-                    $horario = "horarioPLunes";
-                    $horarioInstructor = "horarioIPLunes";
-
-                	// CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_desde').val().split(":"));
-					    var hora_f = newDate($('#hora_hasta').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_justificacion_real').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-
-
-                    $('select#pruebaSelect option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_PLunes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#pruebaSelect').removeAttr("disabled");
-                    $('#instructor_PLunes_id').removeAttr("disabled");
-
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            for (var i = 0; i < data.length; i++) {
-                                $('#pruebaSelect option[value="'+data[i].classrooms_PLunes_id+'"]').hide();
-                                console.log(data[i].classrooms_PLunes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            for (var i = 0; i < data.length; i++) {
-                                $('#instructor_PLunes_id option[value="'+data[i].instructor_PLunes_id+'"]').hide();
-                                console.log('INSTRUCTOR:' + data[i].instructor_PLunes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-
-                });
-
-                $('form').on('change','#hora_fin_SLunes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_SLunes').val();
-                    $dateHasta = $('#hora_fin_SLunes').val();
-                    $horario = "horarioSLunes";
-                    $horarioInstructor = "horarioISLunes";
-
-
-                    $('select#classrooms_SLunes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_SLunes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_SLunes_id').removeAttr("disabled");
-                    $('#instructor_SLunes_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_SLunes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_SLunes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorSLunes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_SLunes_id option[value="'+data[i].classroom_SLunes_id+'"]').hide();
-                                console.log(data[i].classroom_SLunes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_SLunes_id option[value="'+data[i].instructor_SLunes_id+'"]').hide();
-                                console.log('Instructor' + data[i].instructor_SLunes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                });
-
-                $('form').on('change','#hora_fin_TLunes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_TLunes').val();
-                    $dateHasta = $('#hora_fin_TLunes').val();
-                    $horario = "horarioTLunes";
-                    $horarioInstructor = "horarioITLunes";
-
-
-                    $('select#classroom_TLunes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_TLunes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classroom_TLunes_id').removeAttr("disabled");
-                    $('#instructor_TLunes_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_TLunes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_TLunes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorTLunes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    // console.log($dateHasta);
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
-                                $('#classroom_TLunes_id option[value="'+data[i].classroom_TLunes_id+'"]').hide();
-                                console.log(data[i].classroom_TLunes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
-                                $('#instructor_TLunes_id option[value="'+data[i].instructor_TLunes_id+'"]').hide();
-                                console.log('Instructor' + data[i].instructor_TLunes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_PMartes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_PMartes').val();
-                    $dateHasta = $('#hora_fin_PMartes').val();
-                    $horario = "horarioPMartes";
-                    $horarioInstructor = "horarioIPMartes";
-
-                        // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_PMartes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_PMartes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorPMartes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $('select#classrooms_PMartes_id option').each(function(){
-                        $(this).show();
-                    });
-
-                    $('#classrooms_PMartes_id').removeAttr("disabled");
-
-
-
-
-                    // console.log($dateHasta);
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
-                                $('#classrooms_PMartes_id option[value="'+data[i].classrooms_PMartes_id+'"]').hide();
-                                console.log(data[i].classrooms_PMartes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
-                                $('#instructor_PLunes_id option[value="'+data[i].instructor_PMartes_id+'"]').hide();
-                                console.log('Instructor'+data[i].instructor_PMartes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_SMartes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_SMartes').val();
-                    $dateHasta = $('#hora_fin_SMartes').val();
-                    $horario = "horarioSMartes";
-                    $horarioInstructor = "horarioISMartes";
-
-
-                    $('select#classrooms_SMartes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_SMartes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_SMartes_id').removeAttr("disabled");
-                    $('#instructor_SMartes_id').removeAttr("disabled");
-
-
-                    // console.log($dateHasta);
-
-                     // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_SMartes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_SMartes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorSMartes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
-                                $('#classrooms_SMartes_id option[value="'+data[i].classroom_SMartes_id+'"]').hide();
-                                console.log(data[i].classroom_SMartes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
-                                $('#instructor_SMartes_id option[value="'+data[i].instructor_SMartes_id+'"]').hide();
-                                console.log('Instructor'+data[i].instructor_SMartes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_TMartes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_TMartes').val();
-                    $dateHasta = $('#hora_fin_TMartes').val();
-                    $horario = "horarioTMartes";
-                    $horarioInstructor = "horarioITMartes";
-
-
-                    $('select#classroom_TMartes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_TMartes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classroom_TMartes_id').removeAttr("disabled");
-                    $('#instructor_TMartes_id').removeAttr("disabled");
-
-                     // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_TMartes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_TMartes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorTMartes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classroom_TMartes_id option[value="'+data[i].classroom_TMartes_id+'"]').hide();
-                                console.log(data[i].classroom_TMartes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_TMartes_id option[value="'+data[i].instructor_TMartes_id+'"]').hide();
-                                console.log('Instructor'+data[i].instructor_TMartes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                });
-
-                $('form').on('change','#hora_fin_PMiercoles', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_PMiercoles').val();
-                    $dateHasta = $('#hora_fin_PMiercoles').val();
-                    $horario = "horarioPMiercoles";
-                    $horarioInstructor = "horarioIPMiercoles";
-
-                    $('select#classrooms_PMiercoles_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_PMiercoles_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_PMiercoles_id').removeAttr("disabled");
-                    $('#instructor_PMiercoles_id').removeAttr("disabled");
-
-
-                     // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_PMiercoles').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_PMiercoles').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorPMiercoles').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_PMiercoles_id option[value="'+data[i].classrooms_PMiercoles_id+'"]').hide();
-                                console.log(data[i].classrooms_PMiercoles_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_PMiercoles_id option[value="'+data[i].instructor_PMiercoles_id+'"]').hide();
-                                console.log('Instructor'+data[i].instructor_PMiercoles_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_SMiercoles', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_SMiercoles').val();
-                    $dateHasta = $('#hora_fin_SMiercoles').val();
-                    $horario = "horarioSMiercoles";
-                    $horarioInstructor = "horarioISMiercoles";
-
-                    $('select#classrooms_SMiercoles_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_SMiercoles_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_SMiercoles_id').removeAttr("disabled");
-                    $('#instructor_SMiercoles_id').removeAttr("disabled");
-
-
-                     // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_SMiercoles').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_SMiercoles').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorSMiercoles').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_SMiercoles_id option[value="'+data[i].classroom_SMiercoles_id+'"]').hide();
-                                console.log(data[i].classroom_SMiercoles_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_SMiercoles_id option[value="'+data[i].instructor_SMiercoles_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_SMiercoles_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_TMiercoles', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_TMiercoles').val();
-                    $dateHasta = $('#hora_fin_TMiercoles').val();
-                    $horario = "horarioTMiercoles";
-                    $horarioInstructor = "horarioITMiercoles";
-
-                    $('select#classroom_TMiercoles_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_TMiercoles_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classroom_TMiercoles_id').removeAttr("disabled");
-                    $('#instructor_TMiercoles_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_TMiercoles').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_TMiercoles').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorTMiercoles').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classroom_TMiercoles_id option[value="'+data[i].classroom_TMiercoles_id+'"]').hide();
-                                console.log(data[i].classroom_TMiercoles_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_TMiercoles_id option[value="'+data[i].instructor_TMiercoles_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_TMiercoles_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_PJueves', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_PJueves').val();
-                    $dateHasta = $('#hora_fin_PJueves').val();
-                    $horario = "horarioPJueves";
-                    $horarioInstructor = "horarioIPJueves";
-
-                    $('select#classrooms_PJueves_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_PJueves_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_PJueves_id').removeAttr("disabled");
-                    $('#instructor_PJueves_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_PJueves').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_PJueves').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorPJueves').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_PJueves_id option[value="'+data[i].classrooms_PJueves_id+'"]').hide();
-                                console.log(data[i].classrooms_PJueves_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_PJueves_id option[value="'+data[i].instructor_PJueves_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_PJueves_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_SJueves', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_SJueves').val();
-                    $dateHasta = $('#hora_fin_SJueves').val();
-                    $horario = "horarioTJueves";
-                    $horarioInstructor = "horarioITJueves";
-
-                    $('select#classrooms_SJueves_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_SJueves_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_SJueves_id').removeAttr("disabled");
-                    $('#instructor_SJueves_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_SJueves').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_SJueves').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorSJueves').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classroom_SJueves_id option[value="'+data[i].classroom_SJueves_id+'"]').hide();
-                                console.log(data[i].classroom_SJueves_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_SJueves_id option[value="'+data[i].instructor_SJueves_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_SJueves_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_TJueves', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_TJueves').val();
-                    $dateHasta = $('#hora_fin_TJueves').val();
-                    $horario = "horarioTJueves";
-                    $horarioInstructor = "horarioITJueves";
-
-                    $('select#classroom_TJueves_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_TJueves_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classroom_TJueves_id').removeAttr("disabled");
-                    $('#instructor_TJueves_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_TJueves').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_TJueves').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorTJueves').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classroom_TJueves_id option[value="'+data[i].classroom_TJueves_id+'"]').hide();
-                                console.log(data[i].classroom_TJueves_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_TJueves_id option[value="'+data[i].instructor_TJueves_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_TJueves_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_PViernes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_PViernes').val();
-                    $dateHasta = $('#hora_fin_PViernes').val();
-                    $horario = "horarioPViernes";
-                    $horarioInstructor = "horarioIPViernes";
-
-                    $('select#classrooms_PViernes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_PViernes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_PViernes_id').removeAttr("disabled");
-                    $('#instructor_PViernes_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_PViernes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_PViernes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorPViernes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_PViernes_id option[value="'+data[i].classrooms_PViernes_id+'"]').hide();
-                                console.log(data[i].classrooms_PViernes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_PViernes_id option[value="'+data[i].instructor_PViernes_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_PViernes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_SViernes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_SViernes').val();
-                    $dateHasta = $('#hora_fin_SViernes').val();
-                    $horario = "horarioSViernes";
-                    $horarioInstructor = "horarioISViernes";
-                    $('select#classrooms_SViernes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_SViernes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_SViernes_id').removeAttr("disabled");
-                    $('#instructor_SViernes_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_SViernes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_SViernes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorSViernes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_SViernes_id option[value="'+data[i].classroom_SViernes_id+'"]').hide();
-                                console.log(data[i].classroom_SViernes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_SViernes_id option[value="'+data[i].instructor_SViernes_id+'"]').hide();
-                                console.log(data[i].instructor_SViernes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_TViernes', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_TViernes').val();
-                    $dateHasta = $('#hora_fin_TViernes').val();
-                    $horario = "horarioTViernes";
-                    $horarioInstructor = "horarioITViernes";
-                    $('select#classroom_TViernes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_TViernes_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classroom_TViernes_id').removeAttr("disabled");
-                    $('#instructor_TViernes_id').removeAttr("disabled");
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_TViernes').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_TViernes').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorTViernes').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classroom_TViernes_id option[value="'+data[i].classroom_TViernes_id+'"]').hide();
-                                console.log(data[i].classroom_TViernes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_TViernes_id option[value="'+data[i].instructor_TViernes_id+'"]').hide();
-                                console.log('INSTRUCTOR'+data[i].instructor_TViernes_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_PSabado', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_PSabado').val();
-                    $dateHasta = $('#hora_fin_PSabado').val();
-                    $horario = "horarioPSabado";
-                    $horarioInstructor = "horarioIPSabado";
-
-                    $('select#classrooms_PSabado_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_PSabado_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_PSabado_id').removeAttr("disabled");
-                    $('#instructor_PSabado_id').removeAttr("disabled");
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_PSabado').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_PSabado').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorPSabado').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_PSabado_id option[value="'+data[i].classrooms_PSabado_id+'"]').hide();
-                                console.log(data[i].classrooms_PSabado_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_PSabado_id option[value="'+data[i].instructor_PSabado_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_PSabado_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-
-                $('form').on('change','#hora_fin_SSabado', function(event) {
-                    event.preventDefault();
-                    $dateDesde = $('#hora_inicio_SSabado').val();
-                    $dateHasta = $('#hora_fin_SSabado').val();
-                    $horario = "horarioSSabado";
-                    $horarioInstructor = "horarioISSabado";
-
-                    $('select#classrooms_SSabado_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('select#instructor_SSabado_id option').each(function(){
-                        $(this).show();
-                    });
-                    $('#classrooms_SSabado_id').removeAttr("disabled");
-                    $('#instructor_SSabado_id').removeAttr("disabled");
-
-
-                    // CONTEO DE HORAS
-                    function newDate(partes) {
-    				var date = new Date(0);
-    				date.setHours(partes[0]);
-    				date.setMinutes(partes[1]);
-    				return date;
-					}
-
-					function prefijo(num) {
-					    return num < 10 ? ("0" + num) : num;
-					}
-
-					    var hora_i = newDate($('#hora_inicio_SSabado').val().split(":"));
-					    var hora_f = newDate($('#hora_fin_SSabado').val().split(":"));
-
-					    if (hora_f <  hora_i) {
-					        alert('hora final menor a hora inicial');
-					    }
-					    var minutos = (hora_f - hora_i)/1000/60;
-					    var horas = Math.floor(minutos/60);
-					    minutos = minutos % 60;
-
-					$('#horas_InstructorSSabado').val(prefijo(horas));
-					// FIN CONTEO DE HORAS
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#classrooms_SSabado_id option[value="'+data[i].classroom_SSabado_id+'"]').hide();
-                                console.log(data[i].classroom_SSabado_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-
-                    $.ajax({
-                        'type': 'get',
-                        url: '{{URL::to('/validacion_instructor')}}',
-                        data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
-
-                        success:function(data){
-                            console.log(data);
-                            for (var i = 0; i < data.length; i++) {
-
-                                $('#instructor_SSabado_id option[value="'+data[i].instructor_SSabado_id+'"]').hide();
-                                console.log('instructor'+data[i].instructor_SSabado_id);
-                            }
-                        },
-                        error:function(){
-
-                        }
-                    });
-                });
-            </script>
+                </table>
+            </form>
+        </div>
+    <br><br>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+<script>
+
+    $('form').on('change','#programaFormacionTable', function(event) {
+        event.preventDefault();
+        $did=$(this).val();
+        $a=$(this).parent();
+        $op = " ";
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/programaFormacionSeleccionado')}}',
+            data:{'id':$did},
+            success:function(data){
+
+                $timeduration = data.timeduration;
+                $('#timeduration').val($timeduration);
+                $typeprogram = data.type;
+                console.log($timeduration);
+                $('#typeprogram').val($typeprogram);
+
+
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/competencias')}}',
+            data:{'id':$did},
+            success:function(data){
+
+                $op+='<option value="0" selected disabled>Seleccione competencia</option>';
+                for (var i = 0; i < data.length; i++) {
+                    $op+= '<option value="'+data[i].id+'">'+data[i].name+'</option>';
+                }
+                $('.competenciaPrueba').html($op);
+
+
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_hasta', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_desde').val();
+        $dateHasta = $('#hora_hasta').val();
+        $horario = "horarioPLunes";
+        $horarioInstructor = "horarioIPLunes";
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_desde').val().split(":"));
+            var hora_f = newDate($('#hora_hasta').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_justificacion_real').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+
+
+        $('select#pruebaSelect option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_PLunes_id option').each(function(){
+            $(this).show();
+        });
+        $('#pruebaSelect').removeAttr("disabled");
+        $('#instructor_PLunes_id').removeAttr("disabled");
+
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                for (var i = 0; i < data.length; i++) {
+                    $('#pruebaSelect option[value="'+data[i].classrooms_PLunes_id+'"]').attr("disabled", true);                   
+                    console.log(data[i].classrooms_PLunes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                for (var i = 0; i < data.length; i++) {
+                    $('#instructor_PLunes_id option[value="'+data[i].instructor_PLunes_id+'"]').attr("disabled", true);
+                    console.log('INSTRUCTOR:' + data[i].instructor_PLunes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+
+    });
+
+    $('form').on('change','#hora_fin_SLunes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_SLunes').val();
+        $dateHasta = $('#hora_fin_SLunes').val();
+        $horario = "horarioSLunes";
+        $horarioInstructor = "horarioISLunes";
+
+
+        $('select#classrooms_SLunes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_SLunes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_SLunes_id').removeAttr("disabled");
+        $('#instructor_SLunes_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_SLunes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_SLunes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorSLunes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_SLunes_id option[value="'+data[i].classroom_SLunes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_SLunes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_SLunes_id option[value="'+data[i].instructor_SLunes_id+'"]').attr("disabled", true);
+                    console.log('Instructor' + data[i].instructor_SLunes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+    });
+
+    $('form').on('change','#hora_fin_TLunes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_TLunes').val();
+        $dateHasta = $('#hora_fin_TLunes').val();
+        $horario = "horarioTLunes";
+        $horarioInstructor = "horarioITLunes";
+
+
+        $('select#classroom_TLunes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_TLunes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classroom_TLunes_id').removeAttr("disabled");
+        $('#instructor_TLunes_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_TLunes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_TLunes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorTLunes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        // console.log($dateHasta);
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                    $('#classroom_TLunes_id option[value="'+data[i].classroom_TLunes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_TLunes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                    $('#instructor_TLunes_id option[value="'+data[i].instructor_TLunes_id+'"]').attr("disabled", true);
+                    console.log('Instructor' + data[i].instructor_TLunes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_PMartes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_PMartes').val();
+        $dateHasta = $('#hora_fin_PMartes').val();
+        $horario = "horarioPMartes";
+        $horarioInstructor = "horarioIPMartes";
+
+            // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_PMartes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_PMartes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorPMartes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $('select#classrooms_PMartes_id option').each(function(){
+            $(this).show();
+        });
+
+        $('#classrooms_PMartes_id').removeAttr("disabled");
+        $('#instructor_PMartes_id').removeAttr("disabled");
+
+        // console.log($dateHasta);
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                    $('#classrooms_PMartes_id option[value="'+data[i].classrooms_PMartes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classrooms_PMartes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                    $('#instructor_PMartes_id option[value="'+data[i].instructor_PMartes_id+'"]').attr("disabled", true);
+                    console.log('Instructor'+data[i].instructor_PMartes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_SMartes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_SMartes').val();
+        $dateHasta = $('#hora_fin_SMartes').val();
+        $horario = "horarioSMartes";
+        $horarioInstructor = "horarioISMartes";
+
+
+        $('select#classrooms_SMartes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_SMartes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_SMartes_id').removeAttr("disabled");
+        $('#instructor_SMartes_id').removeAttr("disabled");
+
+
+        // console.log($dateHasta);
+
+         // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_SMartes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_SMartes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorSMartes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                    $('#classrooms_SMartes_id option[value="'+data[i].classroom_SMartes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_SMartes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    // $op+= '<option value="'+data[i].type+'">'+data[i].timeduration+'</option>';
+                    $('#instructor_SMartes_id option[value="'+data[i].instructor_SMartes_id+'"]').attr("disabled", true);
+                    console.log('Instructor'+data[i].instructor_SMartes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_TMartes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_TMartes').val();
+        $dateHasta = $('#hora_fin_TMartes').val();
+        $horario = "horarioTMartes";
+        $horarioInstructor = "horarioITMartes";
+
+
+        $('select#classroom_TMartes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_TMartes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classroom_TMartes_id').removeAttr("disabled");
+        $('#instructor_TMartes_id').removeAttr("disabled");
+
+         // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_TMartes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_TMartes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorTMartes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classroom_TMartes_id option[value="'+data[i].classroom_TMartes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_TMartes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_TMartes_id option[value="'+data[i].instructor_TMartes_id+'"]').attr("disabled", true);
+                    console.log('Instructor'+data[i].instructor_TMartes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+    });
+
+    $('form').on('change','#hora_fin_PMiercoles', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_PMiercoles').val();
+        $dateHasta = $('#hora_fin_PMiercoles').val();
+        $horario = "horarioPMiercoles";
+        $horarioInstructor = "horarioIPMiercoles";
+
+        $('select#classrooms_PMiercoles_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_PMiercoles_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_PMiercoles_id').removeAttr("disabled");
+        $('#instructor_PMiercoles_id').removeAttr("disabled");
+
+
+         // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_PMiercoles').val().split(":"));
+            var hora_f = newDate($('#hora_fin_PMiercoles').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorPMiercoles').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_PMiercoles_id option[value="'+data[i].classrooms_PMiercoles_id+'"]').attr("disabled", true);
+                    console.log(data[i].classrooms_PMiercoles_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_PMiercoles_id option[value="'+data[i].instructor_PMiercoles_id+'"]').attr("disabled", true);
+                    console.log('Instructor'+data[i].instructor_PMiercoles_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_SMiercoles', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_SMiercoles').val();
+        $dateHasta = $('#hora_fin_SMiercoles').val();
+        $horario = "horarioSMiercoles";
+        $horarioInstructor = "horarioISMiercoles";
+
+        $('select#classrooms_SMiercoles_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_SMiercoles_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_SMiercoles_id').removeAttr("disabled");
+        $('#instructor_SMiercoles_id').removeAttr("disabled");
+
+
+         // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_SMiercoles').val().split(":"));
+            var hora_f = newDate($('#hora_fin_SMiercoles').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorSMiercoles').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_SMiercoles_id option[value="'+data[i].classroom_SMiercoles_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_SMiercoles_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_SMiercoles_id option[value="'+data[i].instructor_SMiercoles_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_SMiercoles_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_TMiercoles', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_TMiercoles').val();
+        $dateHasta = $('#hora_fin_TMiercoles').val();
+        $horario = "horarioTMiercoles";
+        $horarioInstructor = "horarioITMiercoles";
+
+        $('select#classroom_TMiercoles_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_TMiercoles_id option').each(function(){
+            $(this).show();
+        });
+        $('#classroom_TMiercoles_id').removeAttr("disabled");
+        $('#instructor_TMiercoles_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_TMiercoles').val().split(":"));
+            var hora_f = newDate($('#hora_fin_TMiercoles').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorTMiercoles').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classroom_TMiercoles_id option[value="'+data[i].classroom_TMiercoles_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_TMiercoles_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_TMiercoles_id option[value="'+data[i].instructor_TMiercoles_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_TMiercoles_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_PJueves', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_PJueves').val();
+        $dateHasta = $('#hora_fin_PJueves').val();
+        $horario = "horarioPJueves";
+        $horarioInstructor = "horarioIPJueves";
+
+        $('select#classrooms_PJueves_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_PJueves_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_PJueves_id').removeAttr("disabled");
+        $('#instructor_PJueves_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_PJueves').val().split(":"));
+            var hora_f = newDate($('#hora_fin_PJueves').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorPJueves').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_PJueves_id option[value="'+data[i].classrooms_PJueves_id+'"]').attr("disabled", true);
+                    console.log(data[i].classrooms_PJueves_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_PJueves_id option[value="'+data[i].instructor_PJueves_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_PJueves_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_SJueves', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_SJueves').val();
+        $dateHasta = $('#hora_fin_SJueves').val();
+        $horario = "horarioTJueves";
+        $horarioInstructor = "horarioITJueves";
+
+        $('select#classrooms_SJueves_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_SJueves_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_SJueves_id').removeAttr("disabled");
+        $('#instructor_SJueves_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_SJueves').val().split(":"));
+            var hora_f = newDate($('#hora_fin_SJueves').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorSJueves').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classroom_SJueves_id option[value="'+data[i].classroom_SJueves_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_SJueves_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_SJueves_id option[value="'+data[i].instructor_SJueves_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_SJueves_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_TJueves', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_TJueves').val();
+        $dateHasta = $('#hora_fin_TJueves').val();
+        $horario = "horarioTJueves";
+        $horarioInstructor = "horarioITJueves";
+
+        $('select#classroom_TJueves_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_TJueves_id option').each(function(){
+            $(this).show();
+        });
+        $('#classroom_TJueves_id').removeAttr("disabled");
+        $('#instructor_TJueves_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_TJueves').val().split(":"));
+            var hora_f = newDate($('#hora_fin_TJueves').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorTJueves').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classroom_TJueves_id option[value="'+data[i].classroom_TJueves_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_TJueves_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_TJueves_id option[value="'+data[i].instructor_TJueves_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_TJueves_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_PViernes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_PViernes').val();
+        $dateHasta = $('#hora_fin_PViernes').val();
+        $horario = "horarioPViernes";
+        $horarioInstructor = "horarioIPViernes";
+
+        $('select#classrooms_PViernes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_PViernes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_PViernes_id').removeAttr("disabled");
+        $('#instructor_PViernes_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_PViernes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_PViernes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorPViernes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_PViernes_id option[value="'+data[i].classrooms_PViernes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classrooms_PViernes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_PViernes_id option[value="'+data[i].instructor_PViernes_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_PViernes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_SViernes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_SViernes').val();
+        $dateHasta = $('#hora_fin_SViernes').val();
+        $horario = "horarioSViernes";
+        $horarioInstructor = "horarioISViernes";
+        $('select#classrooms_SViernes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_SViernes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_SViernes_id').removeAttr("disabled");
+        $('#instructor_SViernes_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_SViernes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_SViernes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorSViernes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_SViernes_id option[value="'+data[i].classroom_SViernes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_SViernes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_SViernes_id option[value="'+data[i].instructor_SViernes_id+'"]').attr("disabled", true);
+                    console.log(data[i].instructor_SViernes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_TViernes', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_TViernes').val();
+        $dateHasta = $('#hora_fin_TViernes').val();
+        $horario = "horarioTViernes";
+        $horarioInstructor = "horarioITViernes";
+        $('select#classroom_TViernes_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_TViernes_id option').each(function(){
+            $(this).show();
+        });
+        $('#classroom_TViernes_id').removeAttr("disabled");
+        $('#instructor_TViernes_id').removeAttr("disabled");
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_TViernes').val().split(":"));
+            var hora_f = newDate($('#hora_fin_TViernes').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorTViernes').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classroom_TViernes_id option[value="'+data[i].classroom_TViernes_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_TViernes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_TViernes_id option[value="'+data[i].instructor_TViernes_id+'"]').attr("disabled", true);
+                    console.log('INSTRUCTOR'+data[i].instructor_TViernes_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_PSabado', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_PSabado').val();
+        $dateHasta = $('#hora_fin_PSabado').val();
+        $horario = "horarioPSabado";
+        $horarioInstructor = "horarioIPSabado";
+
+        $('select#classrooms_PSabado_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_PSabado_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_PSabado_id').removeAttr("disabled");
+        $('#instructor_PSabado_id').removeAttr("disabled");
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_PSabado').val().split(":"));
+            var hora_f = newDate($('#hora_fin_PSabado').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorPSabado').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_PSabado_id option[value="'+data[i].classrooms_PSabado_id+'"]').attr("disabled", true);
+                    console.log(data[i].classrooms_PSabado_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_PSabado_id option[value="'+data[i].instructor_PSabado_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_PSabado_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+
+    $('form').on('change','#hora_fin_SSabado', function(event) {
+        event.preventDefault();
+        $dateDesde = $('#hora_inicio_SSabado').val();
+        $dateHasta = $('#hora_fin_SSabado').val();
+        $horario = "horarioSSabado";
+        $horarioInstructor = "horarioISSabado";
+
+        $('select#classrooms_SSabado_id option').each(function(){
+            $(this).show();
+        });
+        $('select#instructor_SSabado_id option').each(function(){
+            $(this).show();
+        });
+        $('#classrooms_SSabado_id').removeAttr("disabled");
+        $('#instructor_SSabado_id').removeAttr("disabled");
+
+
+        // CONTEO DE HORAS
+        function newDate(partes) {
+        var date = new Date(0);
+        date.setHours(partes[0]);
+        date.setMinutes(partes[1]);
+        return date;
+        }
+
+        function prefijo(num) {
+            return num < 10 ? ("0" + num) : num;
+        }
+
+            var hora_i = newDate($('#hora_inicio_SSabado').val().split(":"));
+            var hora_f = newDate($('#hora_fin_SSabado').val().split(":"));
+
+            if (hora_f <  hora_i) {
+                alert('hora final menor a hora inicial');
+            }
+            var minutos = (hora_f - hora_i)/1000/60;
+            var horas = Math.floor(minutos/60);
+            minutos = minutos % 60;
+
+        $('#horas_InstructorSSabado').val(prefijo(horas));
+        // FIN CONTEO DE HORAS
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacion')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horario':$horario},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#classrooms_SSabado_id option[value="'+data[i].classroom_SSabado_id+'"]').attr("disabled", true);
+                    console.log(data[i].classroom_SSabado_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+
+        $.ajax({
+            'type': 'get',
+            url: '{{URL::to('/validacionInstructor')}}',
+            data:{'dateDesde':$dateDesde, 'dateHasta':$dateHasta, 'horarioInstructor':$horarioInstructor},
+
+            success:function(data){
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+
+                    $('#instructor_SSabado_id option[value="'+data[i].instructor_SSabado_id+'"]').attr("disabled", true);
+                    console.log('instructor'+data[i].instructor_SSabado_id);
+                }
+            },
+            error:function(){
+
+            }
+        });
+    });
+</script>
+</body>
+</html>

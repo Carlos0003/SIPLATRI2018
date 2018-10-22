@@ -32,7 +32,7 @@
     <body {{-- class="dash" --}} style="background-color: white;">
     {{-- @extends('layouts.navbar') --}}
 
-    <header style="display: flex;"><span class="icon-menu show"></span><a class="text-right" style="display: flex; position: relative; left: 40%; color: black; font-size: 25px; font-weight: 600; text-decoration: none; line-height: -100%;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logoSena2.png') }}" style="width: 50px; height: 50px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
+    <header style="display: flex;"><span class="icon-menu show"></span><a class="text-right" style="display: flex; position: relative; left: 40%; color: white; font-size: 25px; font-weight: 600; text-decoration: none; line-height: -100%;" class="navbar-brand" href="{{ url('home') }}"><img class="" src="{{ asset('imgs/logosena.png') }}" style="width: 50px; height: 50px; margin-top: 5px;">&nbsp;&nbsp;SIPLATRI <?php \Carbon\Carbon::setLocale(config('app_locale')); echo date('d M Y');?>
             </a>
         </header>
     <main>
